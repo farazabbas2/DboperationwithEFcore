@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DbOperationsWithEfcoreApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260909133109_addedcolortable")]
-    partial class addedcolortable
+    [Migration("20260910055733_scr3")]
+    partial class scr3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,6 +55,9 @@ namespace DbOperationsWithEfcoreApp.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("age")
+                        .HasColumnType("int");
 
                     b.HasKey("id");
 

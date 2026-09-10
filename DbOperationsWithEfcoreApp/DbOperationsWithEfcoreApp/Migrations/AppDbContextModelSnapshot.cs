@@ -53,6 +53,9 @@ namespace DbOperationsWithEfcoreApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("age")
+                        .HasColumnType("int");
+
                     b.HasKey("id");
 
                     b.HasIndex("ColorId");

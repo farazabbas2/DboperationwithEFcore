@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DbOperationsWithEfcoreApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260909113820_addedlanguagetable")]
-    partial class addedlanguagetable
+    [Migration("20260910055557_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,9 @@ namespace DbOperationsWithEfcoreApp.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("ColorId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -53,7 +56,12 @@ namespace DbOperationsWithEfcoreApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("age")
+                        .HasColumnType("int");
+
                     b.HasKey("id");
+
+                    b.HasIndex("ColorId");
 
                     b.HasIndex("LanguageId");
 
@@ -81,18 +89,48 @@ namespace DbOperationsWithEfcoreApp.Migrations
                     b.ToTable("Languages");
                 });
 
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Data.color", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Color");
+                });
+
             modelBuilder.Entity("DbOperationsWithEfcoreApp.Data.Book", b =>
                 {
+                    b.HasOne("DbOperationsWithEfcoreApp.Data.color", "Color")
+                        .WithMany("Books")
+                        .HasForeignKey("ColorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("DbOperationsWithEfcoreApp.Data.Language", "Language")
                         .WithMany("Books")
                         .HasForeignKey("LanguageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Color");
+
                     b.Navigation("Language");
                 });
 
             modelBuilder.Entity("DbOperationsWithEfcoreApp.Data.Language", b =>
+                {
+                    b.Navigation("Books");
+                });
+
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Data.color", b =>
                 {
                     b.Navigation("Books");
                 });

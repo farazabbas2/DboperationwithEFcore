@@ -13,6 +13,8 @@ namespace DbOperationsWithEfcoreApp.Data
 
         public int LanguageId { get; set; }
         public int ColorId { get; set; }
+
+        public int age {  get; set; }
          
         public Language Language { get; set; }
 

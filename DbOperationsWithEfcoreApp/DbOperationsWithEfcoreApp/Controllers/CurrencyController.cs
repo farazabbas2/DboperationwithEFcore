@@ -45,5 +45,20 @@ namespace DbOperationsWithEfcoreApp.Controllers
             var result = await _appDbContext.Currency.FirstOrDefaultAsync(x => x.Title == name && (string.IsNullOrEmpty(description) || x.description == description));
             return Ok(result);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> RemoveCurrency(int id)
+        {
+            var cuurency = await _appDbContext.Currency.FindAsync(id);
+
+            if(cuurency == null)
+            {
+                return NotFound();
+            }
+
+            _appDbContext.Currency.Remove(cuurency);
+            _appDbContext.SaveChangesAsync();
+            return Ok("cuurency deleted successfully");
+        }
     }
 }

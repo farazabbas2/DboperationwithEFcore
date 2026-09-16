@@ -1,4 +1,5 @@
 ﻿using DbOperationsWithEfcoreApp.Data;
+using DbOperationsWithEfcoreApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -30,16 +31,46 @@ namespace DbOperationsWithEfcoreApp.Controllers
         }
 
 
-
         [HttpGet("{name}")]
         public async Task<IActionResult> GetLanguaugeByName([FromRoute] string name, [FromQuery] string? description)
         {
-            //jo name denge whi return karega
-            //  var result = await _appDbContext.Languages.FirstOrDefaultAsync(x => x.Title == name && (string.IsNullOrEmpty(description) || x.Description==description));
+            var result = await _appDbContext.Languages
+                .Where(x => x.Title == name &&
+                           (string.IsNullOrEmpty(description) || x.Description == description))
+                .ToListAsync();
 
-            //us name ke sare record /duplicate entry bhi return kar degaa
-            var result = await _appDbContext.Languages.Where(x => x.Title == name && (string.IsNullOrEmpty(description) || x.Description == description)).ToListAsync();
-            return Ok(result);
+            // ✅ Check karo ki list khali toh nahi hai
+            if (result == null || !result.Any())
+            {
+                // 404 Not Found return karna
+                return StatusCode(404, new
+                {
+                    success = false,
+                    message = $"Language with name '{name}' not found."
+                });
+            }
+
+            // 200 OK return karna
+            return StatusCode(200, new
+            {
+                success = true,
+                message = "Data fetched successfully",
+                data = result
+            });
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> RemoveLanguage(int id)
+        {
+            var result = await _appDbContext.Languages.FindAsync(id);
+            if(result==null)
+            {
+                return NotFound();
+            }
+
+            _appDbContext.Languages.Remove(result);
+            _appDbContext.SaveChangesAsync();
+            return Ok("Language deleted Successfully");
         }
     }
 }

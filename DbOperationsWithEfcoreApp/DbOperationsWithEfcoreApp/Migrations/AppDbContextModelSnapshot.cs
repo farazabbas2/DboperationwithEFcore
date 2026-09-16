@@ -22,7 +22,7 @@ namespace DbOperationsWithEfcoreApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("DbOperationsWithEfcoreApp.Data.Book", b =>
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Models.Book", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -53,9 +53,6 @@ namespace DbOperationsWithEfcoreApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("age")
-                        .HasColumnType("int");
-
                     b.HasKey("id");
 
                     b.HasIndex("ColorId");
@@ -65,7 +62,80 @@ namespace DbOperationsWithEfcoreApp.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("DbOperationsWithEfcoreApp.Data.Language", b =>
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Models.BookPrice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CurrencyId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("CurrencyId");
+
+                    b.ToTable("BookPrice");
+                });
+
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Models.Currency", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Currency");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            Title = "INR",
+                            description = "indian inr"
+                        },
+                        new
+                        {
+                            id = 2,
+                            Title = "Dollar",
+                            description = "dollar"
+                        },
+                        new
+                        {
+                            id = 3,
+                            Title = "Euro",
+                            description = "euro"
+                        },
+                        new
+                        {
+                            id = 4,
+                            Title = "Dinar",
+                            description = "dinar"
+                        });
+                });
+
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Models.Language", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -84,9 +154,35 @@ namespace DbOperationsWithEfcoreApp.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Languages");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            Description = "all bout hindi",
+                            Title = "Hindi"
+                        },
+                        new
+                        {
+                            id = 2,
+                            Description = "all about tamil",
+                            Title = "Tamil"
+                        },
+                        new
+                        {
+                            id = 3,
+                            Description = "all about punjabi",
+                            Title = "Punjabi"
+                        },
+                        new
+                        {
+                            id = 4,
+                            Description = "all about urdu",
+                            Title = "Urdu"
+                        });
                 });
 
-            modelBuilder.Entity("DbOperationsWithEfcoreApp.Data.color", b =>
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Models.color", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -103,15 +199,15 @@ namespace DbOperationsWithEfcoreApp.Migrations
                     b.ToTable("Color");
                 });
 
-            modelBuilder.Entity("DbOperationsWithEfcoreApp.Data.Book", b =>
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Models.Book", b =>
                 {
-                    b.HasOne("DbOperationsWithEfcoreApp.Data.color", "Color")
+                    b.HasOne("DbOperationsWithEfcoreApp.Models.color", "Color")
                         .WithMany("Books")
                         .HasForeignKey("ColorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DbOperationsWithEfcoreApp.Data.Language", "Language")
+                    b.HasOne("DbOperationsWithEfcoreApp.Models.Language", "Language")
                         .WithMany("Books")
                         .HasForeignKey("LanguageId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -122,12 +218,41 @@ namespace DbOperationsWithEfcoreApp.Migrations
                     b.Navigation("Language");
                 });
 
-            modelBuilder.Entity("DbOperationsWithEfcoreApp.Data.Language", b =>
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Models.BookPrice", b =>
+                {
+                    b.HasOne("DbOperationsWithEfcoreApp.Models.Book", "Books")
+                        .WithMany("BookPrices")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DbOperationsWithEfcoreApp.Models.Currency", "Currency")
+                        .WithMany("BookPrices")
+                        .HasForeignKey("CurrencyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Books");
+
+                    b.Navigation("Currency");
+                });
+
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Models.Book", b =>
+                {
+                    b.Navigation("BookPrices");
+                });
+
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Models.Currency", b =>
+                {
+                    b.Navigation("BookPrices");
+                });
+
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Models.Language", b =>
                 {
                     b.Navigation("Books");
                 });
 
-            modelBuilder.Entity("DbOperationsWithEfcoreApp.Data.color", b =>
+            modelBuilder.Entity("DbOperationsWithEfcoreApp.Models.color", b =>
                 {
                     b.Navigation("Books");
                 });

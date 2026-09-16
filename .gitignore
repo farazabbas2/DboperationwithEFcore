@@ -1,9 +1,4 @@
-.vs/
-**/.vs/
-bin/
-**/bin/
-obj/
-**/obj/
-.vscode/
-*.user
-*.suo
+...GET METHOD CONTROLLER ASYNC
+MASTER TABLE DATA SEED
+MIGRATIONS,DATABASE UPDATE
+CREATE TABLE 

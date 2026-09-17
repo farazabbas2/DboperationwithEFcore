@@ -4,6 +4,7 @@ using DbOperationsWithEfcoreApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DbOperationsWithEfcoreApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260917072750_addcoloumn")]
+    partial class addcoloumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,28 +120,28 @@ namespace DbOperationsWithEfcoreApp.Migrations
                             id = 1,
                             Title = "INR",
                             description = "indian inr",
-                            isDeleted = true
+                            isDeleted = false
                         },
                         new
                         {
                             id = 2,
                             Title = "Dollar",
                             description = "dollar",
-                            isDeleted = true
+                            isDeleted = false
                         },
                         new
                         {
                             id = 3,
                             Title = "Euro",
                             description = "euro",
-                            isDeleted = true
+                            isDeleted = false
                         },
                         new
                         {
                             id = 4,
                             Title = "Dinar",
                             description = "dinar",
-                            isDeleted = true
+                            isDeleted = false
                         });
                 });
 
@@ -158,9 +161,6 @@ namespace DbOperationsWithEfcoreApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("isDeleted")
-                        .HasColumnType("bit");
-
                     b.HasKey("id");
 
                     b.ToTable("Languages");
@@ -170,29 +170,25 @@ namespace DbOperationsWithEfcoreApp.Migrations
                         {
                             id = 1,
                             Description = "all bout hindi",
-                            Title = "Hindi",
-                            isDeleted = true
+                            Title = "Hindi"
                         },
                         new
                         {
                             id = 2,
                             Description = "all about tamil",
-                            Title = "Tamil",
-                            isDeleted = true
+                            Title = "Tamil"
                         },
                         new
                         {
                             id = 3,
                             Description = "all about punjabi",
-                            Title = "Punjabi",
-                            isDeleted = true
+                            Title = "Punjabi"
                         },
                         new
                         {
                             id = 4,
                             Description = "all about urdu",
-                            Title = "Urdu",
-                            isDeleted = true
+                            Title = "Urdu"
                         });
                 });
 

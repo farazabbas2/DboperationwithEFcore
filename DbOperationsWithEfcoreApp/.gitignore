@@ -1,6 +1,16 @@
+# Visual Studio
 .vs/
-bin/
-obj/
-.vscode/
 *.user
 *.suo
+
+# Build outputs
+bin/
+obj/
+out/
+
+# Test results
+TestResults/
+
+# OS files
+.DS_Store
+Thumbs.db

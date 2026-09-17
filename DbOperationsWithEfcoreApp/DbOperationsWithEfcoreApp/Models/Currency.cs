@@ -8,6 +8,8 @@
    
         public string description { get; set; }
 
+        public bool isDeleted { get; set; } = true;
+
 
         public ICollection<BookPrice>BookPrices { get; set; }
     }

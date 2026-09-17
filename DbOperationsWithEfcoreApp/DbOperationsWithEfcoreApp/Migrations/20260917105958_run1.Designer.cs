@@ -4,6 +4,7 @@ using DbOperationsWithEfcoreApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DbOperationsWithEfcoreApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260917105958_run1")]
+    partial class run1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,28 +120,28 @@ namespace DbOperationsWithEfcoreApp.Migrations
                             id = 1,
                             Title = "INR",
                             description = "indian inr",
-                            isDeleted = true
+                            isDeleted = false
                         },
                         new
                         {
                             id = 2,
                             Title = "Dollar",
                             description = "dollar",
-                            isDeleted = true
+                            isDeleted = false
                         },
                         new
                         {
                             id = 3,
                             Title = "Euro",
                             description = "euro",
-                            isDeleted = true
+                            isDeleted = false
                         },
                         new
                         {
                             id = 4,
                             Title = "Dinar",
                             description = "dinar",
-                            isDeleted = true
+                            isDeleted = false
                         });
                 });
 
@@ -171,28 +174,28 @@ namespace DbOperationsWithEfcoreApp.Migrations
                             id = 1,
                             Description = "all bout hindi",
                             Title = "Hindi",
-                            isDeleted = true
+                            isDeleted = false
                         },
                         new
                         {
                             id = 2,
                             Description = "all about tamil",
                             Title = "Tamil",
-                            isDeleted = true
+                            isDeleted = false
                         },
                         new
                         {
                             id = 3,
                             Description = "all about punjabi",
                             Title = "Punjabi",
-                            isDeleted = true
+                            isDeleted = false
                         },
                         new
                         {
                             id = 4,
                             Description = "all about urdu",
                             Title = "Urdu",
-                            isDeleted = true
+                            isDeleted = false
                         });
                 });
 

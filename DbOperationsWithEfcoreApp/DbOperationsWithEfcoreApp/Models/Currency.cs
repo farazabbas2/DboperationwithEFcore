@@ -1,4 +1,4 @@
-﻿namespace DbOperationsWithEfcoreApp.Models
+namespace DbOperationsWithEfcoreApp.Models
 {
     public class Currency
     {
@@ -8,9 +8,12 @@
    
         public string description { get; set; }
 
-        public bool isDeleted { get; set; } = true;
+        public bool IsActive { get; set; } = true;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public DateTime? UpdatedAt { get; set; } 
 
 
-        public ICollection<BookPrice>BookPrices { get; set; }
+  
     }
 }

@@ -1,6 +1,8 @@
-﻿using DbOperationsWithEfcoreApp.Data;
+using DbOperationsWithEfcoreApp.Data;
 using DbOperationsWithEfcoreApp.Dtos;
 using DbOperationsWithEfcoreApp.Models;
+using Color = DbOperationsWithEfcoreApp.Models.Color;
+using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +15,12 @@ namespace DbOperationsWithEfcoreApp.Controllers
     public class CurrencyController : ControllerBase
     {
         private readonly AppDbContext _appDbContext;
+        private readonly IValidator<CreateCurrencyDto> _createCurrencyValidator;
 
-        public CurrencyController(AppDbContext appDbContext)
+        public CurrencyController(AppDbContext appDbContext , IValidator<CreateCurrencyDto> createCurrencyValidator)
         {
             _appDbContext = appDbContext;
+            _createCurrencyValidator = createCurrencyValidator;
         }
         [HttpGet()]
        // public IActionResult GetAllCurrrencies()
@@ -48,7 +52,12 @@ namespace DbOperationsWithEfcoreApp.Controllers
         [HttpGet("{name}")]
         public async Task<IActionResult> GetCurrrencyByName([FromRoute] string name, [FromQuery] string? description)
         {
-            var result = await _appDbContext.Currency.FirstOrDefaultAsync(x => x.Title == name && (string.IsNullOrEmpty(description) || x.description == description));
+            string cleanName = name.Trim().ToLower();
+            var result = await _appDbContext.Currency.FirstOrDefaultAsync(x => x.Title.ToLower() == cleanName && (string.IsNullOrEmpty(description) || x.description == description));
+            if (result == null)
+            {
+                return NotFound(new { message = $"Currency with title '{name}' not found." });
+            }
             return Ok(result);
         }
 
@@ -61,25 +70,25 @@ namespace DbOperationsWithEfcoreApp.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveCurrency(int id)
         {
-
             var currency = await _appDbContext.Currency
-          .IgnoreQueryFilters()
-          .FirstOrDefaultAsync(c => c.id == id);
+                .IgnoreQueryFilters()
+                .FirstOrDefaultAsync(c => c.id == id);
+
             if (currency == null)
             {
                 return NotFound(new { message = "Currency does not exist." });
             }
 
-       
-            if (currency.isDeleted == false) 
+            // IsActive == false (0) ka matlab Inactive/Deleted hai
+            if (currency.IsActive == false) 
             {
                 return Conflict(new { message = "Currency is already deleted." });
             }
         
-            currency.isDeleted = false; 
+            // Soft delete: IsActive ko false (0) karein
+            currency.IsActive = false; 
             await _appDbContext.SaveChangesAsync();
 
-            // 6. Success message return karein
             return Ok(new { message = "Currency deleted successfully." });
         }
 
@@ -115,6 +124,22 @@ namespace DbOperationsWithEfcoreApp.Controllers
         public async Task<IActionResult> CreateCurrency([FromBody] CreateCurrencyDto createDto)
         {
             // ✅ FIX: Trim() aur ToLower() use kiya taaki spaces aur case sensitivity ki wajah se duplicate na bane
+
+            var validationResult = await _createCurrencyValidator.ValidateAsync(createDto);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    message = "Validation failed.",
+                    errors = validationResult.Errors.Select(e => new
+                    {
+                        propertyName = e.PropertyName,
+                        errorMessage = e.ErrorMessage
+                    })
+                });
+            }
             string cleanTitle = createDto.Title.Trim().ToLower();
             string cleanDesc = createDto.description.Trim().ToLower();
 
@@ -131,11 +156,12 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 });
             }
 
+            // Naya record create hone par IsActive = true (1 = Active) hoga
             var currency = new Currency
             {
                 Title = createDto.Title.Trim(),
                 description = createDto.description.Trim(),
-                isDeleted = true
+                IsActive = true
             };
 
             _appDbContext.Currency.Add(currency);
@@ -146,8 +172,10 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 message = "Currency created successfully.",
                 data = new
                 {
+                    currency.id,
                     currency.Title,
-                    currency.description
+                    currency.description,
+                    currency.IsActive
                 }
             });
         }
@@ -158,21 +186,18 @@ namespace DbOperationsWithEfcoreApp.Controllers
         {
 
             var currency = await _appDbContext.Currency
-       .IgnoreQueryFilters()
-       .FirstOrDefaultAsync(c => c.id == id);
-
-
-
+            .IgnoreQueryFilters()
+             .FirstOrDefaultAsync(c => c.id == id);
             if (currency == null)
             {
                 return NotFound(new { message = "Currency not found." });
             }
 
-            if (currency.isDeleted==false)
+            // IsActive == false matlab Inactive/Deleted hai
+            if (currency.IsActive == false)
             {
                 return BadRequest(new { message = "Currency is already deleted and cannot be updated." });
             }
-
 
             var existingRecord = await _appDbContext.Currency
            .FirstOrDefaultAsync(x => x.Title == updateDto.Title && x.id != id);
@@ -183,11 +208,8 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 return Conflict(new { message = "Currency title already exists. Please choose a different title." });
             }
 
-
             currency.Title = updateDto.Title;
             currency.description = updateDto.description; // Agar aap description bhi update karna chahte hain
-
-
 
             await _appDbContext.SaveChangesAsync();
 
@@ -198,6 +220,8 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 data = new { currency.id, currency.Title, currency.description }
             });
         }
+
+    
       
             }
         }

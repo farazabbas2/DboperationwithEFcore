@@ -1,16 +1,14 @@
-﻿namespace DbOperationsWithEfcoreApp.Models
+namespace DbOperationsWithEfcoreApp.Models
 {
     public class Language
     {
+        public int Id { get; set; }              // ✅ Capital I
+        public string Name { get; set; } = string.Empty;  // ✅ Title nahi, Name
+        public string? Description { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow; 
+        public DateTime? UpdatedAt { get; set; }
+        public bool IsActive { get; set; } = true;  // ✅ Capital I
 
-        public int id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-
-        public bool isDeleted { get; set; } = true;
-
-        public ICollection<Book> Books {  get; set; }
-
-
+        public ICollection<BookLanguage> BookLanguages { get; set; } = new List<BookLanguage>();
     }
 }

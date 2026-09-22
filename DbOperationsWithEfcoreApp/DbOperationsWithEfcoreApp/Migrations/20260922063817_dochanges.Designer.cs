@@ -4,6 +4,7 @@ using DbOperationsWithEfcoreApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DbOperationsWithEfcoreApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260922063817_dochanges")]
+    partial class dochanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,7 +70,7 @@ namespace DbOperationsWithEfcoreApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<int>("NoOfPages")
@@ -128,7 +131,7 @@ namespace DbOperationsWithEfcoreApp.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -147,21 +150,21 @@ namespace DbOperationsWithEfcoreApp.Migrations
                         {
                             Id = 1,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
+                            IsDeleted = false,
                             Name = "Red"
                         },
                         new
                         {
                             Id = 2,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
+                            IsDeleted = false,
                             Name = "Blue"
                         },
                         new
                         {
                             Id = 3,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
+                            IsDeleted = false,
                             Name = "Green"
                         });
                 });
@@ -177,9 +180,6 @@ namespace DbOperationsWithEfcoreApp.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -191,6 +191,9 @@ namespace DbOperationsWithEfcoreApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("isDeleted")
+                        .HasColumnType("bit");
+
                     b.HasKey("id");
 
                     b.ToTable("Currency");
@@ -200,33 +203,33 @@ namespace DbOperationsWithEfcoreApp.Migrations
                         {
                             id = 1,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
                             Title = "INR",
-                            description = "Indian Rupee"
+                            description = "Indian Rupee",
+                            isDeleted = false
                         },
                         new
                         {
                             id = 2,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
                             Title = "Dollar",
-                            description = "US Dollar"
+                            description = "US Dollar",
+                            isDeleted = false
                         },
                         new
                         {
                             id = 3,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
                             Title = "Euro",
-                            description = "Euro"
+                            description = "Euro",
+                            isDeleted = false
                         },
                         new
                         {
                             id = 4,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
                             Title = "Dinar",
-                            description = "Dinar"
+                            description = "Dinar",
+                            isDeleted = false
                         });
                 });
 
@@ -244,7 +247,7 @@ namespace DbOperationsWithEfcoreApp.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -264,7 +267,7 @@ namespace DbOperationsWithEfcoreApp.Migrations
                             Id = 1,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Indian Rupee",
-                            IsActive = true,
+                            IsDeleted = false,
                             Name = "Hindi"
                         },
                         new
@@ -272,7 +275,7 @@ namespace DbOperationsWithEfcoreApp.Migrations
                             Id = 2,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Tamil Language",
-                            IsActive = true,
+                            IsDeleted = false,
                             Name = "Tamil"
                         },
                         new
@@ -280,7 +283,7 @@ namespace DbOperationsWithEfcoreApp.Migrations
                             Id = 3,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Punjabi Language",
-                            IsActive = true,
+                            IsDeleted = false,
                             Name = "Punjabi"
                         },
                         new
@@ -288,7 +291,7 @@ namespace DbOperationsWithEfcoreApp.Migrations
                             Id = 4,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Urdu Language",
-                            IsActive = true,
+                            IsDeleted = false,
                             Name = "Urdu"
                         });
                 });

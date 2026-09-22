@@ -1,9 +1,12 @@
-﻿using DbOperationsWithEfcoreApp.Data;
+using DbOperationsWithEfcoreApp.Data;
 using DbOperationsWithEfcoreApp.Dtos;
 using DbOperationsWithEfcoreApp.Models;
+using FluentValidation;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration.EnvironmentVariables;
 
 namespace DbOperationsWithEfcoreApp.Controllers
 {
@@ -12,10 +15,14 @@ namespace DbOperationsWithEfcoreApp.Controllers
     public class LanguageController : ControllerBase
     {
         private readonly AppDbContext _appDbContext;
+        private readonly IValidator<CreateLanguageDto> _createLanguageValidator;
+        private readonly IValidator<UpdateLanguageDto> _updateLanguageValidator;
 
-        public LanguageController(AppDbContext appDbContext)
+        public LanguageController(AppDbContext appDbContext, IValidator<CreateLanguageDto> createLanguageValidator, IValidator<UpdateLanguageDto> updateLanguageValidator)
         {
             _appDbContext = appDbContext;
+            _createLanguageValidator = createLanguageValidator;
+            _updateLanguageValidator = updateLanguageValidator;
         }
         [HttpGet("")]
         public async Task<IActionResult> GetallLanguages()
@@ -24,25 +31,26 @@ namespace DbOperationsWithEfcoreApp.Controllers
             return Ok(result);
         }
 
-        [HttpGet("{id:int} ")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetLanguaugeById([FromRoute] int id)
         {
             var result = await _appDbContext.Languages.FindAsync(id);
 
             if (result == null)
             {
-                return NotFound("id not found");
+                return NotFound(new { message = "Language not found." });
             }
 
-            return Ok(new { success = true, data = result });
+            return Ok(result);
         }
 
 
         [HttpGet("{name}")]
         public async Task<IActionResult> GetLanguaugeByName([FromRoute] string name, [FromQuery] string? description)
         {
+            string cleanName = name.Trim().ToLower();
             var result = await _appDbContext.Languages
-                .Where(x => x.Title == name &&
+                .Where(x => x.Name.ToLower() == cleanName &&
                            (string.IsNullOrEmpty(description) || x.Description == description))
                 .ToListAsync();
 
@@ -70,23 +78,24 @@ namespace DbOperationsWithEfcoreApp.Controllers
         public async Task<IActionResult> RemoveLanguage(int id)
         {
             var result = await _appDbContext.Languages
-          .IgnoreQueryFilters()
-          .FirstOrDefaultAsync(c => c.id == id);
-            if (result==null)
+                .IgnoreQueryFilters()
+                .FirstOrDefaultAsync(c => c.Id == id);
+
+            if (result == null)
             {
                 return NotFound(new { message = "Language does not exist." });
             }
-            if(result.isDeleted==false)
+
+            // IsActive == false (0) ka matlab Inactive/Deleted hai
+            if (result.IsActive == false)
             {
                 return Conflict(new { message = "Language is already deleted." });
             }
 
-            //(use for hard delete)
-
-            //_appDbContext.Languages.Remove(result); 
-            result.isDeleted = false;
+            // Soft delete: IsActive ko false (0) karein
+            result.IsActive = false;
             await _appDbContext.SaveChangesAsync();
-            return Ok("Language deleted Successfully");
+            return Ok(new { message = "Language deleted Successfully" });
         }
 
         [HttpPost("alllang")]
@@ -101,9 +110,98 @@ namespace DbOperationsWithEfcoreApp.Controllers
             }
 
             var result = await _appDbContext.
-                Languages.Where(x => request.Ids.Contains(x.id)).
+                Languages.Where(x => request.Ids.Contains(x.Id)).
                 ToListAsync();
             return Ok(result);
         }
+
+
+        //
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Updatelanguage(int id, [FromBody] UpdateLanguageDto languageDto)
+        {
+
+            var validationResult = await _updateLanguageValidator.ValidateAsync(languageDto);
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    message = "Validation failed.",
+                    errors = validationResult.Errors.Select(e => new
+                    {
+                        propertyName = e.PropertyName,
+                        errorMessage = e.ErrorMessage
+                    })
+                });
+            }
+
+            var language = await _appDbContext.Languages.IgnoreQueryFilters().FirstOrDefaultAsync(c => c.Id == id);
+
+            if(language==null)
+            {
+                return NotFound(new { message = "Language does not exist." });
+            }
+
+            // IsActive == false (0) ka matlab Inactive/Deleted hai
+            if (language.IsActive == false)
+            {
+                return Conflict(new { message = "Language is already deleted." });
+            }
+
+            var exisitngrecord = await _appDbContext.Languages.FirstOrDefaultAsync(c => c.Name == languageDto.Title && c.Id != id);
+            if(exisitngrecord != null)
+            {
+                return Conflict(new { message = "Language with the same title already exists." });
+            }
+
+            language.Name = languageDto.Title;
+            language.Description = languageDto.Description;
+            await _appDbContext.SaveChangesAsync();
+             return Ok(new { message = "Language updated successfully." });
+
+        }
+        //post method 
+
+        [HttpPost]
+        public async Task<IActionResult> CreateLanguage([FromBody] CreateLanguageDto languageDto)
+        {
+
+            var validationResult = await _createLanguageValidator.ValidateAsync(languageDto);
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    message = "Validation failed.",
+                    errors = validationResult.Errors.Select(e => new
+                    {
+                        propertyName = e.PropertyName,
+                        errorMessage = e.ErrorMessage
+                    })
+                });
+            }
+            string cleanTitle = languageDto.Title.Trim().ToLower();
+            var exisitingrecord=await _appDbContext.Languages.FirstOrDefaultAsync(c=>c.Name.Trim().ToLower() == cleanTitle);
+            if(exisitingrecord != null)
+            {
+                return Conflict(new { message = "Language with the same title already exists." });
+            }
+
+            // Naya record create hone par IsActive = true (1 = Active) hoga
+            var language = new Language
+            {
+                Name = languageDto.Title,
+                Description = languageDto.Description,
+                IsActive = true
+            };
+            _appDbContext.Languages.Add(language);
+            await _appDbContext.SaveChangesAsync();
+            return Ok(new { message = "Language created successfully.", data = language });
+
+        }
+
     }
+   
 }

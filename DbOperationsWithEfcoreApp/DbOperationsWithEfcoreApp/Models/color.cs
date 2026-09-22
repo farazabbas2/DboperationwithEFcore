@@ -1,10 +1,13 @@
-﻿namespace DbOperationsWithEfcoreApp.Models
+namespace DbOperationsWithEfcoreApp.Models
 {
-    public class color
+    public class Color
     {
-        public int id { get; set; }
-        public string name { get; set; }    
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow; 
+        public DateTime? UpdatedAt { get; set; }
+        public bool IsActive { get; set; } = true;
 
-        public ICollection<Book>Books { get; set; }
+        public ICollection<BookColor> BookColors { get; set; } = new List<BookColor>();
     }
 }

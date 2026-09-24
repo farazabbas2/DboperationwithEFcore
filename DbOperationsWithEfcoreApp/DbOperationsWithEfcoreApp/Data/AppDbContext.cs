@@ -110,6 +110,7 @@ namespace DbOperationsWithEfcoreApp.Data
         public DbSet<BookLanguage> BookLanguages { get; set; }
         public DbSet<BookPrice> BookPrices { get; set; } // Agar hai toh
 
+        public DbSet <User> Users { get; set; } // Agar hai toh
 
         // ==========================================
         // 5. SAVE CHANGES OVERRIDES (IST Timezone Logic)

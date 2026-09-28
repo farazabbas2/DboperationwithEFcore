@@ -1,4 +1,5 @@
 using DbOperationsWithEfcoreApp.Data;
+using DbOperationsWithEfcoreApp.Mappings;
 using DbOperationsWithEfcoreApp.Middlewares;
 using DbOperationsWithEfcoreApp.Validators;
 using FluentValidation;
@@ -9,6 +10,7 @@ using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using System.Text.Json.Serialization;
+using Serilog; // ✅ Ye pehle se hai
 
 namespace DbOperationsWithEfcoreApp
 {
@@ -16,108 +18,144 @@ namespace DbOperationsWithEfcoreApp
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
+            // =================================================================
+            // 1. SERILOG CONFIGURATION (App start hone se PEHLE)
+            // =================================================================
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Information() // Information, Warning, Error logs save karega
+                .WriteTo.Console()          // Console par bhi dikhayega
+                .WriteTo.File("Logs/app-log-.txt", rollingInterval: RollingInterval.Day) // Har din nayi file banegi
+                .CreateLogger();
 
-            // 1. Authentication & JWT
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
-                        ValidateLifetime = true,
-                        ValidateIssuerSigningKey = true,
-                        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                        ValidAudience = builder.Configuration["Jwt:Audience"],
-                        IssuerSigningKey = new SymmetricSecurityKey(
-                            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"] ?? "DefaultSecretKey"))
-                    };
-                });
-
-            // 2. DbContext Registration
-            builder.Services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("AppDb"))
-            );
-
-            // 3. Controllers + JSON Options
-            builder.Services.AddControllers()
-                .AddJsonOptions(options =>
-                {
-                    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-                });
-
-            // 4. CORS
-            builder.Services.AddCors(options =>
+            try
             {
-                options.AddPolicy("AllowReactApp", policy =>
-                {
-                    policy.WithOrigins("http://localhost:5173")
-                          .AllowAnyHeader()
-                          .AllowAnyMethod();
-                });
-            });
+                Log.Information("🚀 Application starting up...");
 
-            // 5. Fluent Validation
-            builder.Services.AddValidatorsFromAssemblyContaining<Program>();
+                var builder = WebApplication.CreateBuilder(args);
 
-            // 6. Swagger / OpenAPI Configuration
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen(options =>
-            {
-                options.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Title = "DbOperations API",
-                    Version = "v1"
-                });
+                // =================================================================
+                // 2. SERILOG KO DEPENDENCY INJECTION SE CONNECT KARNA
+                // =================================================================
+                builder.Host.UseSerilog(); // ✅ YE LINE BAHUT ZARURI HAI
 
-                // Security Definition (Bearer Token)
-                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                {
-                    Name = "Authorization",
-                    Type = SecuritySchemeType.Http,
-                    Scheme = "bearer",
-                    BearerFormat = "JWT",
-                    In = ParameterLocation.Header,
-                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\""
-                });
-
-                // Security Requirement (Apply to all endpoints)
-                options.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
+                // 1. Authentication & JWT
+                builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddJwtBearer(options =>
                     {
-                        new OpenApiSecurityScheme
+                        options.TokenValidationParameters = new TokenValidationParameters
                         {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer"
-                            }
-                        },
-                        Array.Empty<string>()
-                    }
+                            ValidateIssuer = true,
+                            ValidateAudience = true,
+                            ValidateLifetime = true,
+                            ValidateIssuerSigningKey = true,
+                            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                            ValidAudience = builder.Configuration["Jwt:Audience"],
+                            IssuerSigningKey = new SymmetricSecurityKey(
+                                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"] ?? "DefaultSecretKey")),
+                            RoleClaimType = System.Security.Claims.ClaimTypes.Role
+                        };
+                    });
+
+                // 2. DbContext Registration
+                builder.Services.AddDbContext<AppDbContext>(options =>
+                    options.UseSqlServer(builder.Configuration.GetConnectionString("AppDb"))
+                );
+
+                // 3. Controllers + JSON Options
+                builder.Services.AddControllers()
+                    .AddJsonOptions(options =>
+                    {
+                        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+                    });
+                builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
+
+                // 4. CORS
+                builder.Services.AddCors(options =>
+                {
+                    options.AddPolicy("AllowReactApp", policy =>
+                    {
+                        policy.WithOrigins("http://localhost:5173")
+                              .AllowAnyHeader()
+                              .AllowAnyMethod();
+                    });
                 });
-            });
 
-            var app = builder.Build();
+                // 5. Fluent Validation
+                builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
-            // Middleware Pipeline
-            app.UseCors("AllowReactApp");
-            app.UseMiddleware<ExceptionHandlingMiddleware>();
+                // 6. Swagger / OpenAPI Configuration
+                builder.Services.AddEndpointsApiExplorer();
+                builder.Services.AddSwaggerGen(options =>
+                {
+                    options.SwaggerDoc("v1", new OpenApiInfo
+                    {
+                        Title = "DbOperations API",
+                        Version = "v1"
+                    });
 
-            // Swagger Middleware
-            app.UseSwagger();
-            app.UseSwaggerUI();
+                    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                    {
+                        Name = "Authorization",
+                        Type = SecuritySchemeType.Http,
+                        Scheme = "bearer",
+                        BearerFormat = "JWT",
+                        In = ParameterLocation.Header,
+                        Description = "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\""
+                    });
 
-            app.UseHttpsRedirection();
+                    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                    {
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer"
+                                }
+                            },
+                            Array.Empty<string>()
+                        }
+                    });
+                });
 
-            // IMPORTANT: Authentication must come BEFORE Authorization
-            app.UseAuthentication();
-            app.UseAuthorization();
+                var app = builder.Build();
 
-            app.MapControllers();
+                // Middleware Pipeline
+                app.UseCors("AllowReactApp");
 
-            app.Run();
+                // ✅ Custom Logging Middlewares (Ye pehle se aapke code me the, ye sahi jagah par hain)
+                app.UseMiddleware<ExceptionHandlingMiddleware>();
+                app.UseMiddleware<RequestLoggingMiddleware>();
+
+                // Swagger Middleware
+                if (app.Environment.IsDevelopment())
+                {
+                    app.UseSwagger();
+                    app.UseSwaggerUI();
+                }
+
+                app.UseHttpsRedirection();
+
+                // IMPORTANT: Authentication must come BEFORE Authorization
+                app.UseAuthentication();
+                app.UseAuthorization();
+
+                app.MapControllers();
+                app.UseStaticFiles();
+
+                Log.Information("✅ Application started successfully!");
+                app.Run();
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex, "❌ Application failed to start!");
+            }
+            finally
+            {
+                // App band hote waqt logs ko properly file me flush (save) karna
+                Log.CloseAndFlush();
+            }
         }
     }
 }

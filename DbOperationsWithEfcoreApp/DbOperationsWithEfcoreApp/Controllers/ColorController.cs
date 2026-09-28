@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using FluentValidation;
 using DbOperationsWithEfcoreApp.Dtos;
 using DbOperationsWithEfcoreApp.Models;
+using Microsoft.Extensions.FileProviders;
+using System.Data.SqlTypes;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DbOperationsWithEfcoreApp.Controllers
 {
@@ -18,7 +21,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
             _appDbContext = appDbContext;
             _createNewColorValidator = createNewColorValidator;
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAllColors()
         {
@@ -31,6 +34,8 @@ namespace DbOperationsWithEfcoreApp.Controllers
             }).ToListAsync();
             return Ok(result);
         }
+
+        [Authorize]
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetColorById([FromRoute] int id)
         {
@@ -48,6 +53,8 @@ namespace DbOperationsWithEfcoreApp.Controllers
 
             return Ok(color);
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddColor([FromBody] CreateColorDto createDto)
         {
@@ -93,6 +100,34 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 success = true,
                 message = "Color added successfully.",
                 data = responseDto
+            });
+        }
+        [Authorize(Roles = "Admin")]
+        [HttpPut("id")]
+        public async Task<IActionResult> UpdateColor (int id, [FromBody] UpdateColorDto updateColor)
+        {
+            var Color = await _appDbContext.Colors.FirstOrDefaultAsync(c => c.Id == id);
+
+            if(Color==null)
+            {
+                return NotFound(new { message = "color not found" });
+            }
+
+            if(Color.IsActive==false)
+            {
+                return BadRequest(new { message = "color is already deleted" });
+            }
+            var exisitngRecord = await _appDbContext.Colors.FirstOrDefaultAsync(c => c.Name == updateColor.name && c.Id != id);
+            if(exisitngRecord!=null)
+            {
+                return Conflict(new {message= "color with this name is already exists" });
+            }
+            Color.Name = updateColor.name;
+            await _appDbContext.SaveChangesAsync();
+            return Ok(new
+            {
+                message = "color updated successfully",
+                data = new { Color.Name }
             });
         }
 

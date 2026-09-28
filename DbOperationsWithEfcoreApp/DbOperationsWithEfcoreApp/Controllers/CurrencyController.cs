@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DbOperationsWithEfcoreApp.Controllers
 {
@@ -22,6 +23,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
             _appDbContext = appDbContext;
             _createCurrencyValidator = createCurrencyValidator;
         }
+        [Authorize]
         [HttpGet()]
        // public IActionResult GetAllCurrrencies()
        public async Task<IActionResult> GetAllCurrencies()
@@ -38,6 +40,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
             //select Currency).ToList();
             return Ok(result);
         }
+        [Authorize]
 
         [HttpGet("{id:int}")]
         // public IActionResult GetAllCurrrencies()
@@ -49,6 +52,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpGet("{name}")]
         public async Task<IActionResult> GetCurrrencyByName([FromRoute] string name, [FromQuery] string? description)
         {
@@ -67,6 +71,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
 
         // delete data based on id
         // delete data based on id (Soft Delete)
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveCurrency(int id)
         {
@@ -94,7 +99,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
 
 
 
-
+        [Authorize(Roles = "Admin")]
 
         //if we want to get the multiple records based on ids 
         [HttpPost("all")]
@@ -120,6 +125,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
             return Ok(result);
         }
         // POST: api/currencies
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> CreateCurrency([FromBody] CreateCurrencyDto createDto)
         {
@@ -180,7 +186,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
             });
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCurrency( int id,[FromBody] UpdateCurrencyDto updateDto)
         {

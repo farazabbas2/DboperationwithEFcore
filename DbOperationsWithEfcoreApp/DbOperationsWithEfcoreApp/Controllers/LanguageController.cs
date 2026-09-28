@@ -2,6 +2,7 @@ using DbOperationsWithEfcoreApp.Data;
 using DbOperationsWithEfcoreApp.Dtos;
 using DbOperationsWithEfcoreApp.Models;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +25,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
             _createLanguageValidator = createLanguageValidator;
             _updateLanguageValidator = updateLanguageValidator;
         }
+        [Authorize]
         [HttpGet("")]
         public async Task<IActionResult> GetallLanguages()
         {
@@ -44,7 +46,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
             return Ok(result);
         }
 
-
+        [Authorize]
         [HttpGet("{name}")]
         public async Task<IActionResult> GetLanguaugeByName([FromRoute] string name, [FromQuery] string? description)
         {
@@ -73,7 +75,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 data = result
             });
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveLanguage(int id)
         {
@@ -97,7 +99,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
             await _appDbContext.SaveChangesAsync();
             return Ok(new { message = "Language deleted Successfully" });
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost("alllang")]
         public async Task<IActionResult> GetLanguageByIds([FromBody] LanguaeRequestDto request)
         {
@@ -115,9 +117,8 @@ namespace DbOperationsWithEfcoreApp.Controllers
             return Ok(result);
         }
 
-
         //
-
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Updatelanguage(int id, [FromBody] UpdateLanguageDto languageDto)
         {
@@ -163,7 +164,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
 
         }
         //post method 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> CreateLanguage([FromBody] CreateLanguageDto languageDto)
         {

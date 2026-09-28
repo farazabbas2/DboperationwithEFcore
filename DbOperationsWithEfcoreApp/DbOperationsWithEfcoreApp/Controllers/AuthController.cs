@@ -2,6 +2,7 @@
 using DbOperationsWithEfcoreApp.Dtos;
 using DbOperationsWithEfcoreApp.Models;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -65,6 +66,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
             {
                 Name=registerDto.Name,
                 Email = registerDto.Email,
+                Role = "User",
                 passwordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Password)
 
             };
@@ -76,48 +78,116 @@ namespace DbOperationsWithEfcoreApp.Controllers
 
 
         }
+        [Authorize(Roles ="Admin")]
+
+        [HttpPost("force-unlock")]
+        public async Task<IActionResult> ForceUnlock([FromBody] UnlockRequestDto dto)
+        {
+            // 1. User ko email se dhundho
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == dto.Email.ToLower());
+
+            if (user == null)
+            {
+                return NotFound(new { success = false, message = "User not found." });
+            }
+
+            // 2. Zabardasti Unlock kar do (Chahe kuch bhi ho)
+            user.FailedLoginAttempts = 0;
+            user.LockoutEnd = null; // ✅ Ye C# se proper NULL set karega
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                success = true,
+                message = "Account forcefully unlocked successfully!",
+                user = new { user.Email, user.FailedLoginAttempts, user.LockoutEnd }
+            });
+        }
+
+        // DTO Class (agar pehle se nahi hai to add kar lein)
+        public class UnlockRequestDto
+        {
+            public string Email { get; set; }
+        }
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
-        
-      {
-              var validationResult = await _loginValidator.ValidateAsync(loginDto);
-                if(!validationResult.IsValid)
+        {
+            // 1. Fluent Validation
+            var validationResult = await _loginValidator.ValidateAsync(loginDto);
+            if (!validationResult.IsValid)
             {
                 return BadRequest(new
                 {
                     success = false,
-                    message = "validation failed",
+                    message = "Validation failed",
                     errors = validationResult.Errors.Select(e => new
                     {
                         field = e.PropertyName,
                         error = e.ErrorMessage
                     })
                 });
-
-       
-
             }
+
+            // 2. User ko sirf Email se dhundho
             var user = await _context.Users
-            .FirstOrDefaultAsync(u => u.Email.ToLower() == loginDto.Email.ToLower());
+                .FirstOrDefaultAsync(u => u.Email.ToLower() == loginDto.Email.Trim().ToLower());
+
             if (user == null)
             {
-                return Unauthorized(new
+                return Unauthorized(new { success = false, message = "Invalid email or password." });
+            }
+
+            // 3. Check karo: Kya account abhi LOCKED hai?
+            if (user.LockoutEnd.HasValue && user.LockoutEnd.Value > DateTime.UtcNow)
+            {
+                var minutesLeft = Math.Ceiling((user.LockoutEnd.Value - DateTime.UtcNow).TotalMinutes);
+                return StatusCode(423, new
                 {
                     success = false,
-                    message = "Invalid email or password."
+                    message = $"Account is temporarily locked. Please try again in {minutesLeft} minutes."
                 });
             }
 
+            // 4. Password Verify karo
             if (!BCrypt.Net.BCrypt.Verify(loginDto.Password, user.passwordHash))
             {
+                // ❌ Galat Password: Failed attempts count badhao
+                user.FailedLoginAttempts++;
+
+                // Agar 5 baar galat kiya, to 15 minute ke liye lock kar do
+                if (user.FailedLoginAttempts >= 5)
+                {
+                    user.LockoutEnd = DateTime.UtcNow.AddMinutes(1);
+                    await _context.SaveChangesAsync();
+
+                    return StatusCode(423, new
+                    {
+                        success = false,
+                        message = "Account locked due to too many failed attempts. Try again after 15 minutes."
+                    });
+                }
+
+                // Attempt count save karo aur user ko batao ke kitne chances bache hain
+                await _context.SaveChangesAsync();
+                int attemptsLeft = 5 - user.FailedLoginAttempts;
+
                 return Unauthorized(new
                 {
                     success = false,
-                    message = "Invalid email or password."
+                    message = $"Invalid email or password. {attemptsLeft} attempt(s) remaining before account lock."
                 });
             }
+
+            // 5. ✅ SUCCESSFUL LOGIN: Failed attempts ko RESET (0) kar do aur lock hata do
+            user.FailedLoginAttempts = 0;
+            user.LockoutEnd = null;
+            await _context.SaveChangesAsync();
+
+            // JWT Token generate karo
             var token = GenerateJwtToken(user);
 
+            // 6. Success Response
             return Ok(new
             {
                 success = true,
@@ -126,13 +196,14 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 user = new
                 {
                     id = user.Id,
-                    email = user.Email
+                    email = user.Email,
+                    name = user.Name
                 }
             });
         }
 
-    
-        
+
+
         private string GenerateJwtToken(User user)
         {
             // appsettings.json se secret key lo
@@ -145,7 +216,8 @@ namespace DbOperationsWithEfcoreApp.Controllers
             {
         new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
         new Claim(JwtRegisteredClaimNames.Email, user.Email),
-        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+         new Claim(System.Security.Claims.ClaimTypes.Role, user.Role)
     };
 
             var token = new JwtSecurityToken(

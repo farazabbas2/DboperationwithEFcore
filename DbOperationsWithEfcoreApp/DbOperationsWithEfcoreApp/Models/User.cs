@@ -12,5 +12,10 @@
 
         public bool isActive { get; set; } = true;
 
+        public int FailedLoginAttempts { get; set; } = 0;
+        public DateTime? LockoutEnd { get; set; }
+
+        public string Role { get; set; } = "User";
+
     }
 }

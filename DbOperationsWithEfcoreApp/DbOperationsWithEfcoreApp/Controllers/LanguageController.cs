@@ -1,5 +1,6 @@
 using DbOperationsWithEfcoreApp.Data;
 using DbOperationsWithEfcoreApp.Dtos;
+using DbOperationsWithEfcoreApp.Interfaces;
 using DbOperationsWithEfcoreApp.Models;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration.EnvironmentVariables;
+using DbOperationsWithEfcoreApp.Repositories;
 
 namespace DbOperationsWithEfcoreApp.Controllers
 {
@@ -16,27 +18,29 @@ namespace DbOperationsWithEfcoreApp.Controllers
     public class LanguageController : ControllerBase
     {
         private readonly AppDbContext _appDbContext;
+        private readonly ILanguageRepository _languageRepository;
         private readonly IValidator<CreateLanguageDto> _createLanguageValidator;
         private readonly IValidator<UpdateLanguageDto> _updateLanguageValidator;
 
-        public LanguageController(AppDbContext appDbContext, IValidator<CreateLanguageDto> createLanguageValidator, IValidator<UpdateLanguageDto> updateLanguageValidator)
+        public LanguageController(AppDbContext appDbContext, IValidator<CreateLanguageDto> createLanguageValidator, IValidator<UpdateLanguageDto> updateLanguageValidator,ILanguageRepository languageRepository)
         {
             _appDbContext = appDbContext;
             _createLanguageValidator = createLanguageValidator;
             _updateLanguageValidator = updateLanguageValidator;
+            _languageRepository = languageRepository;
         }
         [Authorize]
         [HttpGet("")]
         public async Task<IActionResult> GetallLanguages()
         {
-            var result=await _appDbContext.Languages.ToListAsync();
+            var result = await _languageRepository.GetAllLanguagesAsync();
             return Ok(result);
         }
 
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetLanguaugeById([FromRoute] int id)
         {
-            var result = await _appDbContext.Languages.FindAsync(id);
+            var result = await _languageRepository.GetLanguageByIdAsync(id);
 
             if (result == null)
             {
@@ -51,13 +55,12 @@ namespace DbOperationsWithEfcoreApp.Controllers
         public async Task<IActionResult> GetLanguaugeByName([FromRoute] string name, [FromQuery] string? description)
         {
             string cleanName = name.Trim().ToLower();
-            var result = await _appDbContext.Languages
-                .Where(x => x.Name.ToLower() == cleanName &&
-                           (string.IsNullOrEmpty(description) || x.Description == description))
-                .ToListAsync();
+            var result = await _languageRepository.GetLanguageByNameAsync(name, description);
+                
+
 
             //check exist or not 
-            if (result == null || !result.Any())
+            if (result == null)
             {
                 // 404 Not Found 
                 return StatusCode(404, new
@@ -79,9 +82,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveLanguage(int id)
         {
-            var result = await _appDbContext.Languages
-                .IgnoreQueryFilters()
-                .FirstOrDefaultAsync(c => c.Id == id);
+            var result = await _languageRepository.GetLanguageByIdAsync(id);
 
             if (result == null)
             {
@@ -94,9 +95,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 return Conflict(new { message = "Language is already deleted." });
             }
 
-            // Soft delete: IsActive ko false (0) karein
-            result.IsActive = false;
-            await _appDbContext.SaveChangesAsync();
+            await _languageRepository.SoftDeleteLanguageAsync(id);
             return Ok(new { message = "Language deleted Successfully" });
         }
         [Authorize(Roles = "Admin")]
@@ -111,9 +110,9 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 return BadRequest("please provide at least one ID");
             }
 
-            var result = await _appDbContext.
-                Languages.Where(x => request.Ids.Contains(x.Id)).
-                ToListAsync();
+
+            var result = await _languageRepository
+                .GetLanguagesByIds(request.Ids);
             return Ok(result);
         }
 
@@ -138,7 +137,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 });
             }
 
-            var language = await _appDbContext.Languages.IgnoreQueryFilters().FirstOrDefaultAsync(c => c.Id == id);
+            var language = await _languageRepository.GetLanguageByIdIgnoreFiltersAsync(id);
 
             if(language==null)
             {
@@ -159,7 +158,8 @@ namespace DbOperationsWithEfcoreApp.Controllers
 
             language.Name = languageDto.Title;
             language.Description = languageDto.Description;
-            await _appDbContext.SaveChangesAsync();
+            await _languageRepository.UpdateLanguageAsync(language);
+
              return Ok(new { message = "Language updated successfully." });
 
         }
@@ -184,8 +184,9 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 });
             }
             string cleanTitle = languageDto.Title.Trim().ToLower();
-            var exisitingrecord=await _appDbContext.Languages.FirstOrDefaultAsync(c=>c.Name.Trim().ToLower() == cleanTitle);
-            if(exisitingrecord != null)
+            var existingRecord = await _languageRepository.GetLanguageByNameAsync(languageDto.Title, languageDto.Description);
+
+            if (existingRecord != null)
             {
                 return Conflict(new { message = "Language with the same title already exists." });
             }
@@ -197,8 +198,8 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 Description = languageDto.Description,
                 IsActive = true
             };
-            _appDbContext.Languages.Add(language);
-            await _appDbContext.SaveChangesAsync();
+            await _languageRepository.AddLanguageAsync(language);
+   
             return Ok(new { message = "Language created successfully.", data = language });
 
         }

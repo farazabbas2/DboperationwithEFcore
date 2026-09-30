@@ -177,3 +177,184 @@ WHERE [Id] = @p9;
 2026-09-30 11:23:54.240 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.UpdateColor (DbOperationsWithEfcoreApp)'
 2026-09-30 11:23:54.240 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 41ms)
 2026-09-30 11:23:54.241 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:7103/api/colors/id?id=56 - 200 null application/json; charset=utf-8 44.5433ms
+2026-09-30 12:34:50.871 +05:30 [INF] 🚀 Application starting up...
+2026-09-30 12:34:51.164 +05:30 [INF] ✅ Application started successfully!
+2026-09-30 12:34:51.183 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 12:34:51.354 +05:30 [INF] Now listening on: https://localhost:7103
+2026-09-30 12:34:51.355 +05:30 [INF] Now listening on: http://localhost:5142
+2026-09-30 12:34:51.469 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 12:34:51.471 +05:30 [INF] Hosting environment: Development
+2026-09-30 12:34:51.471 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-09-30 12:34:52.097 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-09-30 12:34:52.202 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-09-30 12:34:52.275 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 74ms)
+2026-09-30 12:34:52.281 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-09-30 12:34:52.281 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 12:34:52.283 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 192.1704ms
+2026-09-30 12:34:52.290 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 9.2602ms
+2026-09-30 12:34:52.308 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.9704ms
+2026-09-30 12:34:52.338 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-09-30 12:34:52.340 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-09-30 12:34:52.351 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 10ms)
+2026-09-30 12:34:52.352 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.4091ms
+2026-09-30 12:35:12.005 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Auth/login - application/json 61
+2026-09-30 12:35:12.011 +05:30 [INF] CORS policy execution failed.
+2026-09-30 12:35:12.012 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 12:35:12.013 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-09-30 12:35:12.039 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 12:35:12.058 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 12:35:12.537 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 12:35:12.538 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 12:35:12.539 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 12:35:12.603 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-09-30 12:35:13.043 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-09-30 12:35:13.319 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 12:35:13.328 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 1267.2912ms
+2026-09-30 12:35:13.329 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 12:35:13.330 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 1317ms)
+2026-09-30 12:35:13.335 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Auth/login - 200 null application/json; charset=utf-8 1329.2342ms
+2026-09-30 12:35:28.234 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/Language - null null
+2026-09-30 12:35:28.236 +05:30 [INF] ️ Incoming Request: GET /api/Language
+2026-09-30 12:35:28.269 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-09-30 12:35:28.275 +05:30 [INF] Route matched with {action = "GetallLanguages", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallLanguages() on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-09-30 12:35:28.295 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit)
+2026-09-30 12:35:28.306 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Language, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 12:35:28.318 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp) in 42.4651ms
+2026-09-30 12:35:28.319 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-09-30 12:35:28.320 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 83ms)
+2026-09-30 12:35:28.321 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/Language - 200 null application/json; charset=utf-8 86.606ms
+2026-09-30 12:35:45.057 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Language - application/json 54
+2026-09-30 12:35:45.058 +05:30 [INF] CORS policy execution failed.
+2026-09-30 12:35:45.059 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 12:35:45.059 +05:30 [INF] ️ Incoming Request: POST /api/Language
+2026-09-30 12:35:45.063 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.CreateLanguage (DbOperationsWithEfcoreApp)'
+2026-09-30 12:35:45.069 +05:30 [INF] Route matched with {action = "CreateLanguage", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateLanguage(DbOperationsWithEfcoreApp.Dtos.CreateLanguageDto) on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-09-30 12:35:45.143 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@cleanName='?' (Size = 4000), @description='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit) AND LOWER([l].[Name]) = @cleanName AND [l].[Description] = @description
+2026-09-30 12:35:45.244 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+INSERT INTO [Languages] ([CreatedAt], [Description], [IsActive], [Name], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p6, @p7, @p8, @p9, @p10);
+2026-09-30 12:35:45.267 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType20`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[DbOperationsWithEfcoreApp.Models.Language, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 12:35:45.268 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.CreateLanguage (DbOperationsWithEfcoreApp) in 199.0834ms
+2026-09-30 12:35:45.269 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.CreateLanguage (DbOperationsWithEfcoreApp)'
+2026-09-30 12:35:45.269 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 210ms)
+2026-09-30 12:35:45.270 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Language - 200 null application/json; charset=utf-8 213.4367ms
+2026-09-30 12:35:51.866 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/Language/2 - null null
+2026-09-30 12:35:51.868 +05:30 [INF] ️ Incoming Request: GET /api/Language/2
+2026-09-30 12:35:51.869 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguaugeById (DbOperationsWithEfcoreApp)'
+2026-09-30 12:35:51.876 +05:30 [INF] Route matched with {action = "GetLanguaugeById", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLanguaugeById(Int32) on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-09-30 12:35:51.885 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit) AND [l].[Id] = @id
+2026-09-30 12:35:51.886 +05:30 [INF] Executing OkObjectResult, writing value of type 'DbOperationsWithEfcoreApp.Models.Language'.
+2026-09-30 12:35:51.887 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguaugeById (DbOperationsWithEfcoreApp) in 10.8247ms
+2026-09-30 12:35:51.888 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguaugeById (DbOperationsWithEfcoreApp)'
+2026-09-30 12:35:51.889 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 20ms)
+2026-09-30 12:35:51.890 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/Language/2 - 200 null application/json; charset=utf-8 23.3399ms
+2026-09-30 12:35:58.453 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:7103/api/Language/1 - null null
+2026-09-30 12:35:58.455 +05:30 [INF] CORS policy execution failed.
+2026-09-30 12:35:58.456 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 12:35:58.457 +05:30 [INF] ️ Incoming Request: DELETE /api/Language/1
+2026-09-30 12:35:58.459 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.RemoveLanguage (DbOperationsWithEfcoreApp)'
+2026-09-30 12:35:58.464 +05:30 [INF] Route matched with {action = "RemoveLanguage", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveLanguage(Int32) on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-09-30 12:35:58.477 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit) AND [l].[Id] = @id
+2026-09-30 12:35:58.487 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[Id] = @id
+2026-09-30 12:35:58.502 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p8='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+UPDATE [Languages] SET [IsActive] = @p6, [UpdatedAt] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-09-30 12:35:58.505 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 12:35:58.507 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.RemoveLanguage (DbOperationsWithEfcoreApp) in 41.4062ms
+2026-09-30 12:35:58.507 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.RemoveLanguage (DbOperationsWithEfcoreApp)'
+2026-09-30 12:35:58.508 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 51ms)
+2026-09-30 12:35:58.508 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7103/api/Language/1 - 200 null application/json; charset=utf-8 55.3542ms
+2026-09-30 12:36:15.651 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:7103/api/Language/5 - application/json 55
+2026-09-30 12:36:15.652 +05:30 [INF] CORS policy execution failed.
+2026-09-30 12:36:15.653 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 12:36:15.653 +05:30 [INF] ️ Incoming Request: PUT /api/Language/5
+2026-09-30 12:36:15.654 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.Updatelanguage (DbOperationsWithEfcoreApp)'
+2026-09-30 12:36:15.660 +05:30 [INF] Route matched with {action = "Updatelanguage", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Updatelanguage(Int32, DbOperationsWithEfcoreApp.Dtos.UpdateLanguageDto) on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-09-30 12:36:15.666 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[Id] = @id
+2026-09-30 12:36:15.674 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@languageDto_Title='?' (Size = 4000), @id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit) AND [l].[Name] = @languageDto_Title AND [l].[Id] <> @id
+2026-09-30 12:36:15.678 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p10='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+UPDATE [Languages] SET [Description] = @p6, [IsActive] = @p7, [Name] = @p8, [UpdatedAt] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2026-09-30 12:36:15.679 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 12:36:15.679 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.Updatelanguage (DbOperationsWithEfcoreApp) in 18.4928ms
+2026-09-30 12:36:15.680 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.Updatelanguage (DbOperationsWithEfcoreApp)'
+2026-09-30 12:36:15.680 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 26ms)
+2026-09-30 12:36:15.681 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:7103/api/Language/5 - 200 null application/json; charset=utf-8 30.0811ms
+2026-09-30 12:36:25.050 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/Language/testing - null null
+2026-09-30 12:36:25.052 +05:30 [INF] ️ Incoming Request: GET /api/Language/testing
+2026-09-30 12:36:25.053 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguaugeByName (DbOperationsWithEfcoreApp)'
+2026-09-30 12:36:25.059 +05:30 [INF] Route matched with {action = "GetLanguaugeByName", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLanguaugeByName(System.String, System.String) on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-09-30 12:36:25.066 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@cleanName='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit) AND LOWER([l].[Name]) = @cleanName
+2026-09-30 12:36:25.068 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType15`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[DbOperationsWithEfcoreApp.Models.Language, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 12:36:25.069 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguaugeByName (DbOperationsWithEfcoreApp) in 9.1263ms
+2026-09-30 12:36:25.070 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguaugeByName (DbOperationsWithEfcoreApp)'
+2026-09-30 12:36:25.070 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 18ms)
+2026-09-30 12:36:25.071 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/Language/testing - 200 null application/json; charset=utf-8 20.617ms
+2026-09-30 12:36:45.070 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Language/alllang - application/json 41
+2026-09-30 12:36:45.071 +05:30 [INF] CORS policy execution failed.
+2026-09-30 12:36:45.071 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 12:36:45.072 +05:30 [INF] ️ Incoming Request: POST /api/Language/alllang
+2026-09-30 12:36:45.073 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguageByIds (DbOperationsWithEfcoreApp)'
+2026-09-30 12:36:45.080 +05:30 [INF] Route matched with {action = "GetLanguageByIds", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLanguageByIds(DbOperationsWithEfcoreApp.Dtos.LanguaeRequestDto) on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-09-30 12:36:45.088 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-09-30 12:36:45.099 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguageByIds (DbOperationsWithEfcoreApp) in 18.3942ms
+2026-09-30 12:36:45.099 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguageByIds (DbOperationsWithEfcoreApp)'
+2026-09-30 12:36:45.100 +05:30 [INF] ⬅️ Outgoing Response: 400 (Time taken: 27ms)
+2026-09-30 12:36:45.100 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Language/alllang - 400 null application/problem+json; charset=utf-8 30.3519ms
+2026-09-30 12:36:53.750 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Language/alllang - application/json 40
+2026-09-30 12:36:53.751 +05:30 [INF] CORS policy execution failed.
+2026-09-30 12:36:53.751 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 12:36:53.752 +05:30 [INF] ️ Incoming Request: POST /api/Language/alllang
+2026-09-30 12:36:53.753 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguageByIds (DbOperationsWithEfcoreApp)'
+2026-09-30 12:36:53.753 +05:30 [INF] Route matched with {action = "GetLanguageByIds", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLanguageByIds(DbOperationsWithEfcoreApp.Dtos.LanguaeRequestDto) on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-09-30 12:36:53.791 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@ids1='?' (DbType = Int32), @ids2='?' (DbType = Int32), @ids3='?' (DbType = Int32), @ids4='?' (DbType = Int32), @ids5='?' (DbType = Int32), @ids6='?' (DbType = Int32), @ids7='?' (DbType = Int32), @ids8='?' (DbType = Int32), @ids9='?' (DbType = Int32), @ids10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit) AND [l].[Id] IN (@ids1, @ids2, @ids3, @ids4, @ids5, @ids6, @ids7, @ids8, @ids9, @ids10)
+2026-09-30 12:36:53.792 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Language, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 12:36:53.793 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguageByIds (DbOperationsWithEfcoreApp) in 39.0093ms
+2026-09-30 12:36:53.793 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguageByIds (DbOperationsWithEfcoreApp)'
+2026-09-30 12:36:53.794 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 42ms)
+2026-09-30 12:36:53.794 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Language/alllang - 200 null application/json; charset=utf-8 44.6435ms

@@ -358,3 +358,135 @@ WHERE [l].[IsActive] = CAST(1 AS bit) AND [l].[Id] IN (@ids1, @ids2, @ids3, @ids
 2026-09-30 12:36:53.793 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetLanguageByIds (DbOperationsWithEfcoreApp)'
 2026-09-30 12:36:53.794 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 42ms)
 2026-09-30 12:36:53.794 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Language/alllang - 200 null application/json; charset=utf-8 44.6435ms
+2026-09-30 14:44:55.772 +05:30 [INF] 🚀 Application starting up...
+2026-09-30 14:44:56.162 +05:30 [INF] ✅ Application started successfully!
+2026-09-30 14:44:56.178 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 14:44:56.324 +05:30 [INF] Now listening on: https://localhost:7103
+2026-09-30 14:44:56.325 +05:30 [INF] Now listening on: http://localhost:5142
+2026-09-30 14:44:56.435 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 14:44:56.435 +05:30 [INF] Hosting environment: Development
+2026-09-30 14:44:56.436 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-09-30 14:44:56.986 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-09-30 14:44:57.082 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-09-30 14:44:57.139 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 57ms)
+2026-09-30 14:44:57.147 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 165.3757ms
+2026-09-30 14:44:57.151 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 14:44:57.151 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-09-30 14:44:57.155 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 4.697ms
+2026-09-30 14:44:57.174 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.0662ms
+2026-09-30 14:44:57.199 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-09-30 14:44:57.200 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-09-30 14:44:57.216 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 15ms)
+2026-09-30 14:44:57.217 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.1297ms
+2026-09-30 14:45:27.004 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Auth/login - application/json 61
+2026-09-30 14:45:27.011 +05:30 [INF] CORS policy execution failed.
+2026-09-30 14:45:27.011 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 14:45:27.014 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-09-30 14:45:27.046 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 14:45:27.066 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 14:45:27.622 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 14:45:27.623 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 14:45:27.623 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 14:45:27.684 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-09-30 14:45:28.118 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-09-30 14:45:28.392 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 14:45:28.401 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 1331.9427ms
+2026-09-30 14:45:28.402 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 14:45:28.403 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 1389ms)
+2026-09-30 14:45:28.410 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Auth/login - 200 null application/json; charset=utf-8 1405.4942ms
+2026-09-30 14:45:49.564 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:7103/api/colors/1 - null null
+2026-09-30 14:45:49.568 +05:30 [INF] CORS policy execution failed.
+2026-09-30 14:45:49.568 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 14:45:49.569 +05:30 [INF] ️ Incoming Request: DELETE /api/colors/1
+2026-09-30 14:45:49.604 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.DeleteColor (DbOperationsWithEfcoreApp)'
+2026-09-30 14:45:49.610 +05:30 [INF] Route matched with {action = "DeleteColor", controller = "Color"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteColor(Int32) on controller DbOperationsWithEfcoreApp.Controllers.ColorController (DbOperationsWithEfcoreApp).
+2026-09-30 14:45:49.614 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.ColorController.DeleteColor (DbOperationsWithEfcoreApp) in 3.2778ms
+2026-09-30 14:45:49.615 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.DeleteColor (DbOperationsWithEfcoreApp)'
+2026-09-30 14:45:49.658 +05:30 [ERR] An unhandled exception occurred.
+System.InvalidOperationException: Unable to resolve service for type 'DbOperationsWithEfcoreApp.Interfaces.IColorRepository' while attempting to activate 'DbOperationsWithEfcoreApp.Controllers.ColorController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method161(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp\Middlewares\RequestLoggingMiddleware.cs:line 25
+   at DbOperationsWithEfcoreApp.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+2026-09-30 14:45:49.682 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7103/api/colors/1 - 500 null application/json 118.3806ms
+2026-09-30 14:47:03.562 +05:30 [INF] 🚀 Application starting up...
+2026-09-30 14:47:03.827 +05:30 [INF] ✅ Application started successfully!
+2026-09-30 14:47:03.848 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 14:47:04.019 +05:30 [INF] Now listening on: https://localhost:7103
+2026-09-30 14:47:04.020 +05:30 [INF] Now listening on: http://localhost:5142
+2026-09-30 14:47:04.130 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 14:47:04.130 +05:30 [INF] Hosting environment: Development
+2026-09-30 14:47:04.130 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-09-30 14:47:04.844 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-09-30 14:47:04.944 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-09-30 14:47:05.002 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 60ms)
+2026-09-30 14:47:05.012 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 175.1902ms
+2026-09-30 14:47:05.014 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 14:47:05.014 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-09-30 14:47:05.020 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 5.989ms
+2026-09-30 14:47:05.040 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.0129ms
+2026-09-30 14:47:05.064 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-09-30 14:47:05.066 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-09-30 14:47:05.078 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 11ms)
+2026-09-30 14:47:05.079 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.5316ms
+2026-09-30 14:47:23.069 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Auth/login - application/json 61
+2026-09-30 14:47:23.076 +05:30 [INF] CORS policy execution failed.
+2026-09-30 14:47:23.077 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 14:47:23.078 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-09-30 14:47:23.104 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 14:47:23.121 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 14:47:23.607 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 14:47:23.608 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 14:47:23.608 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 14:47:23.676 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-09-30 14:47:24.113 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-09-30 14:47:24.397 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 14:47:24.407 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 1281.2276ms
+2026-09-30 14:47:24.408 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 14:47:24.409 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 1330ms)
+2026-09-30 14:47:24.413 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Auth/login - 200 null application/json; charset=utf-8 1343.9333ms
+2026-09-30 14:47:46.209 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:7103/api/colors/1 - null null
+2026-09-30 14:47:46.211 +05:30 [INF] CORS policy execution failed.
+2026-09-30 14:47:46.211 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 14:47:46.212 +05:30 [INF] ️ Incoming Request: DELETE /api/colors/1
+2026-09-30 14:47:46.248 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.DeleteColor (DbOperationsWithEfcoreApp)'
+2026-09-30 14:47:46.254 +05:30 [INF] Route matched with {action = "DeleteColor", controller = "Color"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteColor(Int32) on controller DbOperationsWithEfcoreApp.Controllers.ColorController (DbOperationsWithEfcoreApp).
+2026-09-30 14:47:46.281 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+FROM [Colors] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit) AND [c].[Id] = @id
+2026-09-30 14:47:46.299 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+FROM [Colors] AS [c]
+WHERE [c].[Id] = @id
+2026-09-30 14:47:46.409 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p8='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+UPDATE [Colors] SET [IsActive] = @p6, [UpdatedAt] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-09-30 14:47:46.433 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 14:47:46.435 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.ColorController.DeleteColor (DbOperationsWithEfcoreApp) in 179.6865ms
+2026-09-30 14:47:46.436 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.DeleteColor (DbOperationsWithEfcoreApp)'
+2026-09-30 14:47:46.436 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 224ms)
+2026-09-30 14:47:46.437 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7103/api/colors/1 - 200 null application/json; charset=utf-8 227.7986ms

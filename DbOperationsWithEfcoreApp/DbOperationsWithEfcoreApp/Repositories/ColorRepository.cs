@@ -44,5 +44,18 @@ namespace DbOperationsWithEfcoreApp.Repositories
             _context.Colors.Update(color);
             await _context.SaveChangesAsync();
         }
+
+        public async Task SoftDeleteColorAsync(int id)
+        {
+            var color = await _context.Colors
+              .IgnoreQueryFilters()
+              .FirstOrDefaultAsync(x => x.Id == id);
+            if (color != null)
+            {
+                color.IsActive = false;
+
+                await _context.SaveChangesAsync();
+            } 
+        }
     }
 }

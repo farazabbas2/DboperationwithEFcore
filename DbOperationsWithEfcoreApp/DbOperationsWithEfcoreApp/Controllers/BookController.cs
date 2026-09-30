@@ -23,7 +23,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
         private readonly IValidator<CreateBookDto> _createBookValidator;
         private readonly IMapper _mapper;
 
-        // Notice: AppDbContext yahan se HATA diya gaya hai! Sirf Repository inject ho raha hai.
+   
         public BookController(IBookRepository bookRepository, IValidator<CreateBookDto> createBookValidator, IMapper mapper)
         {
             _bookRepository = bookRepository;

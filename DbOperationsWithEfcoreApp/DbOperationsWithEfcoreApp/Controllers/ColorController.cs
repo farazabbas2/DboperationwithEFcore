@@ -139,5 +139,21 @@ namespace DbOperationsWithEfcoreApp.Controllers
         }
 
 
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteColor(int id)
+        {
+            var existingRecord = await _colorRepository.GetColorByIdAsync(id);
+            if (existingRecord == null)
+                return NotFound(new { success = false, message = "Book id Not found" });
+
+            if (existingRecord.IsActive == false)
+                return Conflict(new { success = false, message = "Book is already deleted" });
+
+            await _colorRepository.SoftDeleteColorAsync(id);
+
+            return Ok(new { message = "Book Deleted Successfully" });
+        }
+
     }
 }

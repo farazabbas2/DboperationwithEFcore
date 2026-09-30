@@ -59,7 +59,7 @@ namespace DbOperationsWithEfcoreApp
                     });
                 builder.Services.AddHttpContextAccessor();
                 builder.Services.AddScoped<IBookRepository, BookRepository>();
-                builder.Services.AddScoped<IBookRepository, BookRepository>();
+                builder.Services.AddScoped<IColorRepository, ColorRepository>();
 
                 builder.Services.AddScoped<ILanguageRepository, LanguageRepository>();
 

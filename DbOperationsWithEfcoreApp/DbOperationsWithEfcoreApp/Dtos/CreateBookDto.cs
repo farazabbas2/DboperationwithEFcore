@@ -14,4 +14,11 @@ public class CreateBookDto
 
     // Multiple Colors ke liye
     public List<int> ColorIds { get; set; } = new List<int>();
+    public List<CreateBookPriceDto> Prices { get; set; }
+}
+
+public class CreateBookPriceDto
+{
+    public decimal Amount { get; set; }  // Ya 'amount' (apne model ke hisaab se)
+    public int CurrencyId { get; set; }
 }

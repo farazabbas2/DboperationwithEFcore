@@ -1,4 +1,5 @@
-﻿using DbOperationsWithEfcoreApp.Models;
+﻿using DbOperationsWithEfcoreApp.Dtos;
+using DbOperationsWithEfcoreApp.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -23,5 +24,7 @@ namespace DbOperationsWithEfcoreApp.Interfaces
         Task SoftDeleteBookAsync(int id);
         Task UpdateBookPdfPathAsync(int id, string filePath);
         Task ReplaceBookRelationsAsync(int bookId, List<int> languageIds, List<int> colorIds);
+        Task UpdateBookPricesAsync(int bookId, List<UpdateBookPriceDto> newPrices);
+        Task AddBookPricesAsync(int bookId, List<CreateBookPriceDto> prices);
     }
 }

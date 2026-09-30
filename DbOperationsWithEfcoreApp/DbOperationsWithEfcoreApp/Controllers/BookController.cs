@@ -23,7 +23,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
         private readonly IValidator<CreateBookDto> _createBookValidator;
         private readonly IMapper _mapper;
 
-   
+
         public BookController(IBookRepository bookRepository, IValidator<CreateBookDto> createBookValidator, IMapper mapper)
         {
             _bookRepository = bookRepository;
@@ -75,6 +75,16 @@ namespace DbOperationsWithEfcoreApp.Controllers
             book.Title = bookDto.Title;
             book.Description = bookDto.Description;
             book.NoOfPages = bookDto.NoOfPages;
+            if (bookDto.Prices != null)
+            {
+                await _bookRepository.UpdateBookPricesAsync(id, bookDto.Prices);
+            }
+
+            // Complex relations update (Languages & Colors)
+            await _bookRepository.ReplaceBookRelationsAsync(id, bookDto.LanguageIds, bookDto.ColorIds);
+
+
+
 
             // Complex relations update ab Repository sambhal raha hai
             await _bookRepository.ReplaceBookRelationsAsync(id, bookDto.LanguageIds, bookDto.ColorIds);
@@ -225,7 +235,8 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 IsActive = true,
                 CreatedAt = DateTime.UtcNow,
                 BookColors = new List<BookColor>(),
-                BookLanguages = new List<BookLanguage>()
+                BookLanguages = new List<BookLanguage>(),
+                BookPrices = new List<BookPrice>()
             };
 
             if (createDto.ColorIds != null && createDto.ColorIds.Any())
@@ -243,28 +254,42 @@ namespace DbOperationsWithEfcoreApp.Controllers
             // Save via Repository
             await _bookRepository.AddBookAsync(book);
 
+            if (createDto.Prices != null && createDto.Prices.Any())
+            {
+                await _bookRepository.AddBookPricesAsync(book.Id, createDto.Prices);
+            }
+
             // Created book ko details ke saath fetch karna bhi ab Repository ka kaam hai
             var createdBookWithDetails = await _bookRepository.GetBookByIdAsync(book.Id);
+            var pricesCount = createdBookWithDetails.BookPrices.Count();
+            Console.WriteLine($"Total prices fetched: {pricesCount}");
 
             if (createdBookWithDetails == null)
                 return StatusCode(500, new { success = false, message = "Book created but failed to fetch details" });
-
-            return StatusCode(201, new
-            {
-                success = true,
-                message = "Book created successfully.",
-                data = new
+        
+                return StatusCode(201, new
                 {
-                    id = createdBookWithDetails.Id,
-                    title = createdBookWithDetails.Title,
-                    description = createdBookWithDetails.Description,
-                    noOfPages = createdBookWithDetails.NoOfPages,
-                    colors = createdBookWithDetails.BookColors.Select(bc => new { colorId = bc.ColorId, colorName = bc.color?.Name ?? "Unknown" }).ToList(),
-                    languages = createdBookWithDetails.BookLanguages.Select(bl => new { languageId = bl.LanguageId, languageName = bl.Language?.Name ?? "Unknown" }).ToList(),
-                    createdAt = createdBookWithDetails.CreatedAt,
-                    isActive = createdBookWithDetails.IsActive
-                }
-            });
+                    success = true,
+                    message = "Book created successfully.",
+                    data = new
+                    {
+                        id = createdBookWithDetails.Id,
+                        title = createdBookWithDetails.Title,
+                        description = createdBookWithDetails.Description,
+                        noOfPages = createdBookWithDetails.NoOfPages,
+                        colors = createdBookWithDetails.BookColors.Select(bc => new { colorId = bc.ColorId, colorName = bc.color?.Name ?? "Unknown" }).ToList(),
+                        languages = createdBookWithDetails.BookLanguages.Select(bl => new { languageId = bl.LanguageId, languageName = bl.Language?.Name ?? "Unknown" }).ToList(),
+                        createdAt = createdBookWithDetails.CreatedAt,
+                        isActive = createdBookWithDetails.IsActive,
+                        price = createdBookWithDetails.BookPrices.Select(bp => new
+                        {
+                            priceId = bp.Id,  // Ya bp.PriceId (jo bhi aapka primary key hai)
+                            price = bp.amount, // Price ka value
+                            currencyId = bp.CurrencyId
+                        }).ToList()
+                    }
+
+                });
+            }
         }
     }
-}

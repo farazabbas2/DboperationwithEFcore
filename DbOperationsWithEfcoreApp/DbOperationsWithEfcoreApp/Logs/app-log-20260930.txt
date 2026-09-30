@@ -490,3 +490,1015 @@ WHERE [Id] = @p8;
 2026-09-30 14:47:46.436 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.DeleteColor (DbOperationsWithEfcoreApp)'
 2026-09-30 14:47:46.436 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 224ms)
 2026-09-30 14:47:46.437 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7103/api/colors/1 - 200 null application/json; charset=utf-8 227.7986ms
+2026-09-30 16:20:26.804 +05:30 [INF] 🚀 Application starting up...
+2026-09-30 16:20:27.139 +05:30 [INF] ✅ Application started successfully!
+2026-09-30 16:20:27.155 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 16:20:27.301 +05:30 [INF] Now listening on: https://localhost:7103
+2026-09-30 16:20:27.302 +05:30 [INF] Now listening on: http://localhost:5142
+2026-09-30 16:20:27.400 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 16:20:27.401 +05:30 [INF] Hosting environment: Development
+2026-09-30 16:20:27.401 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-09-30 16:20:27.893 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-09-30 16:20:28.013 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-09-30 16:20:28.074 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 62ms)
+2026-09-30 16:20:28.080 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-09-30 16:20:28.080 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 16:20:28.081 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 195.8198ms
+2026-09-30 16:20:28.120 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 8.421ms
+2026-09-30 16:20:28.140 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 60.2073ms
+2026-09-30 16:20:28.163 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-09-30 16:20:28.165 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-09-30 16:20:28.180 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 15ms)
+2026-09-30 16:20:28.181 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.8858ms
+2026-09-30 16:41:15.157 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/currencies - null null
+2026-09-30 16:41:15.163 +05:30 [INF] ️ Incoming Request: GET /api/currencies
+2026-09-30 16:41:15.194 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-09-30 16:41:15.197 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-09-30 16:41:15.197 +05:30 [INF] ⬅️ Outgoing Response: 401 (Time taken: 34ms)
+2026-09-30 16:41:15.198 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/currencies - 401 0 null 41.0924ms
+2026-09-30 16:45:19.317 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Auth/login - application/json 57
+2026-09-30 16:45:19.327 +05:30 [INF] CORS policy execution failed.
+2026-09-30 16:45:19.328 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 16:45:19.329 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-09-30 16:45:19.335 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 16:45:19.360 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 16:45:19.523 +05:30 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 16:45:19.532 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 168.6241ms
+2026-09-30 16:45:19.532 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 16:45:19.533 +05:30 [INF] ⬅️ Outgoing Response: 400 (Time taken: 203ms)
+2026-09-30 16:45:19.534 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Auth/login - 400 null application/json; charset=utf-8 217.1429ms
+2026-09-30 16:45:29.226 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Auth/login - application/json 67
+2026-09-30 16:45:29.228 +05:30 [INF] CORS policy execution failed.
+2026-09-30 16:45:29.229 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 16:45:29.230 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-09-30 16:45:29.231 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 16:45:29.232 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 16:45:29.604 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 16:45:29.605 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 16:45:29.605 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 16:45:29.667 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-09-30 16:45:30.093 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-09-30 16:45:30.111 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType3`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 16:45:30.113 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 880.1806ms
+2026-09-30 16:45:30.114 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 16:45:30.115 +05:30 [INF] ⬅️ Outgoing Response: 401 (Time taken: 885ms)
+2026-09-30 16:45:30.119 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Auth/login - 401 null application/json; charset=utf-8 893.1874ms
+2026-09-30 16:45:39.949 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Auth/login - application/json 61
+2026-09-30 16:45:39.950 +05:30 [INF] CORS policy execution failed.
+2026-09-30 16:45:39.951 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 16:45:39.951 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-09-30 16:45:39.952 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 16:45:39.952 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 16:45:39.964 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-09-30 16:45:40.216 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 16:45:40.222 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 268.7124ms
+2026-09-30 16:45:40.223 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 16:45:40.223 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 272ms)
+2026-09-30 16:45:40.224 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Auth/login - 200 null application/json; charset=utf-8 275.0887ms
+2026-09-30 16:46:11.420 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/currencies - null null
+2026-09-30 16:46:11.422 +05:30 [INF] ️ Incoming Request: GET /api/currencies
+2026-09-30 16:46:11.454 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-09-30 16:46:11.460 +05:30 [INF] Route matched with {action = "GetAllCurrencies", controller = "Currency"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCurrencies() on controller DbOperationsWithEfcoreApp.Controllers.CurrencyController (DbOperationsWithEfcoreApp).
+2026-09-30 16:46:11.533 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[id], [c].[CreatedAt], [c].[IsActive], [c].[Title], [c].[UpdatedAt], [c].[description]
+FROM [Currency] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-09-30 16:46:11.542 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Currency, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 16:46:11.554 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp) in 92.5289ms
+2026-09-30 16:46:11.554 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-09-30 16:46:11.555 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 132ms)
+2026-09-30 16:46:11.555 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/currencies - 200 null application/json; charset=utf-8 135.4086ms
+2026-09-30 16:46:19.362 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/Book - null null
+2026-09-30 16:46:19.363 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-09-30 16:46:19.366 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-09-30 16:46:19.370 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-09-30 16:46:19.485 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-09-30 16:46:19.528 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-09-30 16:46:19.603 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 16:46:19.616 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 244.8662ms
+2026-09-30 16:46:19.616 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-09-30 16:46:19.617 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 253ms)
+2026-09-30 16:46:19.618 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 255.9652ms
+2026-09-30 17:16:08.140 +05:30 [INF] 🚀 Application starting up...
+2026-09-30 17:16:08.443 +05:30 [INF] ✅ Application started successfully!
+2026-09-30 17:16:08.463 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 17:16:08.607 +05:30 [INF] Now listening on: https://localhost:7103
+2026-09-30 17:16:08.608 +05:30 [INF] Now listening on: http://localhost:5142
+2026-09-30 17:16:08.729 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 17:16:08.729 +05:30 [INF] Hosting environment: Development
+2026-09-30 17:16:08.730 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-09-30 17:16:09.243 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-09-30 17:16:09.356 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-09-30 17:16:09.419 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 64ms)
+2026-09-30 17:16:09.425 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 189.1284ms
+2026-09-30 17:16:09.429 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 17:16:09.429 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-09-30 17:16:09.436 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 7.8728ms
+2026-09-30 17:16:09.456 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.1018ms
+2026-09-30 17:16:09.485 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-09-30 17:16:09.486 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-09-30 17:16:09.497 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 10ms)
+2026-09-30 17:16:09.498 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.0251ms
+2026-09-30 17:16:34.242 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/auth/login - application/json 40
+2026-09-30 17:16:34.245 +05:30 [INF] ️ Incoming Request: POST /api/auth/login
+2026-09-30 17:16:34.329 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:16:34.347 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 17:16:34.462 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-09-30 17:16:34.479 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 127.3497ms
+2026-09-30 17:16:34.480 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:16:34.480 +05:30 [INF] ⬅️ Outgoing Response: 400 (Time taken: 235ms)
+2026-09-30 17:16:34.483 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/auth/login - 400 null application/problem+json; charset=utf-8 241.0205ms
+2026-09-30 17:16:59.313 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/auth/login - application/json 61
+2026-09-30 17:16:59.317 +05:30 [INF] ️ Incoming Request: POST /api/auth/login
+2026-09-30 17:16:59.319 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:16:59.322 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 17:16:59.749 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:16:59.750 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:16:59.751 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:16:59.813 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-09-30 17:17:00.251 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-09-30 17:17:00.526 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:17:00.531 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 1207.5217ms
+2026-09-30 17:17:00.532 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:17:00.533 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 1215ms)
+2026-09-30 17:17:00.538 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/auth/login - 200 null application/json; charset=utf-8 1225.0493ms
+2026-09-30 17:20:35.033 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-09-30 17:20:35.040 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-09-30 17:20:35.043 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 3ms)
+2026-09-30 17:20:35.044 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 11.4515ms
+2026-09-30 17:20:35.047 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 17:20:35.050 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 2.3076ms
+2026-09-30 17:20:35.051 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-09-30 17:20:35.062 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.2178ms
+2026-09-30 17:20:35.095 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-09-30 17:20:35.096 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-09-30 17:20:35.105 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 8ms)
+2026-09-30 17:20:35.106 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.6161ms
+2026-09-30 17:28:12.184 +05:30 [INF] 🚀 Application starting up...
+2026-09-30 17:28:12.523 +05:30 [INF] ✅ Application started successfully!
+2026-09-30 17:28:12.546 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 17:28:12.689 +05:30 [INF] Now listening on: https://localhost:7103
+2026-09-30 17:28:12.690 +05:30 [INF] Now listening on: http://localhost:5142
+2026-09-30 17:28:12.797 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 17:28:12.798 +05:30 [INF] Hosting environment: Development
+2026-09-30 17:28:12.798 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-09-30 17:28:13.416 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-09-30 17:28:13.504 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-09-30 17:28:13.556 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 53ms)
+2026-09-30 17:28:13.562 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 152.4019ms
+2026-09-30 17:28:13.569 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-09-30 17:28:13.569 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 17:28:13.575 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 6.0372ms
+2026-09-30 17:28:13.594 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.2487ms
+2026-09-30 17:28:13.621 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-09-30 17:28:13.623 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-09-30 17:28:13.636 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 12ms)
+2026-09-30 17:28:13.638 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.6433ms
+2026-09-30 17:29:01.051 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Auth/login - application/json 61
+2026-09-30 17:29:01.055 +05:30 [INF] CORS policy execution failed.
+2026-09-30 17:29:01.056 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 17:29:01.057 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-09-30 17:29:01.083 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:29:01.102 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 17:29:01.572 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:29:01.573 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:29:01.574 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:29:01.631 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-09-30 17:29:02.046 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-09-30 17:29:02.327 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:29:02.336 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 1231.271ms
+2026-09-30 17:29:02.337 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:29:02.338 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 1280ms)
+2026-09-30 17:29:02.343 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Auth/login - 200 null application/json; charset=utf-8 1291.9964ms
+2026-09-30 17:29:23.485 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/currencies - application/json 56
+2026-09-30 17:29:23.487 +05:30 [INF] CORS policy execution failed.
+2026-09-30 17:29:23.488 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 17:29:23.489 +05:30 [INF] ️ Incoming Request: POST /api/currencies
+2026-09-30 17:29:23.524 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.CreateCurrency (DbOperationsWithEfcoreApp)'
+2026-09-30 17:29:23.530 +05:30 [INF] Route matched with {action = "CreateCurrency", controller = "Currency"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateCurrency(DbOperationsWithEfcoreApp.Dtos.CreateCurrencyDto) on controller DbOperationsWithEfcoreApp.Controllers.CurrencyController (DbOperationsWithEfcoreApp).
+2026-09-30 17:29:23.555 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@cleanTitle='?' (Size = 4000), @cleanDesc='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[id], [c].[CreatedAt], [c].[IsActive], [c].[Title], [c].[UpdatedAt], [c].[description]
+FROM [Currency] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit) AND LOWER(LTRIM(RTRIM([c].[Title]))) = @cleanTitle AND LOWER(LTRIM(RTRIM([c].[description]))) = @cleanDesc
+2026-09-30 17:29:23.658 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+INSERT INTO [Currency] ([CreatedAt], [IsActive], [Title], [UpdatedAt], [description])
+OUTPUT INSERTED.[id]
+VALUES (@p6, @p7, @p8, @p9, @p10);
+2026-09-30 17:29:23.686 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType21`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType23`4[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:29:23.690 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.CurrencyController.CreateCurrency (DbOperationsWithEfcoreApp) in 158.9772ms
+2026-09-30 17:29:23.690 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.CreateCurrency (DbOperationsWithEfcoreApp)'
+2026-09-30 17:29:23.691 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 202ms)
+2026-09-30 17:29:23.691 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/currencies - 200 null application/json; charset=utf-8 206.4828ms
+2026-09-30 17:31:34.228 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Book - application/json 215
+2026-09-30 17:31:34.229 +05:30 [INF] ️ Incoming Request: POST /api/Book
+2026-09-30 17:31:34.232 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.CreateBook (DbOperationsWithEfcoreApp)'
+2026-09-30 17:31:34.238 +05:30 [INF] Route matched with {action = "CreateBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBook(CreateBookDto) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-09-30 17:31:34.381 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@cleanTitle='?' (Size = 4000), @cleanDesc='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[IsActive] = CAST(1 AS bit) AND LOWER(LTRIM(RTRIM([b].[Title]))) = @cleanTitle AND LOWER(LTRIM(RTRIM([b].[Description]))) = @cleanDesc) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 17:31:34.469 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = DateTime2), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (Size = 4000), @p21='?' (Size = 4000), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (DbType = DateTime2), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (Size = 4000), @p30='?' (DbType = DateTime2), @p31='?' (Size = 4000), @p32='?' (DbType = Boolean), @p33='?' (DbType = Int32), @p34='?' (Size = 4000), @p35='?' (Size = 4000), @p36='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+MERGE [AuditLogs] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, 0),
+(@p6, @p7, @p8, @p9, @p10, @p11, 1),
+(@p12, @p13, @p14, @p15, @p16, @p17, 2),
+(@p18, @p19, @p20, @p21, @p22, @p23, 3),
+(@p24, @p25, @p26, @p27, @p28, @p29, 4)) AS i ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+VALUES (i.[Action], i.[ChangedAt], i.[ChangedBy], i.[NewValues], i.[OldValues], i.[TableName])
+OUTPUT INSERTED.[Id], i._Position;
+INSERT INTO [Books] ([CreatedAt], [Description], [IsActive], [NoOfPages], [PdfFilePath], [Title], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p30, @p31, @p32, @p33, @p34, @p35, @p36);
+2026-09-30 17:31:34.485 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p37='?' (DbType = Int32), @p38='?' (DbType = Int32), @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Int32), @p42='?' (DbType = Int32), @p43='?' (DbType = Int32), @p44='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BookColors] ([BookId], [ColorId])
+VALUES (@p37, @p38),
+(@p39, @p40);
+INSERT INTO [BookLanguages] ([BookId], [LanguageId])
+VALUES (@p41, @p42),
+(@p43, @p44);
+2026-09-30 17:31:34.541 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-09-30 17:31:34.575 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-09-30 17:31:34.648 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime2), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+INSERT INTO [BookPrices] ([BookId], [CreatedAt], [CurrencyId], [UpdatedAt], [amount])
+OUTPUT INSERTED.[Id]
+VALUES (@p6, @p7, @p8, @p9, @p10);
+2026-09-30 17:31:34.672 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'DbOperationsWithEfcoreApp.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_BookPrices_Currency_CurrencyId". The conflict occurred in database "BookDb", table "dbo.Currency", column 'id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:54733be9-f03c-4aad-adaf-f141b4f27527
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_BookPrices_Currency_CurrencyId". The conflict occurred in database "BookDb", table "dbo.Currency", column 'id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:54733be9-f03c-4aad-adaf-f141b4f27527
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-09-30 17:32:15.100 +05:30 [INF] 🚀 Application starting up...
+2026-09-30 17:32:15.408 +05:30 [INF] ✅ Application started successfully!
+2026-09-30 17:32:15.430 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 17:32:15.606 +05:30 [INF] Now listening on: https://localhost:7103
+2026-09-30 17:32:15.607 +05:30 [INF] Now listening on: http://localhost:5142
+2026-09-30 17:32:15.645 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 17:32:15.646 +05:30 [INF] Hosting environment: Development
+2026-09-30 17:32:15.646 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-09-30 17:32:16.097 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-09-30 17:32:16.205 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-09-30 17:32:16.274 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 72ms)
+2026-09-30 17:32:16.282 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 193.1407ms
+2026-09-30 17:32:16.287 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 17:32:16.287 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-09-30 17:32:16.293 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 5.8817ms
+2026-09-30 17:32:16.320 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.8138ms
+2026-09-30 17:32:16.349 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-09-30 17:32:16.364 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-09-30 17:32:16.388 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 24ms)
+2026-09-30 17:32:16.391 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 41.5286ms
+2026-09-30 17:32:21.075 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Book - application/json 215
+2026-09-30 17:32:21.079 +05:30 [INF] ️ Incoming Request: POST /api/Book
+2026-09-30 17:32:21.186 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.CreateBook (DbOperationsWithEfcoreApp)'
+2026-09-30 17:32:21.204 +05:30 [INF] Route matched with {action = "CreateBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBook(CreateBookDto) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-09-30 17:32:21.741 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:32:21.742 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:32:21.742 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:32:21.803 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-09-30 17:32:22.241 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[@cleanTitle='?' (Size = 4000), @cleanDesc='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[IsActive] = CAST(1 AS bit) AND LOWER(LTRIM(RTRIM([b].[Title]))) = @cleanTitle AND LOWER(LTRIM(RTRIM([b].[Description]))) = @cleanDesc) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 17:32:22.266 +05:30 [INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType3`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 17:32:22.274 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.CreateBook (DbOperationsWithEfcoreApp) in 1066.2523ms
+2026-09-30 17:32:22.275 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.CreateBook (DbOperationsWithEfcoreApp)'
+2026-09-30 17:32:22.277 +05:30 [INF] ⬅️ Outgoing Response: 409 (Time taken: 1197ms)
+2026-09-30 17:32:22.282 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Book - 409 null application/json; charset=utf-8 1206.2566ms
+2026-09-30 17:34:10.988 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Book - application/json 225
+2026-09-30 17:34:10.990 +05:30 [INF] ️ Incoming Request: POST /api/Book
+2026-09-30 17:34:10.992 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.CreateBook (DbOperationsWithEfcoreApp)'
+2026-09-30 17:34:10.993 +05:30 [INF] Route matched with {action = "CreateBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBook(CreateBookDto) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-09-30 17:34:11.005 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@cleanTitle='?' (Size = 4000), @cleanDesc='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[IsActive] = CAST(1 AS bit) AND LOWER(LTRIM(RTRIM([b].[Title]))) = @cleanTitle AND LOWER(LTRIM(RTRIM([b].[Description]))) = @cleanDesc) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 17:34:11.216 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = DateTime2), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (Size = 4000), @p21='?' (Size = 4000), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (DbType = DateTime2), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (Size = 4000), @p30='?' (DbType = DateTime2), @p31='?' (Size = 4000), @p32='?' (DbType = Boolean), @p33='?' (DbType = Int32), @p34='?' (Size = 4000), @p35='?' (Size = 4000), @p36='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+MERGE [AuditLogs] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, 0),
+(@p6, @p7, @p8, @p9, @p10, @p11, 1),
+(@p12, @p13, @p14, @p15, @p16, @p17, 2),
+(@p18, @p19, @p20, @p21, @p22, @p23, 3),
+(@p24, @p25, @p26, @p27, @p28, @p29, 4)) AS i ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+VALUES (i.[Action], i.[ChangedAt], i.[ChangedBy], i.[NewValues], i.[OldValues], i.[TableName])
+OUTPUT INSERTED.[Id], i._Position;
+INSERT INTO [Books] ([CreatedAt], [Description], [IsActive], [NoOfPages], [PdfFilePath], [Title], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p30, @p31, @p32, @p33, @p34, @p35, @p36);
+2026-09-30 17:34:11.240 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p37='?' (DbType = Int32), @p38='?' (DbType = Int32), @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Int32), @p42='?' (DbType = Int32), @p43='?' (DbType = Int32), @p44='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BookColors] ([BookId], [ColorId])
+VALUES (@p37, @p38),
+(@p39, @p40);
+INSERT INTO [BookLanguages] ([BookId], [LanguageId])
+VALUES (@p41, @p42),
+(@p43, @p44);
+2026-09-30 17:34:11.329 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-09-30 17:34:11.369 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-09-30 17:34:11.431 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime2), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+INSERT INTO [BookPrices] ([BookId], [CreatedAt], [CurrencyId], [UpdatedAt], [amount])
+OUTPUT INSERTED.[Id]
+VALUES (@p6, @p7, @p8, @p9, @p10);
+2026-09-30 17:34:11.436 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType15`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType16`9[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[<>f__AnonymousType17`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[<>f__AnonymousType18`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[<>f__AnonymousType19`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:34:11.444 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.CreateBook (DbOperationsWithEfcoreApp) in 450.1303ms
+2026-09-30 17:34:11.445 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.CreateBook (DbOperationsWithEfcoreApp)'
+2026-09-30 17:34:11.446 +05:30 [INF] ⬅️ Outgoing Response: 201 (Time taken: 455ms)
+2026-09-30 17:34:11.446 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Book - 201 null application/json; charset=utf-8 457.9135ms
+2026-09-30 17:34:58.560 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/Book/71 - application/json 225
+2026-09-30 17:34:58.561 +05:30 [INF] ️ Incoming Request: GET /api/Book/71
+2026-09-30 17:34:58.566 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-09-30 17:34:58.573 +05:30 [INF] Route matched with {action = "GetBookById", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookByIdAsync(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-09-30 17:34:58.649 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-09-30 17:34:58.667 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:34:58.672 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp) in 98.7471ms
+2026-09-30 17:34:58.673 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-09-30 17:34:58.673 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 112ms)
+2026-09-30 17:34:58.674 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/Book/71 - 200 null application/json; charset=utf-8 114.352ms
+2026-09-30 17:36:33.376 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Auth/login - application/json 61
+2026-09-30 17:36:33.379 +05:30 [INF] CORS policy execution failed.
+2026-09-30 17:36:33.380 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 17:36:33.381 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-09-30 17:36:33.381 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:36:33.387 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 17:36:33.407 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-09-30 17:36:33.611 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:36:33.614 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 226.0615ms
+2026-09-30 17:36:33.614 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:36:33.614 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 233ms)
+2026-09-30 17:36:33.615 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Auth/login - 200 null application/json; charset=utf-8 239.3284ms
+2026-09-30 17:36:49.145 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/Book/71 - null null
+2026-09-30 17:36:49.146 +05:30 [INF] ️ Incoming Request: GET /api/Book/71
+2026-09-30 17:36:49.147 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-09-30 17:36:49.148 +05:30 [INF] Route matched with {action = "GetBookById", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookByIdAsync(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-09-30 17:36:49.157 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-09-30 17:36:49.160 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:36:49.161 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp) in 12.3161ms
+2026-09-30 17:36:49.161 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-09-30 17:36:49.162 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 15ms)
+2026-09-30 17:36:49.162 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/Book/71 - 200 null application/json; charset=utf-8 17.4213ms
+2026-09-30 17:42:18.482 +05:30 [INF] 🚀 Application starting up...
+2026-09-30 17:42:18.780 +05:30 [INF] ✅ Application started successfully!
+2026-09-30 17:42:18.798 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 17:42:18.945 +05:30 [INF] Now listening on: https://localhost:7103
+2026-09-30 17:42:18.946 +05:30 [INF] Now listening on: http://localhost:5142
+2026-09-30 17:42:19.058 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 17:42:19.059 +05:30 [INF] Hosting environment: Development
+2026-09-30 17:42:19.059 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-09-30 17:42:19.700 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-09-30 17:42:19.790 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-09-30 17:42:19.843 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 53ms)
+2026-09-30 17:42:19.850 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 156.4197ms
+2026-09-30 17:42:19.856 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-09-30 17:42:19.856 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 17:42:19.862 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 5.3148ms
+2026-09-30 17:42:19.878 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.1976ms
+2026-09-30 17:42:19.903 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-09-30 17:42:19.904 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-09-30 17:42:19.920 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 15ms)
+2026-09-30 17:42:19.921 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.1287ms
+2026-09-30 17:42:40.417 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Auth/login - application/json 61
+2026-09-30 17:42:40.422 +05:30 [INF] CORS policy execution failed.
+2026-09-30 17:42:40.423 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 17:42:40.424 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-09-30 17:42:40.449 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:42:40.468 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 17:42:40.969 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:42:40.971 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:42:40.972 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:42:41.029 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-09-30 17:42:41.443 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-09-30 17:42:41.728 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:42:41.738 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 1266.318ms
+2026-09-30 17:42:41.739 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:42:41.740 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 1315ms)
+2026-09-30 17:42:41.744 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Auth/login - 200 null application/json; charset=utf-8 1326.9169ms
+2026-09-30 17:43:32.787 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Book - application/json 221
+2026-09-30 17:43:32.790 +05:30 [INF] CORS policy execution failed.
+2026-09-30 17:43:32.790 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 17:43:32.790 +05:30 [INF] ️ Incoming Request: POST /api/Book
+2026-09-30 17:43:32.827 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.CreateBook (DbOperationsWithEfcoreApp)'
+2026-09-30 17:43:32.834 +05:30 [INF] Route matched with {action = "CreateBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBook(CreateBookDto) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-09-30 17:43:32.931 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@cleanTitle='?' (Size = 4000), @cleanDesc='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b]
+        WHERE [b].[IsActive] = CAST(1 AS bit) AND LOWER(LTRIM(RTRIM([b].[Title]))) = @cleanTitle AND LOWER(LTRIM(RTRIM([b].[Description]))) = @cleanDesc) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 17:43:33.094 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = DateTime2), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (Size = 4000), @p21='?' (Size = 4000), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (DbType = DateTime2), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (Size = 4000), @p30='?' (Size = 4000), @p31='?' (DbType = DateTime2), @p32='?' (Size = 4000), @p33='?' (Size = 4000), @p34='?' (Size = 4000), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (DbType = DateTime2), @p38='?' (Size = 4000), @p39='?' (Size = 4000), @p40='?' (Size = 4000), @p41='?' (Size = 4000), @p42='?' (DbType = DateTime2), @p43='?' (Size = 4000), @p44='?' (DbType = Boolean), @p45='?' (DbType = Int32), @p46='?' (Size = 4000), @p47='?' (Size = 4000), @p48='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+MERGE [AuditLogs] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, 0),
+(@p6, @p7, @p8, @p9, @p10, @p11, 1),
+(@p12, @p13, @p14, @p15, @p16, @p17, 2),
+(@p18, @p19, @p20, @p21, @p22, @p23, 3),
+(@p24, @p25, @p26, @p27, @p28, @p29, 4),
+(@p30, @p31, @p32, @p33, @p34, @p35, 5),
+(@p36, @p37, @p38, @p39, @p40, @p41, 6)) AS i ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+VALUES (i.[Action], i.[ChangedAt], i.[ChangedBy], i.[NewValues], i.[OldValues], i.[TableName])
+OUTPUT INSERTED.[Id], i._Position;
+INSERT INTO [Books] ([CreatedAt], [Description], [IsActive], [NoOfPages], [PdfFilePath], [Title], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p42, @p43, @p44, @p45, @p46, @p47, @p48);
+2026-09-30 17:43:33.118 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p49='?' (DbType = Int32), @p50='?' (DbType = Int32), @p51='?' (DbType = Int32), @p52='?' (DbType = Int32), @p53='?' (DbType = Int32), @p54='?' (DbType = Int32), @p55='?' (DbType = Int32), @p56='?' (DbType = Int32), @p57='?' (DbType = Int32), @p58='?' (DbType = Int32), @p59='?' (DbType = Int32), @p60='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BookColors] ([BookId], [ColorId])
+VALUES (@p49, @p50),
+(@p51, @p52),
+(@p53, @p54);
+INSERT INTO [BookLanguages] ([BookId], [LanguageId])
+VALUES (@p55, @p56),
+(@p57, @p58),
+(@p59, @p60);
+2026-09-30 17:43:33.160 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime2), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+INSERT INTO [BookPrices] ([BookId], [CreatedAt], [CurrencyId], [UpdatedAt], [amount])
+OUTPUT INSERTED.[Id]
+VALUES (@p6, @p7, @p8, @p9, @p10);
+2026-09-30 17:43:33.213 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-09-30 17:43:33.240 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-09-30 17:43:33.272 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType15`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType16`9[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[<>f__AnonymousType17`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[<>f__AnonymousType18`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[<>f__AnonymousType19`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:43:33.279 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.CreateBook (DbOperationsWithEfcoreApp) in 443.8521ms
+2026-09-30 17:43:33.279 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.CreateBook (DbOperationsWithEfcoreApp)'
+2026-09-30 17:43:33.280 +05:30 [INF] ⬅️ Outgoing Response: 201 (Time taken: 489ms)
+2026-09-30 17:43:33.280 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Book - 201 null application/json; charset=utf-8 493.0763ms
+2026-09-30 17:43:53.060 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/Book/73 - null null
+2026-09-30 17:43:53.062 +05:30 [INF] ️ Incoming Request: GET /api/Book/73
+2026-09-30 17:43:53.072 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-09-30 17:43:53.077 +05:30 [INF] Route matched with {action = "GetBookById", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookByIdAsync(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-09-30 17:43:53.136 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-09-30 17:43:53.137 +05:30 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType3`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 17:43:53.139 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp) in 60.5911ms
+2026-09-30 17:43:53.139 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-09-30 17:43:53.140 +05:30 [INF] ⬅️ Outgoing Response: 404 (Time taken: 77ms)
+2026-09-30 17:43:53.140 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/Book/73 - 404 null application/json; charset=utf-8 79.8779ms
+2026-09-30 17:43:57.290 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/Book/72 - null null
+2026-09-30 17:43:57.292 +05:30 [INF] ️ Incoming Request: GET /api/Book/72
+2026-09-30 17:43:57.294 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-09-30 17:43:57.294 +05:30 [INF] Route matched with {action = "GetBookById", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookByIdAsync(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-09-30 17:43:57.301 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-09-30 17:43:57.314 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:43:57.319 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp) in 23.2228ms
+2026-09-30 17:43:57.319 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-09-30 17:43:57.320 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 28ms)
+2026-09-30 17:43:57.320 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/Book/72 - 200 null application/json; charset=utf-8 30.031ms
+2026-09-30 17:49:25.321 +05:30 [INF] 🚀 Application starting up...
+2026-09-30 17:49:25.617 +05:30 [INF] ✅ Application started successfully!
+2026-09-30 17:49:25.635 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 17:49:25.797 +05:30 [INF] Now listening on: https://localhost:7103
+2026-09-30 17:49:25.798 +05:30 [INF] Now listening on: http://localhost:5142
+2026-09-30 17:49:25.908 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 17:49:25.909 +05:30 [INF] Hosting environment: Development
+2026-09-30 17:49:25.909 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-09-30 17:49:26.609 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-09-30 17:49:26.714 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-09-30 17:49:26.776 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 62ms)
+2026-09-30 17:49:26.782 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-09-30 17:49:26.782 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 17:49:26.782 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 181.7362ms
+2026-09-30 17:49:26.790 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 8.2121ms
+2026-09-30 17:49:26.808 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.9321ms
+2026-09-30 17:49:26.842 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-09-30 17:49:26.843 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-09-30 17:49:26.860 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 16ms)
+2026-09-30 17:49:26.861 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.2624ms
+2026-09-30 17:50:18.216 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Auth/login - application/json 61
+2026-09-30 17:50:18.222 +05:30 [INF] CORS policy execution failed.
+2026-09-30 17:50:18.223 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 17:50:18.224 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-09-30 17:50:18.252 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:50:18.271 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 17:50:18.758 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:50:18.759 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:50:18.760 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:50:18.817 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-09-30 17:50:19.237 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-09-30 17:50:19.530 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:50:19.541 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 1266.1914ms
+2026-09-30 17:50:19.542 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:50:19.543 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 1318ms)
+2026-09-30 17:50:19.547 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Auth/login - 200 null application/json; charset=utf-8 1331.8015ms
+2026-09-30 17:50:37.177 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/Book - null null
+2026-09-30 17:50:37.180 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-09-30 17:50:37.216 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-09-30 17:50:37.223 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-09-30 17:50:37.341 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-09-30 17:50:37.412 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-09-30 17:50:37.513 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 17:50:37.532 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 307.9953ms
+2026-09-30 17:50:37.532 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-09-30 17:50:37.533 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 352ms)
+2026-09-30 17:50:37.534 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 356.3177ms
+2026-09-30 17:50:56.496 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/Book/72 - null null
+2026-09-30 17:50:56.497 +05:30 [INF] ️ Incoming Request: GET /api/Book/72
+2026-09-30 17:50:56.501 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-09-30 17:50:56.508 +05:30 [INF] Route matched with {action = "GetBookById", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookByIdAsync(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-09-30 17:50:56.576 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-09-30 17:50:56.604 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-09-30 17:50:56.616 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:50:56.618 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp) in 109.0448ms
+2026-09-30 17:50:56.618 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-09-30 17:50:56.619 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 121ms)
+2026-09-30 17:50:56.619 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/Book/72 - 200 null application/json; charset=utf-8 123.6913ms
+2026-09-30 17:54:46.848 +05:30 [INF] 🚀 Application starting up...
+2026-09-30 17:54:47.234 +05:30 [INF] ✅ Application started successfully!
+2026-09-30 17:54:47.251 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 17:54:47.398 +05:30 [INF] Now listening on: https://localhost:7103
+2026-09-30 17:54:47.399 +05:30 [INF] Now listening on: http://localhost:5142
+2026-09-30 17:54:47.509 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 17:54:47.509 +05:30 [INF] Hosting environment: Development
+2026-09-30 17:54:47.510 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-09-30 17:54:48.132 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-09-30 17:54:48.224 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-09-30 17:54:48.288 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 66ms)
+2026-09-30 17:54:48.295 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 170.2087ms
+2026-09-30 17:54:48.298 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-09-30 17:54:48.298 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 17:54:48.304 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 5.5314ms
+2026-09-30 17:54:48.320 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.4477ms
+2026-09-30 17:54:48.345 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-09-30 17:54:48.347 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-09-30 17:54:48.363 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 16ms)
+2026-09-30 17:54:48.364 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.3293ms
+2026-09-30 17:55:04.695 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/Auth/login - application/json 61
+2026-09-30 17:55:04.701 +05:30 [INF] CORS policy execution failed.
+2026-09-30 17:55:04.702 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-09-30 17:55:04.703 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-09-30 17:55:04.732 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:55:04.752 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-09-30 17:55:05.277 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:55:05.278 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:55:05.278 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-09-30 17:55:05.345 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-09-30 17:55:05.783 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-09-30 17:55:06.085 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:55:06.096 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 1340.0338ms
+2026-09-30 17:55:06.096 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-09-30 17:55:06.097 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 1394ms)
+2026-09-30 17:55:06.102 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/Auth/login - 200 null application/json; charset=utf-8 1407.0815ms
+2026-09-30 17:55:22.942 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/Book/72 - null null
+2026-09-30 17:55:22.944 +05:30 [INF] ️ Incoming Request: GET /api/Book/72
+2026-09-30 17:55:22.983 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-09-30 17:55:22.989 +05:30 [INF] Route matched with {action = "GetBookById", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookByIdAsync(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-09-30 17:55:23.112 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-09-30 17:55:23.149 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-09-30 17:55:23.239 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:55:23.253 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp) in 262.515ms
+2026-09-30 17:55:23.254 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-09-30 17:55:23.254 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 309ms)
+2026-09-30 17:55:23.254 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/Book/72 - 200 null application/json; charset=utf-8 312.8358ms

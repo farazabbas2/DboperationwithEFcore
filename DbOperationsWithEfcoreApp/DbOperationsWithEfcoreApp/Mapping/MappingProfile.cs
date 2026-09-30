@@ -28,6 +28,9 @@ namespace DbOperationsWithEfcoreApp.Mappings
             // POST/PUT API ke liye (DTO -> Entity)
             CreateMap<CreateBookDto, Book>();
             CreateMap<UpdateBookDto, Book>();
+            // Apne MappingProfile.cs me jayein aur ye line add karein:
+            CreateMap<BookPrice, BookPriceDto>()
+                .ForMember(dest => dest.PriceId, opt => opt.MapFrom(src => src.Id)); // ✅ Yahan batayein ki PriceId, Id se aayega
         }
     }
 }

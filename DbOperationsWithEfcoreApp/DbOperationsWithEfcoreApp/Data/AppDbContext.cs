@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace DbOperationsWithEfcoreApp.Data
 {
@@ -20,9 +21,7 @@ namespace DbOperationsWithEfcoreApp.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // ==========================================
-            // 1. QUERY FILTERS (1 / true = ACTIVE, 0 / false = INACTIVE/DELETED)
-            // ==========================================
+        
             // User requirement: IsActive = 1 (true) => Active record, 0 (false) => Inactive/Deleted.
             // Query filter sirf ACTIVE records (IsActive == true) dikhayega.
 
@@ -37,11 +36,7 @@ namespace DbOperationsWithEfcoreApp.Data
 
             modelBuilder.Entity<Book>()
                 .HasQueryFilter(b => b.IsActive);
-
-
-            // ==========================================
-            // 2. SEED DATA (IsActive = true / 1)
-            // ==========================================
+                          //seed data
             modelBuilder.Entity<Currency>().HasData(
                 new Currency { id = 1, Title = "INR", description = "Indian Rupee", IsActive = true, CreatedAt = new DateTime(2024, 1, 1) },
                 new Currency { id = 2, Title = "Dollar", description = "US Dollar", IsActive = true, CreatedAt = new DateTime(2024, 1, 1) },
@@ -63,9 +58,9 @@ namespace DbOperationsWithEfcoreApp.Data
             );
 
 
-            // ==========================================
+           
             // 3. JUNCTION TABLES CONFIGURATION (Many-to-Many)
-            // ==========================================
+            
 
             // BookColor Composite Key (Zaroori hai!)
             modelBuilder.Entity<BookColor>()

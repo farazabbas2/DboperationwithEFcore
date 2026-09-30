@@ -152,7 +152,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
 
             await _colorRepository.SoftDeleteColorAsync(id);
 
-            return Ok(new { message = "Book Deleted Successfully" });
+            return Ok(new { message = "Color Deleted Successfully" });
         }
 
     }

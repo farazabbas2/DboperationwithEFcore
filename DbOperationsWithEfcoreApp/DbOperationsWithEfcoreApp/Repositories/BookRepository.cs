@@ -1,4 +1,5 @@
 ﻿using DbOperationsWithEfcoreApp.Data;
+using DbOperationsWithEfcoreApp.Dtos;
 using DbOperationsWithEfcoreApp.Interfaces;
 using DbOperationsWithEfcoreApp.Models;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,22 @@ namespace DbOperationsWithEfcoreApp.Repositories
                 .Include(b => b.BookPrices).ThenInclude(bp => bp.Currency)
                 .IgnoreQueryFilters()
                 .ToListAsync();
+        }
+        public async Task AddBookPricesAsync(int bookId, List<CreateBookPriceDto> prices)
+        {
+            if (prices == null || !prices.Any())
+                return;
+
+            var bookPrices = prices.Select(p => new BookPrice
+            {
+                BookId = bookId,
+                amount = p.Amount,  // Apne model ke hisaab se 'amount' ya 'Amount'
+                CurrencyId = p.CurrencyId,
+                CreatedAt = DateTime.UtcNow
+            }).ToList();
+
+            await _context.BookPrices.AddRangeAsync(bookPrices);
+            await _context.SaveChangesAsync();
         }
 
         // 2. GetBookById
@@ -117,6 +134,33 @@ namespace DbOperationsWithEfcoreApp.Repositories
             await _context.BookColors.AddRangeAsync(newBookColors);
 
             // 3. Save changes
+            await _context.SaveChangesAsync();
+        }
+        public async Task UpdateBookPricesAsync(int bookId, List<UpdateBookPriceDto> newPrices)
+        {
+            // 1. Is book ki purani saari prices dhundho
+            var oldPrices = await _context.BookPrices.Where(bp => bp.BookId == bookId).ToListAsync();
+
+            // 2. Purani prices ko delete kar do
+            if (oldPrices.Any())
+            {
+                _context.BookPrices.RemoveRange(oldPrices);
+            }
+
+            // 3. Agar nayi prices aayi hain, toh unko add kar do
+            if (newPrices != null && newPrices.Any())
+            {
+                var pricesToAdd = newPrices.Select(p => new BookPrice
+                {
+                    BookId = bookId,
+                    amount = p.Amount,       // Apne model ke hisaab se 'amount' ya 'Amount' likhein
+                    CurrencyId = p.CurrencyId
+                }).ToList();
+
+                await _context.BookPrices.AddRangeAsync(pricesToAdd);
+            }
+
+            // Changes database me save karo
             await _context.SaveChangesAsync();
         }
 

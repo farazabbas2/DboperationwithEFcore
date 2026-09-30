@@ -59,7 +59,9 @@ namespace DbOperationsWithEfcoreApp
                     });
                 builder.Services.AddHttpContextAccessor();
                 builder.Services.AddScoped<IBookRepository, BookRepository>();
-
+               
+             
+                builder.Services.AddScoped<IColorRepository, ColorRepository>();
 
                 // 2. DbContext Registration
                 builder.Services.AddDbContext<AppDbContext>(options =>

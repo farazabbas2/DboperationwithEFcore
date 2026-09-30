@@ -1,12 +1,15 @@
 using DbOperationsWithEfcoreApp.Data;
+using DbOperationsWithEfcoreApp.Dtos;
+using DbOperationsWithEfcoreApp.Interfaces;
+using DbOperationsWithEfcoreApp.Models;
+using DbOperationsWithEfcoreApp.Repositories;
+using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using FluentValidation;
-using DbOperationsWithEfcoreApp.Dtos;
-using DbOperationsWithEfcoreApp.Models;
 using Microsoft.Extensions.FileProviders;
 using System.Data.SqlTypes;
-using Microsoft.AspNetCore.Authorization;
+
 
 namespace DbOperationsWithEfcoreApp.Controllers
 {
@@ -15,23 +18,28 @@ namespace DbOperationsWithEfcoreApp.Controllers
     public class ColorController : ControllerBase
     {
         private readonly AppDbContext _appDbContext;
+        private readonly IColorRepository _colorRepository;
         private readonly IValidator<CreateColorDto> _createNewColorValidator;
-        public ColorController(AppDbContext appDbContext, IValidator<CreateColorDto> createNewColorValidator)
+        public ColorController(AppDbContext appDbContext, IValidator<CreateColorDto> createNewColorValidator, IColorRepository colorRepository)
         {
             _appDbContext = appDbContext;
             _createNewColorValidator = createNewColorValidator;
+            _colorRepository = colorRepository;
         }
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAllColors()
         {
-            var result = await _appDbContext.Colors
-                .Select(c => new
+            var colors = await _colorRepository.GetAllColorsAsync();
+
+            // 2. Controller ka kaam: Data ko shape karna (Projection)
+            var result = colors.Select(c => new
             {
                 c.Id,
                 c.Name,
                 c.IsActive
-            }).ToListAsync();
+            }).ToList();
+
             return Ok(result);
         }
 
@@ -39,7 +47,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetColorById([FromRoute] int id)
         {
-            var color = await _appDbContext.Colors.FirstOrDefaultAsync(c => c.Id == id);
+            var color = await _colorRepository.GetColorByIdAsync(id);
 
             if (color  == null)
             {
@@ -82,9 +90,8 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 CreatedAt = DateTime.UtcNow
             };
 
-            // 3. Database mein save karna
-            await _appDbContext.Colors.AddAsync(color);
-            await _appDbContext.SaveChangesAsync();
+      
+            await _colorRepository.AddColorAsync(color);
 
             // 4. Response DTO banana (ColorResponseDto)
             var responseDto = new ColorResponseDto
@@ -106,14 +113,14 @@ namespace DbOperationsWithEfcoreApp.Controllers
         [HttpPut("id")]
         public async Task<IActionResult> UpdateColor (int id, [FromBody] UpdateColorDto updateColor)
         {
-            var Color = await _appDbContext.Colors.FirstOrDefaultAsync(c => c.Id == id);
+            var color = await _colorRepository.GetColorByIdAsync(id);
 
-            if(Color==null)
+            if (color==null)
             {
                 return NotFound(new { message = "color not found" });
             }
 
-            if(Color.IsActive==false)
+            if(color.IsActive==false)
             {
                 return BadRequest(new { message = "color is already deleted" });
             }
@@ -122,12 +129,12 @@ namespace DbOperationsWithEfcoreApp.Controllers
             {
                 return Conflict(new {message= "color with this name is already exists" });
             }
-            Color.Name = updateColor.name;
-            await _appDbContext.SaveChangesAsync();
+            color.Name = updateColor.name;
+            await _colorRepository.UpdateColorAsync(color);
             return Ok(new
             {
                 message = "color updated successfully",
-                data = new { Color.Name }
+                data = new { color.Name }
             });
         }
 

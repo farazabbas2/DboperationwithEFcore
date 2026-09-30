@@ -1,6 +1,8 @@
 using DbOperationsWithEfcoreApp.Data;
+using DbOperationsWithEfcoreApp.Interfaces;
 using DbOperationsWithEfcoreApp.Mappings;
 using DbOperationsWithEfcoreApp.Middlewares;
+using DbOperationsWithEfcoreApp.Repositories;
 using DbOperationsWithEfcoreApp.Validators;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -8,9 +10,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models;
+using Serilog; // ✅ Ye pehle se hai
 using System.Text;
 using System.Text.Json.Serialization;
-using Serilog; // ✅ Ye pehle se hai
 
 namespace DbOperationsWithEfcoreApp
 {
@@ -55,6 +57,9 @@ namespace DbOperationsWithEfcoreApp
                             RoleClaimType = System.Security.Claims.ClaimTypes.Role
                         };
                     });
+                builder.Services.AddHttpContextAccessor();
+                builder.Services.AddScoped<IBookRepository, BookRepository>();
+
 
                 // 2. DbContext Registration
                 builder.Services.AddDbContext<AppDbContext>(options =>

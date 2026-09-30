@@ -10,6 +10,7 @@ namespace DbOperationsWithEfcoreApp.Dtos
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public bool IsActive { get; set; }
+        public string? PdfFilePath { get; set; }
 
         // Nested Lists
         public List<BookLanguageDto> Languages { get; set; }

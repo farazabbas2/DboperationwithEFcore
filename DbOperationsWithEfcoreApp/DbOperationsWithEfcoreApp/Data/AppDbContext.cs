@@ -4,13 +4,16 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace DbOperationsWithEfcoreApp.Data
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public AppDbContext(DbContextOptions<AppDbContext> options, IHttpContextAccessor httpContextAccessor) : base(options)
         {
+            _httpContextAccessor = httpContextAccessor;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -108,9 +111,11 @@ namespace DbOperationsWithEfcoreApp.Data
         public DbSet<Currency> Currency { get; set; }
         public DbSet<BookColor> BookColors { get; set; }
         public DbSet<BookLanguage> BookLanguages { get; set; }
-        public DbSet<BookPrice> BookPrices { get; set; } // Agar hai toh
+        public DbSet<BookPrice> BookPrices { get; set; }
 
-        public DbSet <User> Users { get; set; } // Agar hai toh
+        public DbSet<User> Users { get; set; }
+
+        public DbSet<AuditLog> AuditLogs { get; set; }
 
         // ==========================================
         // 5. SAVE CHANGES OVERRIDES (IST Timezone Logic)
@@ -118,18 +123,105 @@ namespace DbOperationsWithEfcoreApp.Data
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             ApplyTimestamps();
+            await ApplyAuditLogsAsync(); // 
             return await base.SaveChangesAsync(cancellationToken);
         }
 
         public override int SaveChanges()
         {
             ApplyTimestamps();
+            ApplyAuditLogs();
             return base.SaveChanges();
         }
 
+        private async Task ApplyAuditLogsAsync()
+        {
+            var entries = ChangeTracker.Entries()
+                .Where(e => e.State == EntityState.Added ||
+                            e.State == EntityState.Modified ||
+                            e.State == EntityState.Deleted)
+                .ToList();
+
+
+            foreach (var entry in entries)
+            {
+                // Khud ki AuditLog table ko audit na karein (Infinite loop se bachne ke liye)
+                if (entry.Entity is AuditLog) continue;
+
+                var auditLog = new AuditLog
+                {
+                    TableName = entry.Entity.GetType().Name,
+                    ChangedAt = DateTime.UtcNow.AddHours(5).AddMinutes(30), // IST Time
+                    ChangedBy = _httpContextAccessor?.HttpContext?.User?.Identity?.Name ?? "System"
+                };
+
+                if (entry.State == EntityState.Added)
+                {
+                    auditLog.Action = "INSERT";
+                    auditLog.NewValues = JsonSerializer.Serialize(entry.CurrentValues.ToObject());
+                }
+                else if (entry.State == EntityState.Modified)
+                {
+                    auditLog.Action = "UPDATE";
+                    auditLog.OldValues = JsonSerializer.Serialize(entry.OriginalValues.ToObject());
+                    auditLog.NewValues = JsonSerializer.Serialize(entry.CurrentValues.ToObject());
+                }
+                else if (entry.State == EntityState.Deleted)
+                {
+                    auditLog.Action = "DELETE";
+                    auditLog.OldValues = JsonSerializer.Serialize(entry.OriginalValues.ToObject());
+                }
+
+                // Audit entry ko tracker me add kar do taaki wo save ho jaye
+                AuditLogs.Add(auditLog);
+            }
+        }
+
+
+        // Sync version (agar kahin sync SaveChanges use ho)
+        private void ApplyAuditLogs()
+        {
+            var entries = ChangeTracker.Entries()
+                .Where(e => e.State == EntityState.Added ||
+                            e.State == EntityState.Modified ||
+                            e.State == EntityState.Deleted)
+                .ToList();
+
+            foreach (var entry in entries)
+            {
+                if (entry.Entity is AuditLog) continue;
+
+                var auditLog = new AuditLog
+                {
+                    TableName = entry.Entity.GetType().Name,
+                    ChangedAt = DateTime.UtcNow.AddHours(5).AddMinutes(30),
+                    ChangedBy = _httpContextAccessor?.HttpContext?.User?.Identity?.Name ?? "System"
+                };
+
+                if (entry.State == EntityState.Added)
+                {
+                    auditLog.Action = "INSERT";
+                    auditLog.NewValues = JsonSerializer.Serialize(entry.CurrentValues.ToObject());
+                }
+                else if (entry.State == EntityState.Modified)
+                {
+                    auditLog.Action = "UPDATE";
+                    auditLog.OldValues = JsonSerializer.Serialize(entry.OriginalValues.ToObject());
+                    auditLog.NewValues = JsonSerializer.Serialize(entry.CurrentValues.ToObject());
+                }
+                else if (entry.State == EntityState.Deleted)
+                {
+                    auditLog.Action = "DELETE";
+                    auditLog.OldValues = JsonSerializer.Serialize(entry.OriginalValues.ToObject());
+                }
+
+                AuditLogs.Add(auditLog);
+            }
+        }
+
+
         private void ApplyTimestamps()
         {
-            // India ka Time (IST = UTC + 5 hours 30 minutes)
             var istNow = DateTime.UtcNow.AddHours(5).AddMinutes(30);
 
             foreach (var entry in ChangeTracker.Entries())
@@ -159,10 +251,15 @@ namespace DbOperationsWithEfcoreApp.Data
                     var createdAtProperty = entry.Properties.FirstOrDefault(p => p.Metadata.Name == "CreatedAt");
                     if (createdAtProperty != null)
                     {
-                        createdAtProperty.IsModified = false; // CreatedAt ko change hone se rokein
+                        createdAtProperty.IsModified = false;
                     }
                 }
             }
         }
     }
 }
+
+
+
+
+    

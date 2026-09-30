@@ -1,0 +1,20 @@
+2026-09-30 10:55:35.523 +05:30 [INF] 🚀 Application starting up...
+2026-09-30 10:55:35.962 +05:30 [INF] ✅ Application started successfully!
+2026-09-30 10:55:35.987 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 10:55:36.166 +05:30 [INF] Now listening on: https://localhost:7103
+2026-09-30 10:55:36.167 +05:30 [INF] Now listening on: http://localhost:5142
+2026-09-30 10:55:36.280 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 10:55:36.281 +05:30 [INF] Hosting environment: Development
+2026-09-30 10:55:36.281 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-09-30 10:55:37.838 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-09-30 10:55:37.994 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-09-30 10:55:38.055 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 62ms)
+2026-09-30 10:55:38.060 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 233.0912ms
+2026-09-30 10:55:38.071 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 10:55:38.071 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-09-30 10:55:38.078 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 6.5004ms
+2026-09-30 10:55:38.107 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 35.3685ms
+2026-09-30 10:55:38.137 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-09-30 10:55:38.139 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-09-30 10:55:38.149 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 10ms)
+2026-09-30 10:55:38.151 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.0859ms

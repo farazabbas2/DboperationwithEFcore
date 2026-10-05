@@ -106,6 +106,23 @@ namespace DbOperationsWithEfcoreApp.Repositories
             await _context.SaveChangesAsync();
         }
 
+
+
+        //patch book
+
+        public async Task<bool> PatchBookAsync(int id, PatchBookDto dto)
+        {
+            var book = await _context.Books.FindAsync(id);
+            if (book == null)
+                return false;
+            // Update only the fields that are not null in the DTO
+            if (dto.Description != null)
+                book.Description = dto.Description;
+            // Add more fields here as needed
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
         // 9. Soft Delete (IsActive = false)
         public async Task SoftDeleteBookAsync(int id)
         {

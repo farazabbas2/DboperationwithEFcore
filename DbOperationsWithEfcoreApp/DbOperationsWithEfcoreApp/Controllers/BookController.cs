@@ -91,6 +91,21 @@ namespace DbOperationsWithEfcoreApp.Controllers
 
             return Ok(new { success = true, message = "Book updated successfully" });
         }
+        [Authorize(Roles = "Admin")]
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> PatchBook(int id, [FromBody] PatchBookDto patchDto)
+        {
+            var book = await _bookRepository.GetBookByIdIgnoreFiltersAsync(id);
+            if (book == null)
+                return NotFound(new { success = false, message = "Book not found" });
+            // Only update the fields that are provided
+            if (!string.IsNullOrEmpty(patchDto.Description))
+                book.Description = patchDto.Description;
+            await _bookRepository.UpdateBookAsync(book);
+            return Ok(new { success = true, message = "Book patched successfully" });
+        }
+
+
 
         [HttpPost("{id}/upload-pdf")]
         [Authorize(Roles = "Admin")]

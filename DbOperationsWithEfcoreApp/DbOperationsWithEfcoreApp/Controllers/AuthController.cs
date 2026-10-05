@@ -91,9 +91,9 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 return NotFound(new { success = false, message = "User not found." });
             }
 
-            // 2. Zabardasti Unlock kar do (Chahe kuch bhi ho)
+     
             user.FailedLoginAttempts = 0;
-            user.LockoutEnd = null; // ✅ Ye C# se proper NULL set karega
+            user.LockoutEnd = null; 
 
             await _context.SaveChangesAsync();
 
@@ -105,7 +105,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
             });
         }
 
-        // DTO Class (agar pehle se nahi hai to add kar lein)
+
         public class UnlockRequestDto
         {
             public string Email { get; set; }

@@ -8,7 +8,9 @@ namespace DbOperationsWithEfcoreApp.Interfaces
     public interface IBookRepository
     {
         // 1. Data Fetching Methods
+        
         Task<List<Book>> GetAllBooksAsync();
+        Task<bool> PatchBookAsync(int id, PatchBookDto dto);
         Task<Book?> GetBookByIdAsync(int id);
         Task<Book?> GetBookByIdIgnoreFiltersAsync(int id); // Update ke liye
 

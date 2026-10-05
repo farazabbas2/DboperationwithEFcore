@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using DbOperationsWithEfcoreApp.Models;
 using DbOperationsWithEfcoreApp.Dtos;
 

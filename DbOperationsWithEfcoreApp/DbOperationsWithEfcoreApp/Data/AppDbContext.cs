@@ -102,7 +102,7 @@ namespace DbOperationsWithEfcoreApp.Data
         // ==========================================
         public DbSet<Book> Books { get; set; }
         public DbSet<Language> Languages { get; set; }
-        public DbSet<Color> Colors { get; set; }       // 'color' se 'Color' kiya
+        public DbSet<Color> Colors { get; set; }       
         public DbSet<Currency> Currency { get; set; }
         public DbSet<BookColor> BookColors { get; set; }
         public DbSet<BookLanguage> BookLanguages { get; set; }

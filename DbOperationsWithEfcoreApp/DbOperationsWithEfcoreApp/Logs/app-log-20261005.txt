@@ -1,0 +1,187 @@
+2026-10-05 10:26:42.915 +05:30 [INF] 🚀 Application starting up...
+2026-10-05 10:26:43.347 +05:30 [INF] ✅ Application started successfully!
+2026-10-05 10:26:43.380 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-05 10:26:43.558 +05:30 [INF] Now listening on: https://localhost:7103
+2026-10-05 10:26:43.559 +05:30 [INF] Now listening on: http://localhost:5142
+2026-10-05 10:26:43.666 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-05 10:26:43.668 +05:30 [INF] Hosting environment: Development
+2026-10-05 10:26:43.668 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-10-05 10:26:45.108 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-10-05 10:26:45.250 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-10-05 10:26:45.325 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 77ms)
+2026-10-05 10:26:45.336 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 243.9106ms
+2026-10-05 10:26:45.338 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-10-05 10:26:45.338 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-10-05 10:26:45.345 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 7.5327ms
+2026-10-05 10:26:45.429 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 90.9413ms
+2026-10-05 10:26:45.485 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-10-05 10:26:45.487 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-10-05 10:26:45.499 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 12ms)
+2026-10-05 10:26:45.500 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.015ms
+2026-10-05 10:27:48.503 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/auth/login - application/json 61
+2026-10-05 10:27:48.509 +05:30 [INF] ️ Incoming Request: POST /api/auth/login
+2026-10-05 10:27:48.595 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '01-10-2026 12:41:17', Current time (UTC): '05-10-2026 04:57:48'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-10-05 10:27:48.609 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '01-10-2026 12:41:17', Current time (UTC): '05-10-2026 04:57:48'.
+2026-10-05 10:27:48.612 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-10-05 10:27:48.641 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-10-05 10:27:49.299 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-10-05 10:27:49.300 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-10-05 10:27:49.301 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-10-05 10:27:49.361 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-10-05 10:27:49.819 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-10-05 10:27:50.086 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-05 10:27:50.094 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 1449.6741ms
+2026-10-05 10:27:50.095 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-10-05 10:27:50.097 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 1587ms)
+2026-10-05 10:27:50.104 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/auth/login - 200 null application/json; charset=utf-8 1601.5054ms
+2026-10-05 10:28:21.425 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/Book - application/json 61
+2026-10-05 10:28:21.426 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-05 10:28:21.440 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-05 10:28:21.446 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-05 10:28:21.595 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-10-05 10:28:21.657 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-05 10:28:21.777 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-05 10:28:21.798 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 351.0469ms
+2026-10-05 10:28:21.798 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-05 10:28:21.799 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 372ms)
+2026-10-05 10:28:21.800 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 375.2722ms
+2026-10-05 10:56:48.855 +05:30 [INF] 🚀 Application starting up...
+2026-10-05 10:56:49.385 +05:30 [INF] ✅ Application started successfully!
+2026-10-05 10:56:49.408 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-05 10:56:49.622 +05:30 [INF] Now listening on: https://localhost:7103
+2026-10-05 10:56:49.623 +05:30 [INF] Now listening on: http://localhost:5142
+2026-10-05 10:56:49.727 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-05 10:56:49.727 +05:30 [INF] Hosting environment: Development
+2026-10-05 10:56:49.728 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-10-05 10:56:51.161 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-10-05 10:56:51.336 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-10-05 10:56:51.397 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 61ms)
+2026-10-05 10:56:51.402 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 264.5017ms
+2026-10-05 10:56:51.411 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-10-05 10:56:51.411 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-10-05 10:56:51.419 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 7.4541ms
+2026-10-05 10:56:51.443 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.9429ms
+2026-10-05 10:56:51.531 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-10-05 10:56:51.533 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-10-05 10:56:51.671 +05:30 [ERR] An unhandled exception occurred.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - DbOperationsWithEfcoreApp.Controllers.BookController.PatchBook (DbOperationsWithEfcoreApp). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp\Middlewares\RequestLoggingMiddleware.cs:line 25
+   at DbOperationsWithEfcoreApp.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+2026-10-05 10:56:51.684 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 500 null application/json 153.0724ms
+2026-10-05 10:57:27.781 +05:30 [INF] 🚀 Application starting up...
+2026-10-05 10:57:28.077 +05:30 [INF] ✅ Application started successfully!
+2026-10-05 10:57:28.095 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-05 10:57:28.248 +05:30 [INF] Now listening on: https://localhost:7103
+2026-10-05 10:57:28.248 +05:30 [INF] Now listening on: http://localhost:5142
+2026-10-05 10:57:28.287 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-05 10:57:28.288 +05:30 [INF] Hosting environment: Development
+2026-10-05 10:57:28.289 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-10-05 10:57:29.060 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-10-05 10:57:29.222 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-10-05 10:57:29.279 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 58ms)
+2026-10-05 10:57:29.285 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-10-05 10:57:29.286 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-10-05 10:57:29.286 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 230.5767ms
+2026-10-05 10:57:29.294 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 9.0119ms
+2026-10-05 10:57:29.312 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.8696ms
+2026-10-05 10:57:29.341 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-10-05 10:57:29.343 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-10-05 10:57:29.357 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 14ms)
+2026-10-05 10:57:29.359 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.5249ms
+2026-10-05 10:57:42.764 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/api/auth/login - application/json 61
+2026-10-05 10:57:42.768 +05:30 [INF] ️ Incoming Request: GET /api/auth/login
+2026-10-05 10:57:42.886 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2026-10-05 10:57:42.887 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2026-10-05 10:57:42.888 +05:30 [INF] ⬅️ Outgoing Response: 405 (Time taken: 119ms)
+2026-10-05 10:57:42.888 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/api/auth/login - 405 0 null 123.7246ms
+2026-10-05 10:57:47.321 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/auth/login - application/json 61
+2026-10-05 10:57:47.324 +05:30 [INF] ️ Incoming Request: POST /api/auth/login
+2026-10-05 10:57:47.325 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-10-05 10:57:47.351 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-10-05 10:57:48.051 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-10-05 10:57:48.052 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-10-05 10:57:48.052 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-10-05 10:57:48.124 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-10-05 10:57:48.616 +05:30 [INF] Executed DbCommand (47ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-10-05 10:57:48.892 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-05 10:57:48.904 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 1547.6562ms
+2026-10-05 10:57:48.905 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-10-05 10:57:48.906 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 1582ms)
+2026-10-05 10:57:48.912 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/auth/login - 200 null application/json; charset=utf-8 1590.2038ms
+2026-10-05 10:58:01.315 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7103/api/auth/login - application/json 61
+2026-10-05 10:58:01.316 +05:30 [INF] ️ Incoming Request: POST /api/auth/login
+2026-10-05 10:58:01.324 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-10-05 10:58:01.325 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-10-05 10:58:01.333 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-10-05 10:58:01.519 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-05 10:58:01.520 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 194.1056ms
+2026-10-05 10:58:01.521 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-10-05 10:58:01.522 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 205ms)
+2026-10-05 10:58:01.522 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7103/api/auth/login - 200 null application/json; charset=utf-8 207.8108ms
+2026-10-05 10:59:04.882 +05:30 [INF] Request starting HTTP/2 PATCH https://localhost:7103/api/Book/71 - application/json 34
+2026-10-05 10:59:04.886 +05:30 [INF] CORS policy execution failed.
+2026-10-05 10:59:04.887 +05:30 [INF] Request origin https://localhost:7103 does not have permission to access the resource.
+2026-10-05 10:59:04.890 +05:30 [INF] ️ Incoming Request: PATCH /api/Book/71
+2026-10-05 10:59:04.897 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-10-05 10:59:04.900 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-10-05 10:59:04.901 +05:30 [INF] ⬅️ Outgoing Response: 401 (Time taken: 10ms)
+2026-10-05 10:59:04.902 +05:30 [INF] Request finished HTTP/2 PATCH https://localhost:7103/api/Book/71 - 401 0 null 19.4698ms
+2026-10-05 10:59:22.080 +05:30 [INF] Request starting HTTP/2 PATCH https://localhost:7103/api/book/71  - application/json 34
+2026-10-05 10:59:22.081 +05:30 [INF] ️ Incoming Request: PATCH /api/book/71%20
+2026-10-05 10:59:22.083 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.PatchBook (DbOperationsWithEfcoreApp)'
+2026-10-05 10:59:22.091 +05:30 [INF] Route matched with {action = "PatchBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PatchBook(Int32, DbOperationsWithEfcoreApp.Dtos.PatchBookDto) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-05 10:59:22.242 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @id
+2026-10-05 10:59:22.374 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p12='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+UPDATE [Books] SET [Description] = @p6, [IsActive] = @p7, [NoOfPages] = @p8, [PdfFilePath] = @p9, [Title] = @p10, [UpdatedAt] = @p11
+OUTPUT 1
+WHERE [Id] = @p12;
+2026-10-05 10:59:22.404 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-05 10:59:22.406 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.PatchBook (DbOperationsWithEfcoreApp) in 314.3471ms
+2026-10-05 10:59:22.407 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.PatchBook (DbOperationsWithEfcoreApp)'
+2026-10-05 10:59:22.407 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 325ms)
+2026-10-05 10:59:22.408 +05:30 [INF] Request finished HTTP/2 PATCH https://localhost:7103/api/book/71  - 200 null application/json; charset=utf-8 328.5608ms

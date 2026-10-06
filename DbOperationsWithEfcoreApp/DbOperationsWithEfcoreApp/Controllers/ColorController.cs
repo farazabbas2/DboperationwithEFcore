@@ -42,6 +42,48 @@ namespace DbOperationsWithEfcoreApp.Controllers
 
             return Ok(result);
         }
+        [Authorize(Roles = "Admin")]
+        [HttpPost("bulk")]
+        public async Task<IActionResult> AddBulkColors([FromBody] List<CreateColorDto> colorDtos)
+        {
+            if(colorDtos==null || !colorDtos.Any())
+            {
+                return BadRequest(new { message = "No colors provided." });
+            }
+            var incomingNames = colorDtos.Select(c => c.Name.Trim().ToLower()).ToList();
+            var duplciateRequest = incomingNames.GroupBy(x => x).Where(g => g.Count() > 1).Select(g => g.Key).ToList();
+
+            if (duplciateRequest.Any())
+            {
+                return Conflict(new { message = "Duplicate color names in request.", duplicates = duplciateRequest });
+            }
+
+            var ExistingRecords=await _colorRepository.GetAllColorsAsync();
+            var existingNames = ExistingRecords.Select(c => c.Name.Trim().ToLower()).ToHashSet();
+            var duplicatesInDb = incomingNames.Where(n => existingNames.Contains(n)).ToList();
+            if (duplicatesInDb.Any())
+            {
+                return Conflict(new { success = false, message = "Some colors already exist.", duplicates = duplicatesInDb });
+            }
+            var colorsToAdd = colorDtos.Select(dto => new Color
+            {
+                Name = dto.Name.Trim(),
+                IsActive = true
+            }).ToList();
+            await _colorRepository.AddBulkColorsAsync(colorsToAdd);
+            await _colorRepository.SaveChangesAsync();
+
+            return StatusCode(201, new
+            {
+                success = true,
+                message = $"{colorsToAdd.Count} colors inserted successfully.",
+                insertedIds = colorsToAdd.Select(c => c.Id)
+            });
+
+        }
+
+
+
 
         [Authorize]
         [HttpGet("{id:int}")]

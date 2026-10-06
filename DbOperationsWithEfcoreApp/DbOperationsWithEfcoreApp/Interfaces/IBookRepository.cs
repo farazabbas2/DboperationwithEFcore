@@ -14,7 +14,7 @@ namespace DbOperationsWithEfcoreApp.Interfaces
         Task<Book?> GetBookByIdAsync(int id);
         Task<Book?> GetBookByIdIgnoreFiltersAsync(int id); // Update ke liye
 
-        // 2. Validation Helpers (Controller ko clean rakhne ke liye)
+        // 2. Validation Helpers 
         Task<bool> IsBookDuplicateAsync(string title, string description);
         Task<List<Language>> GetLanguagesByIdsAsync(List<int> ids);
         Task<List<Color>> GetColorsByIdsAsync(List<int> ids);
@@ -28,5 +28,7 @@ namespace DbOperationsWithEfcoreApp.Interfaces
         Task ReplaceBookRelationsAsync(int bookId, List<int> languageIds, List<int> colorIds);
         Task UpdateBookPricesAsync(int bookId, List<UpdateBookPriceDto> newPrices);
         Task AddBookPricesAsync(int bookId, List<CreateBookPriceDto> prices);
+        Task AddBulkColorsAsync(IEnumerable<Color> colors);
+        
     }
 }

@@ -21,9 +21,36 @@ namespace DbOperationsWithEfcoreApp.Data
         {
             base.OnModelCreating(modelBuilder);
 
-        
+
             // User requirement: IsActive = 1 (true) => Active record, 0 (false) => Inactive/Deleted.
             // Query filter sirf ACTIVE records (IsActive == true) dikhayega.
+            modelBuilder.Entity<Friendship>(entity =>
+            {
+                entity.HasKey(e => e.Id); // Primary Key
+
+                // Performance ke liye Indexes (Fast searching ke liye)
+                entity.HasIndex(e => e.UserId);
+                entity.HasIndex(e => e.FriendId);
+
+                // Default Value
+                entity.Property(e => e.status).HasDefaultValue(1);
+            });
+            modelBuilder.Entity<UserActivity>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+
+                entity.HasIndex(e => e.UserId);
+                entity.HasIndex(e => e.CreatedAt);
+                entity.HasIndex(e => e.BookId);
+
+                entity.Property(e => e.ActionType)
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(255);
+
+              
+            });
 
             modelBuilder.Entity<Currency>()
                 .HasQueryFilter(c => c.IsActive);
@@ -94,6 +121,11 @@ namespace DbOperationsWithEfcoreApp.Data
                 .WithMany(l => l.BookLanguages)
                 .HasForeignKey(bl => bl.LanguageId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+
+            modelBuilder.Entity<Color>()
+            .HasIndex(c => c.Name)
+            .IsUnique(); 
         }
 
 
@@ -111,6 +143,10 @@ namespace DbOperationsWithEfcoreApp.Data
         public DbSet<User> Users { get; set; }
 
         public DbSet<AuditLog> AuditLogs { get; set; }
+
+        public DbSet<Friendship> Friendships { get; set; }
+
+        public DbSet<UserActivity> UserActivities { get; set; }
 
         // ==========================================
         // 5. SAVE CHANGES OVERRIDES (IST Timezone Logic)

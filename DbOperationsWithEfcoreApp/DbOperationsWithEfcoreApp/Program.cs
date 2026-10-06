@@ -5,6 +5,7 @@ using DbOperationsWithEfcoreApp.Middlewares;
 using DbOperationsWithEfcoreApp.Repositories;
 using DbOperationsWithEfcoreApp.Validators;
 using FluentValidation;
+using DbOperationsWithEfcoreApp.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -13,6 +14,8 @@ using Microsoft.OpenApi.Models;
 using Serilog; // ✅ Ye pehle se hai
 using System.Text;
 using System.Text.Json.Serialization;
+using DbOperationsWithEfcoreApp.Services.FriendService;
+using DbOperationsWithEfcoreApp.Services.ActivityService;
 
 namespace DbOperationsWithEfcoreApp
 {
@@ -62,8 +65,16 @@ namespace DbOperationsWithEfcoreApp
                 builder.Services.AddScoped<IColorRepository, ColorRepository>();
 
                 builder.Services.AddScoped<ILanguageRepository, LanguageRepository>();
+                // Repositories
+                // Repositories
+                builder.Services.AddScoped<IFriendRepository, FriendRepository>();
+                builder.Services.AddScoped<IActivityRepository, ActivityRepository>();
+                // Services
+                builder.Services.AddScoped<IFriendService, FriendService>();
+                builder.Services.AddScoped<IActivityService, ActivityService>();
 
-                // 2. DbContext Registration
+                // Services
+            
                 builder.Services.AddDbContext<AppDbContext>(options =>
                     options.UseSqlServer(builder.Configuration.GetConnectionString("AppDb"))
                 );

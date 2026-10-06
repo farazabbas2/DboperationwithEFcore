@@ -91,6 +91,11 @@ namespace DbOperationsWithEfcoreApp.Repositories
             await _context.Books.AddAsync(book);
             await _context.SaveChangesAsync();
         }
+        public async Task AddBulkColorsAsync(IEnumerable<Color> colors)
+        {
+            await _context.Colors.AddRangeAsync(colors);
+            await _context.SaveChangesAsync();
+        }
 
         // 7. Add Bulk Books
         public async Task AddBooksRangeAsync(List<Book> books)

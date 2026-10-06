@@ -27,6 +27,13 @@ namespace DbOperationsWithEfcoreApp.Repositories
             return await _context.Colors.FirstOrDefaultAsync(c => c.Id == id);
         }
 
+
+        public async Task AddBulkColorsAsync(IEnumerable<Color> colors)
+        {
+            await _context.Colors.AddRangeAsync(colors);
+            await _context.SaveChangesAsync();
+        }
+
         // Yeh method controller ko clean rakhne ke liye hai (Duplicate check)
         public async Task<bool> IsColorNameDuplicateAsync(string name, int excludeId)
         {
@@ -38,6 +45,10 @@ namespace DbOperationsWithEfcoreApp.Repositories
             await _context.Colors.AddAsync(color);
             await _context.SaveChangesAsync();
         }
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
+        } 
 
         public async Task UpdateColorAsync(Color color)
         {

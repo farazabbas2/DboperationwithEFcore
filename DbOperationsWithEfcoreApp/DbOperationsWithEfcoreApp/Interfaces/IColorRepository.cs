@@ -11,7 +11,8 @@ namespace DbOperationsWithEfcoreApp.Interfaces
         Task<bool> IsColorNameDuplicateAsync(string name, int excludeId);
         Task AddColorAsync(Color color);
         Task UpdateColorAsync(Color color);
-
+        Task AddBulkColorsAsync(IEnumerable<Color> colors);
+        Task SaveChangesAsync();
         Task SoftDeleteColorAsync(int id);
     }
 }

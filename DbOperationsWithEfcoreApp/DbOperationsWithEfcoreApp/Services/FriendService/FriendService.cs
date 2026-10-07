@@ -30,20 +30,79 @@ namespace DbOperationsWithEfcoreApp.Services.FriendService
                 return (false, "Sender User ID does not exist.");
             }
 
-            var alreadyConnected = await _repo.FriendshipExistsAsync(userId, friendId);
-            if (alreadyConnected)
+            var existing = await _repo.GetExistingFriendshipAsync(userId, friendId);
+            if (existing != null)
             {
-                return (false, "You are already connected with this user.");
+                if (existing.status == 1)
+                {
+                    return (false, "You are already connected with this user.");
+                }
+                if (existing.status == 0)
+                {
+                    if (existing.UserId == userId)
+                    {
+                        return (false, "Friend request has already been sent and is pending approval.");
+                    }
+                    else
+                    {
+                        // The other user already sent a request, so accept it!
+                        existing.status = 1;
+                        await _repo.UpdateAsync(existing);
+                        return (true, "Friend request accepted! You are now connected.");
+                    }
+                }
             }
 
-            var friendship = new Friendship { UserId = userId, FriendId = friendId, status = 1, CreatedAt = DateTime.UtcNow };
+            // Status = 0 (Pending until recipient accepts)
+            var friendship = new Friendship 
+            { 
+                UserId = userId, 
+                FriendId = friendId, 
+                status = 0, 
+                CreatedAt = DateTime.UtcNow 
+            };
             await _repo.AddAsync(friendship);
-            return (true, "Friend request sent successfully!");
+            return (true, "Friend request sent successfully! Awaiting recipient's acceptance.");
+        }
+
+        public async Task<(bool Success, string Message)> AcceptFriendRequest(long userId, long requesterId)
+        {
+            var friendship = await _repo.GetFriendshipAsync(requesterId, userId);
+            if (friendship == null)
+            {
+                return (false, "Friend request not found.");
+            }
+
+            if (friendship.status == 1)
+            {
+                return (false, "You are already friends with this user.");
+            }
+
+            friendship.status = 1; // 1 = Accepted
+            await _repo.UpdateAsync(friendship);
+            return (true, "Friend request accepted! Added to your friends list.");
+        }
+
+        public async Task<(bool Success, string Message)> RejectFriendRequest(long userId, long requesterId)
+        {
+            var friendship = await _repo.GetFriendshipAsync(requesterId, userId);
+            if (friendship == null)
+            {
+                return (false, "Friend request not found.");
+            }
+
+            await _repo.DeleteAsync(friendship);
+            return (true, "Friend request declined.");
         }
 
         public async Task<List<Friendship>> GetMyFriends(long userId)
         {
             return await _repo.GetFriendsAsync(userId);
+        }
+
+        public async Task<List<Friendship>> GetPendingRequests(long userId)
+        {
+            return await _repo.GetPendingRequestsAsync(userId);
         }
     }
 }

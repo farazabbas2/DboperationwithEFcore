@@ -26,7 +26,7 @@ namespace DbOperationsWithEfcoreApp.Services.ActivityService
                 ActionType = actionType,
                 BookId = bookId,
                 Description = description,
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = DateTime.Now
             };
             await _activityRepo.AddAsync(activity);
         }

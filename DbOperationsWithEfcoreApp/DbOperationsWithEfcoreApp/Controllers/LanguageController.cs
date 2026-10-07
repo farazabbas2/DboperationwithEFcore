@@ -33,7 +33,17 @@ namespace DbOperationsWithEfcoreApp.Controllers
         [HttpGet("")]
         public async Task<IActionResult> GetallLanguages()
         {
-            var result = await _languageRepository.GetAllLanguagesAsync();
+            var languages = await _languageRepository.GetAllLanguagesAsync();
+            var result = languages.Select(l => new
+            {
+                l.Id,
+                l.Name,
+                Title = l.Name,
+                l.Description,
+                l.IsActive,
+                l.CreatedAt,
+                l.UpdatedAt
+            });
             return Ok(result);
         }
 
@@ -47,7 +57,16 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 return NotFound(new { message = "Language not found." });
             }
 
-            return Ok(result);
+            return Ok(new
+            {
+                result.Id,
+                result.Name,
+                Title = result.Name,
+                result.Description,
+                result.IsActive,
+                result.CreatedAt,
+                result.UpdatedAt
+            });
         }
 
         [Authorize]
@@ -98,21 +117,28 @@ namespace DbOperationsWithEfcoreApp.Controllers
             await _languageRepository.SoftDeleteLanguageAsync(id);
             return Ok(new { message = "Language deleted Successfully" });
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         [HttpPost("alllang")]
         public async Task<IActionResult> GetLanguageByIds([FromBody] LanguaeRequestDto request)
         {
-
-
             if (request == null || request.Ids == null ||
                 request.Ids.Count == 0)
             {
                 return BadRequest("please provide at least one ID");
             }
 
-
-            var result = await _languageRepository
+            var languages = await _languageRepository
                 .GetLanguagesByIds(request.Ids);
+            var result = languages.Select(l => new
+            {
+                l.Id,
+                l.Name,
+                Title = l.Name,
+                l.Description,
+                l.IsActive,
+                l.CreatedAt,
+                l.UpdatedAt
+            });
             return Ok(result);
         }
 

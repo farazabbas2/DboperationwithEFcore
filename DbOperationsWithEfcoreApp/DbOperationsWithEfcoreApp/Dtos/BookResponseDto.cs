@@ -36,7 +36,10 @@ namespace DbOperationsWithEfcoreApp.Dtos
     public class BookPriceDto
     {
         public int PriceId { get; set; }
+        public int CurrencyId { get; set; }
         public decimal Amount { get; set; } // amount ka type decimal ya double jo bhi aapke model mein hai
         public string CurrencyName { get; set; }
+        public string? CurrencyTitle { get; set; }
+        public string? CurrencyDescription { get; set; }
     }
 }

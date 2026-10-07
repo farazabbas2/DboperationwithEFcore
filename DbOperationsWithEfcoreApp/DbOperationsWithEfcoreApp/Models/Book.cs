@@ -9,9 +9,9 @@ namespace DbOperationsWithEfcoreApp.Models
         public DateTime? UpdatedAt { get; set; }
         public int NoOfPages { get; set; }
         public bool IsActive { get; set; } = true;
-
+        public bool isActive { get => IsActive; set => IsActive = value; }
         public string? PdfFilePath { get; set; }
-       
+
         // Many-to-Many: Languages
         public ICollection<BookLanguage> BookLanguages { get; set; } = new List<BookLanguage>();
 

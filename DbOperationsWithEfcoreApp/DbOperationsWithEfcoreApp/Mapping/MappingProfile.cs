@@ -23,14 +23,16 @@ namespace DbOperationsWithEfcoreApp.Mappings
             // Note: Agar aapke model mein 'Color' capital C se hai, toh src.Color.Name karein.
 
             CreateMap<BookPrice, BookPriceDto>()
-                .ForMember(dest => dest.CurrencyName, opt => opt.MapFrom(src => src.Currency.Title));
+                .ForMember(dest => dest.PriceId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.CurrencyId, opt => opt.MapFrom(src => src.CurrencyId))
+                .ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.amount))
+                .ForMember(dest => dest.CurrencyName, opt => opt.MapFrom(src => src.Currency != null ? src.Currency.Title : null))
+                .ForMember(dest => dest.CurrencyTitle, opt => opt.MapFrom(src => src.Currency != null ? src.Currency.Title : null))
+                .ForMember(dest => dest.CurrencyDescription, opt => opt.MapFrom(src => src.Currency != null ? src.Currency.description : null));
 
             // POST/PUT API ke liye (DTO -> Entity)
             CreateMap<CreateBookDto, Book>();
             CreateMap<UpdateBookDto, Book>();
-            // Apne MappingProfile.cs me jayein aur ye line add karein:
-            CreateMap<BookPrice, BookPriceDto>()
-                .ForMember(dest => dest.PriceId, opt => opt.MapFrom(src => src.Id)); // ✅ Yahan batayein ki PriceId, Id se aayega
         }
     }
 }

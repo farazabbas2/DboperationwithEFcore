@@ -52,6 +52,12 @@ namespace DbOperationsWithEfcoreApp.Data
               
             });
 
+            modelBuilder.Entity<AuditLog>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+            });
+
             modelBuilder.Entity<Currency>()
                 .HasQueryFilter(c => c.IsActive);
 
@@ -154,14 +160,28 @@ namespace DbOperationsWithEfcoreApp.Data
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             ApplyTimestamps();
-            await ApplyAuditLogsAsync(); // 
+            try
+            {
+                await ApplyAuditLogsAsync();
+            }
+            catch
+            {
+                // Graceful fallback: audit logging error should not block business operations
+            }
             return await base.SaveChangesAsync(cancellationToken);
         }
 
         public override int SaveChanges()
         {
             ApplyTimestamps();
-            ApplyAuditLogs();
+            try
+            {
+                ApplyAuditLogs();
+            }
+            catch
+            {
+                // Graceful fallback
+            }
             return base.SaveChanges();
         }
 

@@ -8745,3 +8745,1277 @@ WHERE ([f].[UserId] = @userId OR [f].[FriendId] = @userId) AND [f].[status] = 1
 2026-10-06 15:44:12.484 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
 2026-10-06 15:44:12.496 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 12ms)
 2026-10-06 15:44:12.498 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.0907ms
+2026-10-06 16:41:53.047 +05:30 [INF] 🚀 Application starting up...
+2026-10-06 16:41:53.298 +05:30 [INF] ✅ Application started successfully!
+2026-10-06 16:41:53.320 +05:30 [INF] User profile is available. Using 'C:\Users\Administartor\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-06 16:41:53.535 +05:30 [INF] Now listening on: https://localhost:7103
+2026-10-06 16:41:53.536 +05:30 [INF] Now listening on: http://localhost:5142
+2026-10-06 16:41:53.571 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-06 16:41:53.571 +05:30 [INF] Hosting environment: Development
+2026-10-06 16:41:53.571 +05:30 [INF] Content root path: C:\Users\Administartor\Desktop\EntityFrameworkCore\src\DboperationwithEFcore\DbOperationsWithEfcoreApp\DbOperationsWithEfcoreApp
+2026-10-06 16:41:54.384 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/index.html - null null
+2026-10-06 16:41:54.486 +05:30 [INF] ️ Incoming Request: GET /swagger/index.html
+2026-10-06 16:41:54.544 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 59ms)
+2026-10-06 16:41:54.552 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/index.html - 200 null text/html;charset=utf-8 173.8648ms
+2026-10-06 16:41:54.554 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - null null
+2026-10-06 16:41:54.554 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/_vs/browserLink - null null
+2026-10-06 16:41:54.560 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 7.4644ms
+2026-10-06 16:41:54.579 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.8472ms
+2026-10-06 16:41:54.604 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - null null
+2026-10-06 16:41:54.606 +05:30 [INF] ️ Incoming Request: GET /swagger/v1/swagger.json
+2026-10-06 16:41:54.626 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 20ms)
+2026-10-06 16:41:54.627 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7103/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.882ms
+2026-10-06 16:42:16.415 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7103/api/Auth/login - application/json 55
+2026-10-06 16:42:16.422 +05:30 [INF] CORS policy execution successful.
+2026-10-06 16:42:16.423 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-10-06 16:42:16.453 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:16.474 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:17.045 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookColor'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-10-06 16:42:17.046 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookLanguage'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-10-06 16:42:17.047 +05:30 [WRN] Entity 'Book' has a global query filter defined and is the required end of a relationship with the entity 'BookPrice'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-10-06 16:42:17.111 +05:30 [WRN] No store type was specified for the decimal property 'amount' on entity type 'BookPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-10-06 16:42:17.619 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-10-06 16:42:18.017 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p7='?' (DbType = Int32), @p6='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+UPDATE [Users] SET [FailedLoginAttempts] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-10-06 16:42:18.051 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType3`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:42:18.062 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 1584.879ms
+2026-10-06 16:42:18.064 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:18.065 +05:30 [INF] ⬅️ Outgoing Response: 401 (Time taken: 1641ms)
+2026-10-06 16:42:18.072 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7103/api/Auth/login - 401 null application/json; charset=utf-8 1656.5185ms
+2026-10-06 16:42:29.143 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7103/api/Auth/login - application/json 56
+2026-10-06 16:42:29.145 +05:30 [INF] CORS policy execution successful.
+2026-10-06 16:42:29.146 +05:30 [INF] ️ Incoming Request: POST /api/Auth/login
+2026-10-06 16:42:29.146 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:29.147 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DbOperationsWithEfcoreApp.Dtos.LoginDto) on controller DbOperationsWithEfcoreApp.Controllers.AuthController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:29.175 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@ToLower='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FailedLoginAttempts], [u].[LockoutEnd], [u].[Name], [u].[Role], [u].[isActive], [u].[passwordHash]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Email]) = @ToLower
+2026-10-06 16:42:29.377 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p7='?' (DbType = Int32), @p6='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Action], [ChangedAt], [ChangedBy], [NewValues], [OldValues], [TableName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+UPDATE [Users] SET [FailedLoginAttempts] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-10-06 16:42:29.401 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`4[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:29.406 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp) in 258.3455ms
+2026-10-06 16:42:29.407 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.AuthController.Login (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:29.407 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 261ms)
+2026-10-06 16:42:29.408 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7103/api/Auth/login - 200 null application/json; charset=utf-8 264.8836ms
+2026-10-06 16:42:31.498 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/currencies - null null
+2026-10-06 16:42:31.498 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:42:31.499 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Language - null null
+2026-10-06 16:42:31.499 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/colors - null null
+2026-10-06 16:42:31.500 +05:30 [INF] ️ Incoming Request: GET /api/currencies
+2026-10-06 16:42:31.500 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:42:31.501 +05:30 [INF] ️ Incoming Request: GET /api/Language
+2026-10-06 16:42:31.502 +05:30 [INF] ️ Incoming Request: GET /api/colors
+2026-10-06 16:42:31.552 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.552 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.552 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.552 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.558 +05:30 [INF] Route matched with {action = "GetallLanguages", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallLanguages() on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:31.559 +05:30 [INF] Route matched with {action = "GetAllCurrencies", controller = "Currency"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCurrencies() on controller DbOperationsWithEfcoreApp.Controllers.CurrencyController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:31.559 +05:30 [INF] Route matched with {action = "GetAllColors", controller = "Color"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllColors() on controller DbOperationsWithEfcoreApp.Controllers.ColorController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:31.559 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:31.698 +05:30 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[id], [c].[CreatedAt], [c].[IsActive], [c].[Title], [c].[UpdatedAt], [c].[description]
+FROM [Currency] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:42:31.711 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+FROM [Colors] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:42:31.713 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Currency, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:31.713 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:42:31.716 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp) in 156.0816ms
+2026-10-06 16:42:31.717 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.717 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 217ms)
+2026-10-06 16:42:31.718 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/currencies - 200 null application/json; charset=utf-8 219.7392ms
+2026-10-06 16:42:31.779 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/currencies - null null
+2026-10-06 16:42:31.780 +05:30 [INF] ️ Incoming Request: GET /api/currencies
+2026-10-06 16:42:31.780 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType20`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:31.782 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Language, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:31.782 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.783 +05:30 [INF] Route matched with {action = "GetAllCurrencies", controller = "Currency"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCurrencies() on controller DbOperationsWithEfcoreApp.Controllers.CurrencyController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:31.783 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp) in 222.3793ms
+2026-10-06 16:42:31.784 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.785 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 282ms)
+2026-10-06 16:42:31.785 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[id], [c].[CreatedAt], [c].[IsActive], [c].[Title], [c].[UpdatedAt], [c].[description]
+FROM [Currency] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:42:31.785 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/colors - 200 null application/json; charset=utf-8 286.2278ms
+2026-10-06 16:42:31.787 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Currency, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:31.790 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp) in 6.0098ms
+2026-10-06 16:42:31.790 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.791 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 10ms)
+2026-10-06 16:42:31.791 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/colors - null null
+2026-10-06 16:42:31.792 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/currencies - 200 null application/json; charset=utf-8 13.0789ms
+2026-10-06 16:42:31.792 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp) in 232.5081ms
+2026-10-06 16:42:31.793 +05:30 [INF] ️ Incoming Request: GET /api/colors
+2026-10-06 16:42:31.795 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.795 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.795 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 294ms)
+2026-10-06 16:42:31.796 +05:30 [INF] Route matched with {action = "GetAllColors", controller = "Color"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllColors() on controller DbOperationsWithEfcoreApp.Controllers.ColorController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:31.796 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Language - 200 null application/json; charset=utf-8 297.6425ms
+2026-10-06 16:42:31.797 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Language - null null
+2026-10-06 16:42:31.798 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+FROM [Colors] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:42:31.799 +05:30 [INF] ️ Incoming Request: GET /api/Language
+2026-10-06 16:42:31.801 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.801 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType20`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:31.801 +05:30 [INF] Route matched with {action = "GetallLanguages", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallLanguages() on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:31.801 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp) in 4.3933ms
+2026-10-06 16:42:31.802 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.803 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 10ms)
+2026-10-06 16:42:31.803 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:42:31.804 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/colors - 200 null application/json; charset=utf-8 12.6735ms
+2026-10-06 16:42:31.805 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Language, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:31.807 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp) in 4.7803ms
+2026-10-06 16:42:31.807 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.808 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 8ms)
+2026-10-06 16:42:31.809 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Language - 200 null application/json; charset=utf-8 12.1197ms
+2026-10-06 16:42:31.837 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-10-06 16:42:31.886 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:31.972 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:42:31.980 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 418.9459ms
+2026-10-06 16:42:31.981 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.982 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 481ms)
+2026-10-06 16:42:31.983 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 484.5189ms
+2026-10-06 16:42:31.985 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:42:31.987 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:42:31.988 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:31.989 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:31.996 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:32.014 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:42:32.016 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 24.8747ms
+2026-10-06 16:42:32.016 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:32.017 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 30ms)
+2026-10-06 16:42:32.017 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 31.7113ms
+2026-10-06 16:42:37.091 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:42:37.092 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:42:37.093 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:37.093 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:37.099 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:37.117 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:42:37.118 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 24.001ms
+2026-10-06 16:42:37.118 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:37.119 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 26ms)
+2026-10-06 16:42:37.119 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 28.6938ms
+2026-10-06 16:42:37.124 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:42:37.125 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:42:37.125 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:37.126 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:37.130 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:37.147 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:42:37.149 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 22.1499ms
+2026-10-06 16:42:37.149 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:37.149 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 24ms)
+2026-10-06 16:42:37.150 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 26.2075ms
+2026-10-06 16:42:39.911 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book/9 - null null
+2026-10-06 16:42:39.912 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/currencies - null null
+2026-10-06 16:42:39.913 +05:30 [INF] ️ Incoming Request: GET /api/Book/9
+2026-10-06 16:42:39.913 +05:30 [INF] ️ Incoming Request: GET /api/currencies
+2026-10-06 16:42:39.914 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:39.914 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:39.915 +05:30 [INF] Route matched with {action = "GetAllCurrencies", controller = "Currency"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCurrencies() on controller DbOperationsWithEfcoreApp.Controllers.CurrencyController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:39.918 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[id], [c].[CreatedAt], [c].[IsActive], [c].[Title], [c].[UpdatedAt], [c].[description]
+FROM [Currency] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:42:39.919 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Currency, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:39.920 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp) in 4.0254ms
+2026-10-06 16:42:39.921 +05:30 [INF] Route matched with {action = "GetBookById", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookByIdAsync(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:39.921 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:39.923 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 9ms)
+2026-10-06 16:42:39.924 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/currencies - 200 null application/json; charset=utf-8 12.0023ms
+2026-10-06 16:42:39.927 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/currencies - null null
+2026-10-06 16:42:39.928 +05:30 [INF] ️ Incoming Request: GET /api/currencies
+2026-10-06 16:42:39.929 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:39.929 +05:30 [INF] Route matched with {action = "GetAllCurrencies", controller = "Currency"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCurrencies() on controller DbOperationsWithEfcoreApp.Controllers.CurrencyController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:39.931 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[id], [c].[CreatedAt], [c].[IsActive], [c].[Title], [c].[UpdatedAt], [c].[description]
+FROM [Currency] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:42:39.932 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Currency, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:39.932 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp) in 2.3292ms
+2026-10-06 16:42:39.933 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:39.933 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 4ms)
+2026-10-06 16:42:39.934 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/currencies - 200 null application/json; charset=utf-8 6.7742ms
+2026-10-06 16:42:39.939 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-10-06 16:42:39.969 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:39.980 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:39.981 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp) in 59.3687ms
+2026-10-06 16:42:39.982 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:39.982 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 69ms)
+2026-10-06 16:42:39.983 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book/9 - 200 null application/json; charset=utf-8 71.7018ms
+2026-10-06 16:42:39.986 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book/9 - null null
+2026-10-06 16:42:39.988 +05:30 [INF] ️ Incoming Request: GET /api/Book/9
+2026-10-06 16:42:39.989 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:39.989 +05:30 [INF] Route matched with {action = "GetBookById", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookByIdAsync(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:39.992 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:39.993 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:39.993 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp) in 3.5663ms
+2026-10-06 16:42:39.994 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:39.994 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 6ms)
+2026-10-06 16:42:39.995 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book/9 - 200 null application/json; charset=utf-8 8.2729ms
+2026-10-06 16:42:40.974 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book/9/read - null null
+2026-10-06 16:42:40.974 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:42:40.975 +05:30 [INF] ️ Incoming Request: GET /api/Book/9/read
+2026-10-06 16:42:40.976 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:42:40.977 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:40.978 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:40.978 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.ReadBook (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:40.982 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:40.984 +05:30 [INF] Route matched with {action = "ReadBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReadBook(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:40.986 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:40.991 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:42:40.992 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 13.4771ms
+2026-10-06 16:42:40.992 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:40.993 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 17ms)
+2026-10-06 16:42:40.994 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 20.044ms
+2026-10-06 16:42:40.998 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:42:40.999 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:42:41.000 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:41.001 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:41.007 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:41.008 +05:30 [INF] Executing FileContentResult, sending file with download name 'Pride and Prejudice.pdf' ...
+2026-10-06 16:42:41.015 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:42:41.015 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 13.8274ms
+2026-10-06 16:42:41.016 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:41.016 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 16ms)
+2026-10-06 16:42:41.017 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 18.7464ms
+2026-10-06 16:42:41.042 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.ReadBook (DbOperationsWithEfcoreApp) in 57.4766ms
+2026-10-06 16:42:41.042 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.ReadBook (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:41.043 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 67ms)
+2026-10-06 16:42:41.044 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book/9/read - 200 3454690 application/pdf 69.9392ms
+2026-10-06 16:42:41.045 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book/9/read - null null
+2026-10-06 16:42:41.046 +05:30 [INF] ️ Incoming Request: GET /api/Book/9/read
+2026-10-06 16:42:41.047 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.ReadBook (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:41.047 +05:30 [INF] Route matched with {action = "ReadBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReadBook(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:41.049 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:41.082 +05:30 [INF] Executing FileContentResult, sending file with download name 'Pride and Prejudice.pdf' ...
+2026-10-06 16:42:41.101 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.ReadBook (DbOperationsWithEfcoreApp) in 53.1831ms
+2026-10-06 16:42:41.102 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.ReadBook (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:41.102 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 56ms)
+2026-10-06 16:42:41.103 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book/9/read - 200 3454690 application/pdf 58.0545ms
+2026-10-06 16:42:43.045 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:42:43.046 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:42:43.047 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:43.047 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:43.052 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:43.059 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:42:43.060 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 11.6415ms
+2026-10-06 16:42:43.061 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:43.061 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 15ms)
+2026-10-06 16:42:43.062 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 17.4383ms
+2026-10-06 16:42:43.065 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:42:43.066 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:42:43.067 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:43.067 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:43.071 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:43.077 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:42:43.078 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 10.7234ms
+2026-10-06 16:42:43.079 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:43.079 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 13ms)
+2026-10-06 16:42:43.080 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 14.6708ms
+2026-10-06 16:42:45.667 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book/9 - null null
+2026-10-06 16:42:45.667 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/currencies - null null
+2026-10-06 16:42:45.668 +05:30 [INF] ️ Incoming Request: GET /api/Book/9
+2026-10-06 16:42:45.669 +05:30 [INF] ️ Incoming Request: GET /api/currencies
+2026-10-06 16:42:45.669 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:45.670 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:45.670 +05:30 [INF] Route matched with {action = "GetBookById", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookByIdAsync(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:45.671 +05:30 [INF] Route matched with {action = "GetAllCurrencies", controller = "Currency"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCurrencies() on controller DbOperationsWithEfcoreApp.Controllers.CurrencyController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:45.674 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[id], [c].[CreatedAt], [c].[IsActive], [c].[Title], [c].[UpdatedAt], [c].[description]
+FROM [Currency] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:42:45.674 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:45.675 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Currency, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:45.676 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:45.676 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp) in 3.4114ms
+2026-10-06 16:42:45.677 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp) in 5.1374ms
+2026-10-06 16:42:45.677 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:45.678 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:45.679 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 10ms)
+2026-10-06 16:42:45.679 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 11ms)
+2026-10-06 16:42:45.681 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/currencies - 200 null application/json; charset=utf-8 13.4418ms
+2026-10-06 16:42:45.681 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book/9 - 200 null application/json; charset=utf-8 14.6564ms
+2026-10-06 16:42:45.684 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/currencies - null null
+2026-10-06 16:42:45.684 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book/9 - null null
+2026-10-06 16:42:45.685 +05:30 [INF] ️ Incoming Request: GET /api/currencies
+2026-10-06 16:42:45.686 +05:30 [INF] ️ Incoming Request: GET /api/Book/9
+2026-10-06 16:42:45.687 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:45.687 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:45.688 +05:30 [INF] Route matched with {action = "GetAllCurrencies", controller = "Currency"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCurrencies() on controller DbOperationsWithEfcoreApp.Controllers.CurrencyController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:45.688 +05:30 [INF] Route matched with {action = "GetBookById", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookByIdAsync(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:45.690 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[id], [c].[CreatedAt], [c].[IsActive], [c].[Title], [c].[UpdatedAt], [c].[description]
+FROM [Currency] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:42:45.690 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:45.691 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Currency, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:45.692 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:42:45.692 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp) in 3.3959ms
+2026-10-06 16:42:45.693 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp) in 3.2065ms
+2026-10-06 16:42:45.693 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:45.693 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetBookByIdAsync (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:45.694 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 8ms)
+2026-10-06 16:42:45.694 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 8ms)
+2026-10-06 16:42:45.695 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/currencies - 200 null application/json; charset=utf-8 11.1823ms
+2026-10-06 16:42:45.695 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book/9 - 200 null application/json; charset=utf-8 11.2062ms
+2026-10-06 16:42:46.690 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:42:46.690 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book/9/read - null null
+2026-10-06 16:42:46.691 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:42:46.692 +05:30 [INF] ️ Incoming Request: GET /api/Book/9/read
+2026-10-06 16:42:46.692 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:46.693 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.ReadBook (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:46.693 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:46.693 +05:30 [INF] Route matched with {action = "ReadBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReadBook(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:46.696 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:46.699 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:46.707 +05:30 [INF] Executing FileContentResult, sending file with download name 'Pride and Prejudice.pdf' ...
+2026-10-06 16:42:46.707 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:42:46.708 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 14.4548ms
+2026-10-06 16:42:46.709 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:46.709 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 18ms)
+2026-10-06 16:42:46.710 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 20.2677ms
+2026-10-06 16:42:46.722 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:42:46.723 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book/9/read - null null
+2026-10-06 16:42:46.723 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:42:46.725 +05:30 [INF] ️ Incoming Request: GET /api/Book/9/read
+2026-10-06 16:42:46.725 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:46.726 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.ReadBook (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:46.726 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:46.726 +05:30 [INF] Route matched with {action = "ReadBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReadBook(Int32) on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:42:46.731 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b3].[Id], [b3].[CreatedAt], [b3].[Description], [b3].[IsActive], [b3].[NoOfPages], [b3].[PdfFilePath], [b3].[Title], [b3].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt]
+    FROM [Books] AS [b]
+    WHERE [b].[IsActive] = CAST(1 AS bit) AND [b].[Id] = @id
+) AS [b3]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l0].[Id], [l0].[CreatedAt], [l0].[Description], [l0].[IsActive], [l0].[Name], [l0].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN (
+        SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+        FROM [Languages] AS [l]
+        WHERE [l].[IsActive] = CAST(1 AS bit)
+    ) AS [l0] ON [b0].[LanguageId] = [l0].[Id]
+) AS [s] ON [b3].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c0].[Id], [c0].[CreatedAt], [c0].[IsActive], [c0].[Name], [c0].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN (
+        SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+        FROM [Colors] AS [c]
+        WHERE [c].[IsActive] = CAST(1 AS bit)
+    ) AS [c0] ON [b1].[ColorId] = [c0].[Id]
+) AS [s0] ON [b3].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c2].[id] AS [id0], [c2].[CreatedAt] AS [CreatedAt0], [c2].[IsActive], [c2].[Title], [c2].[UpdatedAt] AS [UpdatedAt0], [c2].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN (
+        SELECT [c1].[id], [c1].[CreatedAt], [c1].[IsActive], [c1].[Title], [c1].[UpdatedAt], [c1].[description]
+        FROM [Currency] AS [c1]
+        WHERE [c1].[IsActive] = CAST(1 AS bit)
+    ) AS [c2] ON [b2].[CurrencyId] = [c2].[id]
+) AS [s1] ON [b3].[Id] = [s1].[BookId]
+ORDER BY [b3].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:46.733 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:42:46.736 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.ReadBook (DbOperationsWithEfcoreApp) in 41.0305ms
+2026-10-06 16:42:46.736 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.ReadBook (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:46.737 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 45ms)
+2026-10-06 16:42:46.738 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book/9/read - 200 3454690 application/pdf 47.5621ms
+2026-10-06 16:42:46.741 +05:30 [INF] Executing FileContentResult, sending file with download name 'Pride and Prejudice.pdf' ...
+2026-10-06 16:42:46.741 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:42:46.742 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 14.5317ms
+2026-10-06 16:42:46.742 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:46.743 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 19ms)
+2026-10-06 16:42:46.744 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 21.5807ms
+2026-10-06 16:42:46.755 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.ReadBook (DbOperationsWithEfcoreApp) in 25.1407ms
+2026-10-06 16:42:46.755 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.ReadBook (DbOperationsWithEfcoreApp)'
+2026-10-06 16:42:46.756 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 31ms)
+2026-10-06 16:42:46.757 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book/9/read - 200 3454690 application/pdf 34.0724ms
+2026-10-06 16:47:44.339 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/currencies - null null
+2026-10-06 16:47:44.339 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:47:44.339 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Language - null null
+2026-10-06 16:47:44.340 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/colors - null null
+2026-10-06 16:47:44.341 +05:30 [INF] ️ Incoming Request: GET /api/currencies
+2026-10-06 16:47:44.341 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:47:44.342 +05:30 [INF] ️ Incoming Request: GET /api/Language
+2026-10-06 16:47:44.343 +05:30 [INF] ️ Incoming Request: GET /api/colors
+2026-10-06 16:47:44.344 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.344 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.345 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.345 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.345 +05:30 [INF] Route matched with {action = "GetAllCurrencies", controller = "Currency"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCurrencies() on controller DbOperationsWithEfcoreApp.Controllers.CurrencyController (DbOperationsWithEfcoreApp).
+2026-10-06 16:47:44.346 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:47:44.346 +05:30 [INF] Route matched with {action = "GetallLanguages", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallLanguages() on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-10-06 16:47:44.346 +05:30 [INF] Route matched with {action = "GetAllColors", controller = "Color"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllColors() on controller DbOperationsWithEfcoreApp.Controllers.ColorController (DbOperationsWithEfcoreApp).
+2026-10-06 16:47:44.359 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:47:44.359 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[id], [c].[CreatedAt], [c].[IsActive], [c].[Title], [c].[UpdatedAt], [c].[description]
+FROM [Currency] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:47:44.361 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+FROM [Colors] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:47:44.361 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Language, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:47:44.361 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Currency, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:47:44.362 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType20`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:47:44.362 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp) in 14.3167ms
+2026-10-06 16:47:44.363 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp) in 16.0208ms
+2026-10-06 16:47:44.364 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp) in 14.6646ms
+2026-10-06 16:47:44.364 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.364 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.365 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.365 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:47:44.366 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 23ms)
+2026-10-06 16:47:44.365 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 23ms)
+2026-10-06 16:47:44.368 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/colors - 200 null application/json; charset=utf-8 28.7189ms
+2026-10-06 16:47:44.368 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Language - null null
+2026-10-06 16:47:44.366 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 25ms)
+2026-10-06 16:47:44.369 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/currencies - null null
+2026-10-06 16:47:44.370 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Language - 200 null application/json; charset=utf-8 30.5664ms
+2026-10-06 16:47:44.373 +05:30 [INF] ️ Incoming Request: GET /api/Language
+2026-10-06 16:47:44.374 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/currencies - 200 null application/json; charset=utf-8 36.0675ms
+2026-10-06 16:47:44.375 +05:30 [INF] ️ Incoming Request: GET /api/currencies
+2026-10-06 16:47:44.376 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/colors - null null
+2026-10-06 16:47:44.378 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.379 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:47:44.380 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.381 +05:30 [INF] ️ Incoming Request: GET /api/colors
+2026-10-06 16:47:44.381 +05:30 [INF] Route matched with {action = "GetallLanguages", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallLanguages() on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-10-06 16:47:44.382 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 34.7124ms
+2026-10-06 16:47:44.383 +05:30 [INF] Route matched with {action = "GetAllCurrencies", controller = "Currency"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCurrencies() on controller DbOperationsWithEfcoreApp.Controllers.CurrencyController (DbOperationsWithEfcoreApp).
+2026-10-06 16:47:44.384 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.386 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.390 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[id], [c].[CreatedAt], [c].[IsActive], [c].[Title], [c].[UpdatedAt], [c].[description]
+FROM [Currency] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:47:44.387 +05:30 [INF] Route matched with {action = "GetAllColors", controller = "Color"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllColors() on controller DbOperationsWithEfcoreApp.Controllers.ColorController (DbOperationsWithEfcoreApp).
+2026-10-06 16:47:44.386 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:47:44.391 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 49ms)
+2026-10-06 16:47:44.391 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:47:44.392 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Currency, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:47:44.393 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Language, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:47:44.394 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 54.6734ms
+2026-10-06 16:47:44.394 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+FROM [Colors] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:47:44.395 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:47:44.395 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp) in 8.9366ms
+2026-10-06 16:47:44.396 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp) in 11.5011ms
+2026-10-06 16:47:44.398 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType20`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:47:44.399 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.399 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.399 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.400 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp) in 7.5691ms
+2026-10-06 16:47:44.400 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:47:44.400 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 25ms)
+2026-10-06 16:47:44.401 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 27ms)
+2026-10-06 16:47:44.401 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.402 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/currencies - 200 null application/json; charset=utf-8 33.5796ms
+2026-10-06 16:47:44.403 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Language - 200 null application/json; charset=utf-8 34.5962ms
+2026-10-06 16:47:44.403 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 22ms)
+2026-10-06 16:47:44.406 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:47:44.407 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/colors - 200 null application/json; charset=utf-8 30.3939ms
+2026-10-06 16:47:44.413 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:47:44.414 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 11.8623ms
+2026-10-06 16:47:44.414 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:44.415 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 19ms)
+2026-10-06 16:47:44.415 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 24.5172ms
+2026-10-06 16:47:48.364 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:47:48.365 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:47:48.366 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:48.366 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:47:48.378 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:47:48.386 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:47:48.386 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 19.7896ms
+2026-10-06 16:47:48.387 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:48.388 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 22ms)
+2026-10-06 16:47:48.389 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 25.1933ms
+2026-10-06 16:47:48.393 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:47:48.394 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:47:48.395 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:48.395 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:47:48.399 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:47:48.405 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:47:48.406 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 10.6964ms
+2026-10-06 16:47:48.407 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:47:48.407 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 13ms)
+2026-10-06 16:47:48.408 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 14.8465ms
+2026-10-06 16:52:16.508 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Friend/list/4 - null null
+2026-10-06 16:52:16.509 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Feed/4 - null null
+2026-10-06 16:52:16.509 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:52:16.509 +05:30 [INF] ️ Incoming Request: GET /api/Friend/list/4
+2026-10-06 16:52:16.510 +05:30 [INF] ️ Incoming Request: GET /api/Feed/4
+2026-10-06 16:52:16.511 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:52:16.512 +05:30 [INF] Executing endpoint 'InventoryManagement.Controllers.FriendController.GetFriends (DbOperationsWithEfcoreApp)'
+2026-10-06 16:52:16.512 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.FeedController.GetFeed (DbOperationsWithEfcoreApp)'
+2026-10-06 16:52:16.513 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:52:16.514 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:52:16.520 +05:30 [INF] Route matched with {action = "GetFriends", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFriends(Int64) on controller InventoryManagement.Controllers.FriendController (DbOperationsWithEfcoreApp).
+2026-10-06 16:52:16.520 +05:30 [INF] Route matched with {action = "GetFeed", controller = "Feed"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFeed(Int64) on controller DbOperationsWithEfcoreApp.Controllers.FeedController (DbOperationsWithEfcoreApp).
+2026-10-06 16:52:16.565 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:52:16.570 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@userId='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[CreatedAt], [f].[FriendId], [f].[UserId], [f].[status]
+FROM [Friendships] AS [f]
+WHERE ([f].[UserId] = @userId OR [f].[FriendId] = @userId) AND [f].[status] = 1
+2026-10-06 16:52:16.573 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[CreatedAt], [f].[FriendId], [f].[UserId], [f].[status]
+FROM [Friendships] AS [f]
+WHERE ([f].[UserId] = @userId OR [f].[FriendId] = @userId) AND [f].[status] = 1
+2026-10-06 16:52:16.583 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:52:16.584 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 69.1627ms
+2026-10-06 16:52:16.584 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:52:16.585 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 73ms)
+2026-10-06 16:52:16.586 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 76.2662ms
+2026-10-06 16:52:16.587 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Friendship, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:52:16.593 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:52:16.594 +05:30 [INF] Executed action InventoryManagement.Controllers.FriendController.GetFriends (DbOperationsWithEfcoreApp) in 73.493ms
+2026-10-06 16:52:16.595 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:52:16.596 +05:30 [INF] Executed endpoint 'InventoryManagement.Controllers.FriendController.GetFriends (DbOperationsWithEfcoreApp)'
+2026-10-06 16:52:16.597 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:52:16.597 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 87ms)
+2026-10-06 16:52:16.598 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:52:16.598 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Friend/list/4 - 200 null application/json; charset=utf-8 90.1575ms
+2026-10-06 16:52:16.600 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Friend/list/4 - null null
+2026-10-06 16:52:16.602 +05:30 [INF] ️ Incoming Request: GET /api/Friend/list/4
+2026-10-06 16:52:16.603 +05:30 [INF] Executing endpoint 'InventoryManagement.Controllers.FriendController.GetFriends (DbOperationsWithEfcoreApp)'
+2026-10-06 16:52:16.603 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:52:16.603 +05:30 [INF] Route matched with {action = "GetFriends", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFriends(Int64) on controller InventoryManagement.Controllers.FriendController (DbOperationsWithEfcoreApp).
+2026-10-06 16:52:16.606 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[CreatedAt], [f].[FriendId], [f].[UserId], [f].[status]
+FROM [Friendships] AS [f]
+WHERE ([f].[UserId] = @userId OR [f].[FriendId] = @userId) AND [f].[status] = 1
+2026-10-06 16:52:16.607 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Friendship, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:52:16.608 +05:30 [INF] Executed action InventoryManagement.Controllers.FriendController.GetFriends (DbOperationsWithEfcoreApp) in 3.1223ms
+2026-10-06 16:52:16.608 +05:30 [INF] Executed endpoint 'InventoryManagement.Controllers.FriendController.GetFriends (DbOperationsWithEfcoreApp)'
+2026-10-06 16:52:16.609 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 7ms)
+2026-10-06 16:52:16.610 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Friend/list/4 - 200 null application/json; charset=utf-8 10.0106ms
+2026-10-06 16:52:16.611 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:52:16.612 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 13.1175ms
+2026-10-06 16:52:16.613 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:52:16.613 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 18ms)
+2026-10-06 16:52:16.614 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 20.7944ms
+2026-10-06 16:52:16.634 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p='?' (DbType = Int32), @friendIds1='?' (DbType = Int64), @friendIds2='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@p) [u].[Id], [u].[ActionType], [u].[BookId], [u].[CreatedAt], [u].[Description], [u].[UserId]
+FROM [UserActivities] AS [u]
+WHERE [u].[UserId] IN (@friendIds1, @friendIds2)
+ORDER BY [u].[CreatedAt] DESC
+2026-10-06 16:52:16.640 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.UserActivity, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:52:16.642 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.FeedController.GetFeed (DbOperationsWithEfcoreApp) in 120.604ms
+2026-10-06 16:52:16.643 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.FeedController.GetFeed (DbOperationsWithEfcoreApp)'
+2026-10-06 16:52:16.643 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 132ms)
+2026-10-06 16:52:16.644 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Feed/4 - 200 null application/json; charset=utf-8 134.9773ms
+2026-10-06 16:52:16.646 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Feed/4 - null null
+2026-10-06 16:52:16.647 +05:30 [INF] ️ Incoming Request: GET /api/Feed/4
+2026-10-06 16:52:16.648 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.FeedController.GetFeed (DbOperationsWithEfcoreApp)'
+2026-10-06 16:52:16.648 +05:30 [INF] Route matched with {action = "GetFeed", controller = "Feed"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFeed(Int64) on controller DbOperationsWithEfcoreApp.Controllers.FeedController (DbOperationsWithEfcoreApp).
+2026-10-06 16:52:16.650 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[CreatedAt], [f].[FriendId], [f].[UserId], [f].[status]
+FROM [Friendships] AS [f]
+WHERE ([f].[UserId] = @userId OR [f].[FriendId] = @userId) AND [f].[status] = 1
+2026-10-06 16:52:16.651 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@p='?' (DbType = Int32), @friendIds1='?' (DbType = Int64), @friendIds2='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@p) [u].[Id], [u].[ActionType], [u].[BookId], [u].[CreatedAt], [u].[Description], [u].[UserId]
+FROM [UserActivities] AS [u]
+WHERE [u].[UserId] IN (@friendIds1, @friendIds2)
+ORDER BY [u].[CreatedAt] DESC
+2026-10-06 16:52:16.652 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.UserActivity, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:52:16.652 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.FeedController.GetFeed (DbOperationsWithEfcoreApp) in 3.4946ms
+2026-10-06 16:52:16.653 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.FeedController.GetFeed (DbOperationsWithEfcoreApp)'
+2026-10-06 16:52:16.653 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 5ms)
+2026-10-06 16:52:16.654 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Feed/4 - 200 null application/json; charset=utf-8 7.2133ms
+2026-10-06 16:57:43.414 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:57:43.415 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Language - null null
+2026-10-06 16:57:43.415 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/currencies - null null
+2026-10-06 16:57:43.416 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/colors - null null
+2026-10-06 16:57:43.416 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:57:43.417 +05:30 [INF] ️ Incoming Request: GET /api/Language
+2026-10-06 16:57:43.417 +05:30 [INF] ️ Incoming Request: GET /api/currencies
+2026-10-06 16:57:43.418 +05:30 [INF] ️ Incoming Request: GET /api/colors
+2026-10-06 16:57:43.419 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.419 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.419 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.420 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.420 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:57:43.421 +05:30 [INF] Route matched with {action = "GetallLanguages", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallLanguages() on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-10-06 16:57:43.421 +05:30 [INF] Route matched with {action = "GetAllCurrencies", controller = "Currency"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCurrencies() on controller DbOperationsWithEfcoreApp.Controllers.CurrencyController (DbOperationsWithEfcoreApp).
+2026-10-06 16:57:43.421 +05:30 [INF] Route matched with {action = "GetAllColors", controller = "Color"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllColors() on controller DbOperationsWithEfcoreApp.Controllers.ColorController (DbOperationsWithEfcoreApp).
+2026-10-06 16:57:43.432 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:57:43.432 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[id], [c].[CreatedAt], [c].[IsActive], [c].[Title], [c].[UpdatedAt], [c].[description]
+FROM [Currency] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:57:43.433 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Language, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:57:43.433 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+FROM [Colors] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:57:43.434 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Currency, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:57:43.434 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp) in 11.6115ms
+2026-10-06 16:57:43.435 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType20`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:57:43.436 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:57:43.436 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp) in 12.4638ms
+2026-10-06 16:57:43.436 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.465 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.466 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 49ms)
+2026-10-06 16:57:43.437 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp) in 12.9238ms
+2026-10-06 16:57:43.493 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 75ms)
+2026-10-06 16:57:43.494 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Language - 200 null application/json; charset=utf-8 79.2504ms
+2026-10-06 16:57:43.498 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/currencies - 200 null application/json; charset=utf-8 82.9482ms
+2026-10-06 16:57:43.493 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/currencies - null null
+2026-10-06 16:57:43.496 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.493 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Language - null null
+2026-10-06 16:57:43.502 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/colors - null null
+2026-10-06 16:57:43.505 +05:30 [INF] ️ Incoming Request: GET /api/currencies
+2026-10-06 16:57:43.505 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:57:43.505 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 87ms)
+2026-10-06 16:57:43.507 +05:30 [INF] ️ Incoming Request: GET /api/Language
+2026-10-06 16:57:43.508 +05:30 [INF] ️ Incoming Request: GET /api/colors
+2026-10-06 16:57:43.509 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.509 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 87.3368ms
+2026-10-06 16:57:43.510 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/colors - 200 null application/json; charset=utf-8 94.0707ms
+2026-10-06 16:57:43.510 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.511 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.511 +05:30 [INF] Route matched with {action = "GetAllCurrencies", controller = "Currency"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCurrencies() on controller DbOperationsWithEfcoreApp.Controllers.CurrencyController (DbOperationsWithEfcoreApp).
+2026-10-06 16:57:43.512 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.514 +05:30 [INF] Route matched with {action = "GetallLanguages", controller = "Language"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallLanguages() on controller DbOperationsWithEfcoreApp.Controllers.LanguageController (DbOperationsWithEfcoreApp).
+2026-10-06 16:57:43.514 +05:30 [INF] Route matched with {action = "GetAllColors", controller = "Color"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllColors() on controller DbOperationsWithEfcoreApp.Controllers.ColorController (DbOperationsWithEfcoreApp).
+2026-10-06 16:57:43.515 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7103/api/Book - null null
+2026-10-06 16:57:43.515 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 99ms)
+2026-10-06 16:57:43.516 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[id], [c].[CreatedAt], [c].[IsActive], [c].[Title], [c].[UpdatedAt], [c].[description]
+FROM [Currency] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:57:43.517 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+FROM [Languages] AS [l]
+WHERE [l].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:57:43.518 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+FROM [Colors] AS [c]
+WHERE [c].[IsActive] = CAST(1 AS bit)
+2026-10-06 16:57:43.518 +05:30 [INF] ️ Incoming Request: GET /api/Book
+2026-10-06 16:57:43.519 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 104.2285ms
+2026-10-06 16:57:43.520 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Currency, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:57:43.520 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Models.Language, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:57:43.521 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType20`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 16:57:43.521 +05:30 [INF] Executing endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.523 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp) in 7.956ms
+2026-10-06 16:57:43.523 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp) in 7.2619ms
+2026-10-06 16:57:43.524 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp) in 7.1619ms
+2026-10-06 16:57:43.524 +05:30 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks() on controller DbOperationsWithEfcoreApp.Controllers.BookController (DbOperationsWithEfcoreApp).
+2026-10-06 16:57:43.525 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.CurrencyController.GetAllCurrencies (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.525 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.LanguageController.GetallLanguages (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.526 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.ColorController.GetAllColors (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.527 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 21ms)
+2026-10-06 16:57:43.527 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 20ms)
+2026-10-06 16:57:43.527 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 19ms)
+2026-10-06 16:57:43.528 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/currencies - 200 null application/json; charset=utf-8 34.5467ms
+2026-10-06 16:57:43.528 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Language - 200 null application/json; charset=utf-8 35.3921ms
+2026-10-06 16:57:43.529 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/colors - 200 null application/json; charset=utf-8 26.4703ms
+2026-10-06 16:57:43.530 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[Description], [b].[IsActive], [b].[NoOfPages], [b].[PdfFilePath], [b].[Title], [b].[UpdatedAt], [s].[BookId], [s].[LanguageId], [s].[Id], [s].[CreatedAt], [s].[Description], [s].[IsActive], [s].[Name], [s].[UpdatedAt], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s0].[CreatedAt], [s0].[IsActive], [s0].[Name], [s0].[UpdatedAt], [s1].[Id], [s1].[BookId], [s1].[CreatedAt], [s1].[CurrencyId], [s1].[UpdatedAt], [s1].[amount], [s1].[id0], [s1].[CreatedAt0], [s1].[IsActive], [s1].[Title], [s1].[UpdatedAt0], [s1].[description]
+FROM [Books] AS [b]
+LEFT JOIN (
+    SELECT [b0].[BookId], [b0].[LanguageId], [l].[Id], [l].[CreatedAt], [l].[Description], [l].[IsActive], [l].[Name], [l].[UpdatedAt]
+    FROM [BookLanguages] AS [b0]
+    INNER JOIN [Languages] AS [l] ON [b0].[LanguageId] = [l].[Id]
+) AS [s] ON [b].[Id] = [s].[BookId]
+LEFT JOIN (
+    SELECT [b1].[BookId], [b1].[ColorId], [c].[Id], [c].[CreatedAt], [c].[IsActive], [c].[Name], [c].[UpdatedAt]
+    FROM [BookColors] AS [b1]
+    INNER JOIN [Colors] AS [c] ON [b1].[ColorId] = [c].[Id]
+) AS [s0] ON [b].[Id] = [s0].[BookId]
+LEFT JOIN (
+    SELECT [b2].[Id], [b2].[BookId], [b2].[CreatedAt], [b2].[CurrencyId], [b2].[UpdatedAt], [b2].[amount], [c0].[id] AS [id0], [c0].[CreatedAt] AS [CreatedAt0], [c0].[IsActive], [c0].[Title], [c0].[UpdatedAt] AS [UpdatedAt0], [c0].[description]
+    FROM [BookPrices] AS [b2]
+    INNER JOIN [Currency] AS [c0] ON [b2].[CurrencyId] = [c0].[id]
+) AS [s1] ON [b].[Id] = [s1].[BookId]
+ORDER BY [b].[Id], [s].[BookId], [s].[LanguageId], [s].[Id], [s0].[BookId], [s0].[ColorId], [s0].[Id], [s1].[Id]
+2026-10-06 16:57:43.540 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`3[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[DbOperationsWithEfcoreApp.Dtos.BookResponseDto, DbOperationsWithEfcoreApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-06 16:57:43.541 +05:30 [INF] Executed action DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp) in 14.4258ms
+2026-10-06 16:57:43.541 +05:30 [INF] Executed endpoint 'DbOperationsWithEfcoreApp.Controllers.BookController.GetAllBooks (DbOperationsWithEfcoreApp)'
+2026-10-06 16:57:43.542 +05:30 [INF] ⬅️ Outgoing Response: 200 (Time taken: 23ms)
+2026-10-06 16:57:43.542 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7103/api/Book - 200 null application/json; charset=utf-8 27.2812ms

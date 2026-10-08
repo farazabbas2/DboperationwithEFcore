@@ -153,7 +153,7 @@ namespace DbOperationsWithEfcoreApp
                     app.UseSwaggerUI();
                 }
 
-                app.UseHttpsRedirection();
+                // app.UseHttpsRedirection(); // Disabled in dev so Authorization headers are not stripped by 307 redirects
 
                 // IMPORTANT: Authentication must come BEFORE Authorization
                 app.UseAuthentication();

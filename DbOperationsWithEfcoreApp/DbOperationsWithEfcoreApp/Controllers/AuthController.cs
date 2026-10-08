@@ -1,4 +1,4 @@
-﻿using DbOperationsWithEfcoreApp.Data;
+using DbOperationsWithEfcoreApp.Data;
 using DbOperationsWithEfcoreApp.Dtos;
 using DbOperationsWithEfcoreApp.Models;
 using FluentValidation;
@@ -197,7 +197,8 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 {
                     id = user.Id,
                     email = user.Email,
-                    name = user.Name
+                    name = user.Name,
+                    role = user.Role
                 }
             });
         }
@@ -214,17 +215,19 @@ namespace DbOperationsWithEfcoreApp.Controllers
 
             var claims = new[]
             {
-        new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-        new Claim(JwtRegisteredClaimNames.Email, user.Email),
-        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-         new Claim(System.Security.Claims.ClaimTypes.Role, user.Role)
-    };
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(System.Security.Claims.ClaimTypes.Role, user.Role),
+                new Claim("role", user.Role),
+                new Claim("name", user.Name)
+            };
 
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.Now.AddHours(2), // Token 2 ghante valid rahega
+                expires: DateTime.UtcNow.AddDays(7), // Token 7 din valid rahega
                 signingCredentials: credentials
             );
 

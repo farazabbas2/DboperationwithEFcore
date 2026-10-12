@@ -14,22 +14,37 @@ using System.Text;
 
 
 
+using System.Security.Cryptography;
+using DbOperationsWithEfcoreApp.Services.EmailService;
+
 namespace DbOperationsWithEfcoreApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
-
         private readonly IValidator<RegisterDto> _registerValidator;
         private readonly IValidator<LoginDto> _loginValidator;
+        private readonly IValidator<ForgotPasswordDto> _forgotPasswordValidator;
+        private readonly IValidator<ResetPasswordDto> _resetPasswordValidator;
+        private readonly IEmailService _emailService;
         private readonly IConfiguration _configuration;
-
         private readonly AppDbContext _context;
-        public AuthController(AppDbContext appDbContext, IValidator<RegisterDto> registerValidator, IValidator<LoginDto> loginValidator, IConfiguration configuration)
+
+        public AuthController(
+            AppDbContext appDbContext,
+            IValidator<RegisterDto> registerValidator,
+            IValidator<LoginDto> loginValidator,
+            IValidator<ForgotPasswordDto> forgotPasswordValidator,
+            IValidator<ResetPasswordDto> resetPasswordValidator,
+            IEmailService emailService,
+            IConfiguration configuration)
         {
             _registerValidator = registerValidator;
             _loginValidator = loginValidator;
+            _forgotPasswordValidator = forgotPasswordValidator;
+            _resetPasswordValidator = resetPasswordValidator;
+            _emailService = emailService;
             _context = appDbContext;
             _configuration = configuration;
         }
@@ -83,7 +98,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
         [HttpPost("force-unlock")]
         public async Task<IActionResult> ForceUnlock([FromBody] UnlockRequestDto dto)
         {
-            // 1. User ko email se dhundho
+            // 1. search user with email
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == dto.Email.ToLower());
 
             if (user == null)
@@ -129,7 +144,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 });
             }
 
-            // 2. User ko sirf Email se dhundho
+            // 2. search user with email
             var user = await _context.Users
                 .FirstOrDefaultAsync(u => u.Email.ToLower() == loginDto.Email.Trim().ToLower());
 
@@ -138,7 +153,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 return Unauthorized(new { success = false, message = "Invalid email or password." });
             }
 
-            // 3. Check karo: Kya account abhi LOCKED hai?
+            // 3. Check account is locked or not
             if (user.LockoutEnd.HasValue && user.LockoutEnd.Value > DateTime.UtcNow)
             {
                 var minutesLeft = Math.Ceiling((user.LockoutEnd.Value - DateTime.UtcNow).TotalMinutes);
@@ -149,13 +164,13 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 });
             }
 
-            // 4. Password Verify karo
+            // 4. Password Verify 
             if (!BCrypt.Net.BCrypt.Verify(loginDto.Password, user.passwordHash))
             {
-                // ❌ Galat Password: Failed attempts count badhao
+                // Increment failed login attempts
                 user.FailedLoginAttempts++;
 
-                // Agar 5 baar galat kiya, to 15 minute ke liye lock kar do
+                
                 if (user.FailedLoginAttempts >= 5)
                 {
                     user.LockoutEnd = DateTime.UtcNow.AddMinutes(1);
@@ -168,7 +183,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
                     });
                 }
 
-                // Attempt count save karo aur user ko batao ke kitne chances bache hain
+                // save attemp count and return remaining attempts
                 await _context.SaveChangesAsync();
                 int attemptsLeft = 5 - user.FailedLoginAttempts;
 
@@ -234,10 +249,120 @@ namespace DbOperationsWithEfcoreApp.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto dto)
+        {
+            var validationResult = await _forgotPasswordValidator.ValidateAsync(dto);
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    message = "Validation failed.",
+                    errors = validationResult.Errors.Select(e => new
+                    {
+                        field = e.PropertyName,
+                        error = e.ErrorMessage
+                    })
+                });
+            }
 
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.Email.ToLower() == dto.Email.Trim().ToLower());
 
+            if (user == null)
+            {
+                return NotFound(new
+                {
+                    success = false,
+                    message = "No account is registered with this email address."
+                });
+            }
 
+            // Generate secure reset token
+            var tokenBytes = RandomNumberGenerator.GetBytes(16);
+            var token = Convert.ToHexString(tokenBytes).ToLower();
+
+            user.PasswordResetToken = token;
+            user.ResetTokenExpiry = DateTime.UtcNow.AddHours(1);
+            await _context.SaveChangesAsync();
+
+            var frontendUrl = _configuration["FrontendUrl"] ?? "http://localhost:5173";
+            var resetLink = $"{frontendUrl}/reset-password?email={Uri.EscapeDataString(user.Email)}&token={token}";
+
+            // Send password reset email
+            await _emailService.SendPasswordResetEmailAsync(user.Email, token, resetLink);
+
+            return Ok(new
+            {
+                success = true,
+                message = "Password reset instructions sent successfully to your email!"
+            });
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto dto)
+        {
+            var validationResult = await _resetPasswordValidator.ValidateAsync(dto);
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    message = "Validation failed.",
+                    errors = validationResult.Errors.Select(e => new
+                    {
+                        field = e.PropertyName,
+                        error = e.ErrorMessage
+                    })
+                });
+            }
+
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.Email.ToLower() == dto.Email.Trim().ToLower());
+
+            if (user == null)
+            {
+                return NotFound(new
+                {
+                    success = false,
+                    message = "User not found with this email."
+                });
+            }
+
+            if (string.IsNullOrEmpty(user.PasswordResetToken) ||
+                !string.Equals(user.PasswordResetToken.Trim(), dto.Token.Trim(), StringComparison.OrdinalIgnoreCase))
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    message = "Invalid reset token. Please request a new password reset link."
+                });
+            }
+
+            if (!user.ResetTokenExpiry.HasValue || user.ResetTokenExpiry.Value < DateTime.UtcNow)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    message = "Reset token has expired. Please request a new password reset link."
+                });
+            }
+
+            // Update password & reset security tracking
+            user.passwordHash = BCrypt.Net.BCrypt.HashPassword(dto.NewPassword);
+            user.PasswordResetToken = null;
+            user.ResetTokenExpiry = null;
+            user.FailedLoginAttempts = 0;
+            user.LockoutEnd = null;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                success = true,
+                message = "Your password has been reset successfully! You can now log in with your new password."
+            });
+        }
     }
-    
-     
 }

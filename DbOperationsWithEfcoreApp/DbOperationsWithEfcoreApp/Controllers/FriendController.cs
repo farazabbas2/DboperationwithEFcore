@@ -34,8 +34,8 @@ namespace InventoryManagement.Controllers
         }
 
         [HttpPost("reject")]
-        public async Task<IActionResult> RejectRequest([FromBody] FriendRequestDto dto)
-        {
+        public async Task<IActionResult> RejectRequest([FromBody] FriendRequestDto dto)     
+        {    
             var (success, message) = await _service.RejectFriendRequest(dto.UserId, dto.FriendId);
             if (!success)
             {
@@ -57,5 +57,5 @@ namespace InventoryManagement.Controllers
             var pending = await _service.GetPendingRequests(userId);
             return Ok(pending);
         }
-    }
-}
+    }   
+}                                                                                                                                                                                                                                                                                                                    

@@ -16,6 +16,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using DbOperationsWithEfcoreApp.Services.FriendService;
 using DbOperationsWithEfcoreApp.Services.ActivityService;
+using DbOperationsWithEfcoreApp.Services.EmailService;
 
 namespace DbOperationsWithEfcoreApp
 {
@@ -72,6 +73,7 @@ namespace DbOperationsWithEfcoreApp
                 // Services
                 builder.Services.AddScoped<IFriendService, FriendService>();
                 builder.Services.AddScoped<IActivityService, ActivityService>();
+                builder.Services.AddScoped<IEmailService, EmailService>();
 
                 // Services
             

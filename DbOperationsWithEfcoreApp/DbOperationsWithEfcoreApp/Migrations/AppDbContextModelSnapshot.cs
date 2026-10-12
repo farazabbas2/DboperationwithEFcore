@@ -289,7 +289,7 @@ namespace DbOperationsWithEfcoreApp.Migrations
                     b.Property<int>("status")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasDefaultValue(0);
+                        .HasDefaultValue(1);
 
                     b.HasKey("Id");
 
@@ -388,6 +388,12 @@ namespace DbOperationsWithEfcoreApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PasswordResetToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ResetTokenExpiry")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -432,6 +438,8 @@ namespace DbOperationsWithEfcoreApp.Migrations
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BookId");
 
                     b.HasIndex("CreatedAt");
 

@@ -16,6 +16,8 @@
         public DateTime? LockoutEnd { get; set; }
 
         public string Role { get; set; } = "User";
+        public string? PasswordResetToken { get; set; }
+        public DateTime? ResetTokenExpiry { get; set; }
 
     }
 }

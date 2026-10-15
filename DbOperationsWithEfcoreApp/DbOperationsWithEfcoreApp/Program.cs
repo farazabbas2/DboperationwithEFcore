@@ -1,22 +1,23 @@
 using DbOperationsWithEfcoreApp.Data;
+using DbOperationsWithEfcoreApp.Hubs;
 using DbOperationsWithEfcoreApp.Interfaces;
 using DbOperationsWithEfcoreApp.Mappings;
 using DbOperationsWithEfcoreApp.Middlewares;
 using DbOperationsWithEfcoreApp.Repositories;
+using DbOperationsWithEfcoreApp.Services;
+using DbOperationsWithEfcoreApp.Services.ActivityService;
+using DbOperationsWithEfcoreApp.Services.EmailService;
+using DbOperationsWithEfcoreApp.Services.FriendService;
 using DbOperationsWithEfcoreApp.Validators;
 using FluentValidation;
-using DbOperationsWithEfcoreApp.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models;
-using Serilog; // ✅ Ye pehle se hai
+using Serilog; 
 using System.Text;
 using System.Text.Json.Serialization;
-using DbOperationsWithEfcoreApp.Services.FriendService;
-using DbOperationsWithEfcoreApp.Services.ActivityService;
-using DbOperationsWithEfcoreApp.Services.EmailService;
 
 namespace DbOperationsWithEfcoreApp
 {
@@ -24,13 +25,13 @@ namespace DbOperationsWithEfcoreApp
     {
         public static void Main(string[] args)
         {
-            // =================================================================
-            // 1. SERILOG CONFIGURATION (App start hone se PEHLE)
-            // =================================================================
+      
+               // 1. SERILOG CONFIGURATION 
+           
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information() // Information, Warning, Error logs save karega
                 .WriteTo.Console()          // Console par bhi dikhayega
-                .WriteTo.File("Logs/app-log-.txt", rollingInterval: RollingInterval.Day) // Har din nayi file banegi
+                .WriteTo.File("Logs/app-log-.txt", rollingInterval: RollingInterval.Day) //a new file daily
                 .CreateLogger();
 
             try
@@ -39,10 +40,11 @@ namespace DbOperationsWithEfcoreApp
 
                 var builder = WebApplication.CreateBuilder(args);
 
-                // =================================================================
+
                 // 2. SERILOG KO DEPENDENCY INJECTION SE CONNECT KARNA
-                // =================================================================
-                builder.Host.UseSerilog(); // ✅ YE LINE BAHUT ZARURI HAI
+            
+  
+                builder.Host.UseSerilog(); 
 
                 // 1. Authentication & JWT
                 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -60,13 +62,30 @@ namespace DbOperationsWithEfcoreApp
                                 Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"] ?? "DefaultSecretKey")),
                             RoleClaimType = System.Security.Claims.ClaimTypes.Role
                         };
+
+                        options.Events = new JwtBearerEvents
+                        {
+                            OnMessageReceived = context =>
+                            {
+                                var accessToken = context.Request.Query["access_token"];
+                                var path = context.HttpContext.Request.Path;
+
+                                // Agar request Hub par aa rahi hai aur token hai, toh use token
+                                if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/notificationHub"))
+                                {
+                                    context.Token = accessToken;
+                                }
+                                return Task.CompletedTask;
+                            }
+                        };
                     });
                 builder.Services.AddHttpContextAccessor();
+                builder.Services.AddSignalR();
                 builder.Services.AddScoped<IBookRepository, BookRepository>();
                 builder.Services.AddScoped<IColorRepository, ColorRepository>();
 
                 builder.Services.AddScoped<ILanguageRepository, LanguageRepository>();
-                // Repositories
+         
                 // Repositories
                 builder.Services.AddScoped<IFriendRepository, FriendRepository>();
                 builder.Services.AddScoped<IActivityRepository, ActivityRepository>();
@@ -75,7 +94,7 @@ namespace DbOperationsWithEfcoreApp
                 builder.Services.AddScoped<IActivityService, ActivityService>();
                 builder.Services.AddScoped<IEmailService, EmailService>();
 
-                // Services
+
             
                 builder.Services.AddDbContext<AppDbContext>(options =>
                     options.UseSqlServer(builder.Configuration.GetConnectionString("AppDb"))
@@ -94,9 +113,10 @@ namespace DbOperationsWithEfcoreApp
                 {
                     options.AddPolicy("AllowReactApp", policy =>
                     {
-                        policy.WithOrigins("http://localhost:5173")
+                        policy.WithOrigins("http://localhost:5173", "http://localhost:5175")
                               .AllowAnyHeader()
-                              .AllowAnyMethod();
+                              .AllowAnyMethod()
+                              .AllowCredentials();
                     });
                 });
 
@@ -144,7 +164,7 @@ namespace DbOperationsWithEfcoreApp
                 // Middleware Pipeline
                 app.UseCors("AllowReactApp");
 
-                // ✅ Custom Logging Middlewares (Ye pehle se aapke code me the, ye sahi jagah par hain)
+                //  Custom Logging Middlewares
                 app.UseMiddleware<ExceptionHandlingMiddleware>();
                 app.UseMiddleware<RequestLoggingMiddleware>();
 
@@ -163,7 +183,7 @@ namespace DbOperationsWithEfcoreApp
 
                 app.MapControllers();
                 app.UseStaticFiles();
-
+                app.MapHub<NotificationHub>("/notificationHub");
                 Log.Information("✅ Application started successfully!");
                 app.Run();
             }

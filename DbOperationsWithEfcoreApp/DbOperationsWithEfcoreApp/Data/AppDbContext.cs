@@ -32,8 +32,8 @@ namespace DbOperationsWithEfcoreApp.Data
                 entity.HasIndex(e => e.UserId);
                 entity.HasIndex(e => e.FriendId);
 
-                // Default Value
-                entity.Property(e => e.status).HasDefaultValue(1);
+                // Default Value: 0 = Pending, 1 = Accepted
+                entity.Property(e => e.status).HasDefaultValue(0);
             });
             modelBuilder.Entity<UserActivity>(entity =>
             {

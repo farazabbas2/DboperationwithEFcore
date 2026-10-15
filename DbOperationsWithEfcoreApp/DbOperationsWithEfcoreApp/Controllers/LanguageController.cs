@@ -142,7 +142,7 @@ namespace DbOperationsWithEfcoreApp.Controllers
             return Ok(result);
         }
 
-        //
+        //update method
         [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Updatelanguage(int id, [FromBody] UpdateLanguageDto languageDto)
@@ -225,7 +225,6 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 IsActive = true
             };
             await _languageRepository.AddLanguageAsync(language);
-   
             return Ok(new { message = "Language created successfully.", data = language });
 
         }

@@ -1,17 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
 using DbOperationsWithEfcoreApp.Dtos;
+using DbOperationsWithEfcoreApp.Hubs;
 using DbOperationsWithEfcoreApp.Interfaces;
 using DbOperationsWithEfcoreApp.Models;
 using DbOperationsWithEfcoreApp.Validators;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using AutoMapper;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore; // DbUpdateException ke liye
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DbOperationsWithEfcoreApp.Controllers
 {
@@ -22,13 +24,15 @@ namespace DbOperationsWithEfcoreApp.Controllers
         private readonly IBookRepository _bookRepository;
         private readonly IValidator<CreateBookDto> _createBookValidator;
         private readonly IMapper _mapper;
+        private readonly IHubContext<NotificationHub> _hubContext;
 
 
-        public BookController(IBookRepository bookRepository, IValidator<CreateBookDto> createBookValidator, IMapper mapper)
+        public BookController(IBookRepository bookRepository, IValidator<CreateBookDto> createBookValidator, IMapper mapper, IHubContext<NotificationHub> hubContext)
         {
             _bookRepository = bookRepository;
             _createBookValidator = createBookValidator;
             _mapper = mapper;
+            _hubContext = hubContext;
         }
 
         [Authorize]
@@ -277,12 +281,17 @@ namespace DbOperationsWithEfcoreApp.Controllers
             // Created book ko details ke saath fetch karna bhi ab Repository ka kaam hai
             var createdBookWithDetails = await _bookRepository.GetBookByIdAsync(book.Id);
             var pricesCount = createdBookWithDetails.BookPrices.Count();
-            Console.WriteLine($"Total prices fetched: {pricesCount}");
-
             if (createdBookWithDetails == null)
                 return StatusCode(500, new { success = false, message = "Book created but failed to fetch details" });
-        
-                return StatusCode(201, new
+
+            string message = $"🎉 New Book Added: '{createdBookWithDetails.Title}' is now available!";
+            await _hubContext.Clients.All.SendAsync("ReceiveNewBookAlert", new
+            {
+                id = createdBookWithDetails.Id,
+                title = createdBookWithDetails.Title,
+                message = message
+            });
+            return StatusCode(201, new
                 {
                     success = true,
                     message = "Book created successfully.",

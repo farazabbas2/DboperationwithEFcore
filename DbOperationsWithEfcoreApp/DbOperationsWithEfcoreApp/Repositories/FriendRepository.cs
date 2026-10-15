@@ -68,5 +68,19 @@ namespace DbOperationsWithEfcoreApp.Repositories
         {
             return await _context.Users.AnyAsync(u => u.Id == userId);
         }
+
+
+        public async Task<bool> RemoveFriendAsync(int userId,int FriendId)
+        {
+            var frienship = await _context.Friendships.FirstOrDefaultAsync(f => f.IsActive && (f.UserId == userId && f.FriendId == FriendId) || 
+            (f.UserId == f.FriendId && f.FriendId == userId));
+            if (frienship != null)
+            {
+                frienship.IsActive = false;
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
     }
 }

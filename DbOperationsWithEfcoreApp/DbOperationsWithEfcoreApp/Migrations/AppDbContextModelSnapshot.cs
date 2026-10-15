@@ -283,13 +283,16 @@ namespace DbOperationsWithEfcoreApp.Migrations
                     b.Property<long>("FriendId")
                         .HasColumnType("bigint");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
                     b.Property<int>("status")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasDefaultValue(1);
+                        .HasDefaultValue(0);
 
                     b.HasKey("Id");
 

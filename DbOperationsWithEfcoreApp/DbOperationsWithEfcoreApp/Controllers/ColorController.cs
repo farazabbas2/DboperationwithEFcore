@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using System.Data.SqlTypes;
-
+using DbOperationsWithEfcoreApp.Hubs;
+using Microsoft.AspNetCore.SignalR;
 
 namespace DbOperationsWithEfcoreApp.Controllers
 {
@@ -20,11 +21,14 @@ namespace DbOperationsWithEfcoreApp.Controllers
         private readonly AppDbContext _appDbContext;
         private readonly IColorRepository _colorRepository;
         private readonly IValidator<CreateColorDto> _createNewColorValidator;
-        public ColorController(AppDbContext appDbContext, IValidator<CreateColorDto> createNewColorValidator, IColorRepository colorRepository)
+        private readonly IHubContext<NotificationHub> _hubContext;
+
+        public ColorController(AppDbContext appDbContext, IValidator<CreateColorDto> createNewColorValidator, IColorRepository colorRepository, IHubContext<NotificationHub> hubContext)
         {
             _appDbContext = appDbContext;
             _createNewColorValidator = createNewColorValidator;
             _colorRepository = colorRepository;
+            _hubContext = hubContext;
         }
         [Authorize]
         [HttpGet]
@@ -72,6 +76,15 @@ namespace DbOperationsWithEfcoreApp.Controllers
             }).ToList();
             await _colorRepository.AddBulkColorsAsync(colorsToAdd);
             await _colorRepository.SaveChangesAsync();
+
+            try
+            {
+                await _hubContext.Clients.All.SendAsync("ReceiveNewColorAlert", new
+                {
+                    message = $"🎨 {colorsToAdd.Count} new colors added to library palette!"
+                });
+            }
+            catch { }
 
             return StatusCode(201, new
             {
@@ -134,6 +147,18 @@ namespace DbOperationsWithEfcoreApp.Controllers
 
       
             await _colorRepository.AddColorAsync(color);
+
+            try
+            {
+                await _hubContext.Clients.All.SendAsync("ReceiveNewColorAlert", new
+                {
+                    id = color.Id,
+                    name = color.Name,
+                    colorName = color.Name,
+                    message = $"🎨 New Color Added: '{color.Name}' is now available in library palette!"
+                });
+            }
+            catch { }
 
             // 4. Response DTO banana (ColorResponseDto)
             var responseDto = new ColorResponseDto

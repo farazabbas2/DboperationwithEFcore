@@ -129,9 +129,13 @@ namespace DbOperationsWithEfcoreApp.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
 
-            modelBuilder.Entity<Color>()
+             modelBuilder.Entity<Color>()
             .HasIndex(c => c.Name)
-            .IsUnique(); 
+            .IsUnique();
+
+                  modelBuilder.Entity<Friendship>()
+                .Property(f => f.IsActive)
+                 .HasDefaultValue(true);
         }
 
 

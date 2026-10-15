@@ -6,6 +6,10 @@
             public long UserId { get; set; }
             public long FriendId { get; set; }
             public int status { get; set; }  // 0: Pending, 1: Accepted
-        public DateTime CreatedAt { get; set; }
-        }
+           public DateTime CreatedAt { get; set; }
+
+           public bool IsActive { get; set; } = true; //deleted or not
+
+
+    }
 }

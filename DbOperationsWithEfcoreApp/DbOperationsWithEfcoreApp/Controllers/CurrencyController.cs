@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using DbOperationsWithEfcoreApp.Hubs;
+using Microsoft.AspNetCore.SignalR;
 
 namespace DbOperationsWithEfcoreApp.Controllers
 {
@@ -17,11 +19,13 @@ namespace DbOperationsWithEfcoreApp.Controllers
     {
         private readonly AppDbContext _appDbContext;
         private readonly IValidator<CreateCurrencyDto> _createCurrencyValidator;
+        private readonly IHubContext<NotificationHub> _hubContext;
 
-        public CurrencyController(AppDbContext appDbContext , IValidator<CreateCurrencyDto> createCurrencyValidator)
+        public CurrencyController(AppDbContext appDbContext, IValidator<CreateCurrencyDto> createCurrencyValidator, IHubContext<NotificationHub> hubContext)
         {
             _appDbContext = appDbContext;
             _createCurrencyValidator = createCurrencyValidator;
+            _hubContext = hubContext;
         }
         [Authorize]
         [HttpGet()]
@@ -172,6 +176,19 @@ namespace DbOperationsWithEfcoreApp.Controllers
 
             _appDbContext.Currency.Add(currency);
             await _appDbContext.SaveChangesAsync();
+
+            try
+            {
+                await _hubContext.Clients.All.SendAsync("ReceiveNewCurrencyAlert", new
+                {
+                    id = currency.id,
+                    title = currency.Title,
+                    currencyTitle = currency.Title,
+                    description = currency.description,
+                    message = $"💰 New Currency Added: '{currency.Title}' ({currency.description}) is now available!"
+                });
+            }
+            catch { }
 
             return Ok(new
             {

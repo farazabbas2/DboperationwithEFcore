@@ -5,6 +5,11 @@ using DbOperationsWithEfcoreApp.Hubs;
 using DbOperationsWithEfcoreApp.Data;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
+using DbOperationsWithEfcoreApp.Repositories;
+using DbOperationsWithEfcoreApp.Interfaces;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace InventoryManagement.Controllers
 {
@@ -16,11 +21,14 @@ namespace InventoryManagement.Controllers
         private readonly IHubContext<NotificationHub> _hubContext;
         private readonly AppDbContext _context;
 
-        public FriendController(IFriendService service, IHubContext<NotificationHub> hubContext, AppDbContext context)
+        private readonly IFriendRepository _friendRepository;
+
+        public FriendController(IFriendService service, IHubContext<NotificationHub> hubContext, AppDbContext context, IFriendRepository friendRepository)
         {
             _service = service;
             _hubContext = hubContext;
             _context = context;
+            _friendRepository = friendRepository;
         }
 
         [HttpPost("request")]
@@ -125,6 +133,38 @@ namespace InventoryManagement.Controllers
 
             return Ok(result);
         }
+        [Authorize(Roles ="Admin,User")]
+        [HttpDelete("remove/{friendId}")]
+        public async Task<IActionResult> RemoveFriend(int friendId)
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+
+            if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out int currentUserId))
+            {
+                return Unauthorized(new { success = false, message = "Invalid User Token" });
+            }
+
+
+            if (currentUserId == friendId)
+            {
+                return BadRequest(new { success = false, message = "You cannot remove yourself." });
+            }
+            var isRemoved = await _friendRepository.RemoveFriendAsync(currentUserId, friendId);
+            if (isRemoved)
+            {
+                return Ok(new { success = true, message = "Friend removed successfully." });
+            }
+            else
+            {
+                return NotFound(new { success = false, message = "Friendship record not found." });
+            }
+        }
+        
+
+
+
+
 
         [HttpGet("pending/{userId}")]
         public async Task<IActionResult> GetPendingRequests(long userId)

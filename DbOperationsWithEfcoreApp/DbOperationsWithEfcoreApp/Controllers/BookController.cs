@@ -1,4 +1,5 @@
 using AutoMapper;
+using DbOperationsWithEfcoreApp.Data;
 using DbOperationsWithEfcoreApp.Dtos;
 using DbOperationsWithEfcoreApp.Hubs;
 using DbOperationsWithEfcoreApp.Interfaces;
@@ -25,14 +26,16 @@ namespace DbOperationsWithEfcoreApp.Controllers
         private readonly IValidator<CreateBookDto> _createBookValidator;
         private readonly IMapper _mapper;
         private readonly IHubContext<NotificationHub> _hubContext;
+        private readonly AppDbContext _context;
 
 
-        public BookController(IBookRepository bookRepository, IValidator<CreateBookDto> createBookValidator, IMapper mapper, IHubContext<NotificationHub> hubContext)
+        public BookController(IBookRepository bookRepository, IValidator<CreateBookDto> createBookValidator, IMapper mapper, IHubContext<NotificationHub> hubContext, AppDbContext context)
         {
             _bookRepository = bookRepository;
             _createBookValidator = createBookValidator;
             _mapper = mapper;
             _hubContext = hubContext;
+            _context = context;
         }
 
         [Authorize]
@@ -252,32 +255,45 @@ namespace DbOperationsWithEfcoreApp.Controllers
                 Description = createDto.Description.Trim(),
                 NoOfPages = createDto.NoOfPages,
                 IsActive = true,
-                CreatedAt = DateTime.UtcNow,
-                BookColors = new List<BookColor>(),
-                BookLanguages = new List<BookLanguage>(),
-                BookPrices = new List<BookPrice>()
+                CreatedAt = DateTime.UtcNow
             };
-
-            if (createDto.ColorIds != null && createDto.ColorIds.Any())
+            using (var transaction = await _context.Database.BeginTransactionAsync())
             {
-                foreach (var colorId in createDto.ColorIds)
-                    book.BookColors.Add(new BookColor { ColorId = colorId });
+                try
+                {
+                   //Book insert (SP ke through)
+                    await _bookRepository.AddBookAsync(book);
+
+                    // Relations insert
+                    if ((createDto.ColorIds != null && createDto.ColorIds.Any()) ||
+                        (createDto.LanguageIds != null && createDto.LanguageIds.Any()))
+                    {
+                        await _bookRepository.ReplaceBookRelationsAsync(book.Id, createDto.LanguageIds, createDto.ColorIds);
+                    }
+
+                    //  Prices insert
+                    if (createDto.Prices != null && createDto.Prices.Any())
+                    {
+                        await _bookRepository.AddBookPricesAsync(book.Id, createDto.Prices);
+                    }
+
+                    //if everything is successful, commit the transaction
+
+                    await transaction.CommitAsync();
+                }
+                catch (Exception ex)
+                {
+                    //if any error then rollback the transaction
+                    await transaction.RollbackAsync();
+
+                    return BadRequest(new
+                    {
+                        success = false,
+                        message = "Book creation failed. All changes have been rolled back.",
+                        error = ex.Message
+                    });
+                }
             }
-
-            if (createDto.LanguageIds != null && createDto.LanguageIds.Any())
-            {
-                foreach (var languageId in createDto.LanguageIds)
-                    book.BookLanguages.Add(new BookLanguage { LanguageId = languageId });
-            }
-
-            // Save via Repository
-            await _bookRepository.AddBookAsync(book);
-
-            if (createDto.Prices != null && createDto.Prices.Any())
-            {
-                await _bookRepository.AddBookPricesAsync(book.Id, createDto.Prices);
-            }
-
             // Created book ko details ke saath fetch karna bhi ab Repository ka kaam hai
             var createdBookWithDetails = await _bookRepository.GetBookByIdAsync(book.Id);
             var pricesCount = createdBookWithDetails.BookPrices.Count();

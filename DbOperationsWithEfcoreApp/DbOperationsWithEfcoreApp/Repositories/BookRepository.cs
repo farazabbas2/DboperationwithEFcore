@@ -2,11 +2,12 @@
 using DbOperationsWithEfcoreApp.Dtos;
 using DbOperationsWithEfcoreApp.Interfaces;
 using DbOperationsWithEfcoreApp.Models;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-
 namespace DbOperationsWithEfcoreApp.Repositories
 {
     public class BookRepository : IBookRepository
@@ -88,8 +89,31 @@ namespace DbOperationsWithEfcoreApp.Repositories
         // 6. Add Single Book
         public async Task AddBookAsync(Book book)
         {
-            await _context.Books.AddAsync(book);
-            await _context.SaveChangesAsync();
+            //GET BOOK ID FROM OUTPUT
+            var bookIdParam = new SqlParameter("@NewBookId", SqlDbType.Int)
+            {
+                Direction = ParameterDirection.Output
+            };
+            //CALL STORED PROCEDURE
+            await _context.Database.ExecuteSqlRawAsync(
+                @"EXEC AddNewBook 
+            @Title, 
+            @Description, 
+            @NoOfPages, 
+            @CreatedAt,
+            @IsActive,
+            @NewBookId OUTPUT",
+
+                new SqlParameter("@Title", book.Title),
+                new SqlParameter("@Description", book.Description),
+                new SqlParameter("@NoOfPages", book.NoOfPages),
+                new SqlParameter("@CreatedAt", book.CreatedAt), 
+                new SqlParameter("@IsActive", book.IsActive),
+                bookIdParam
+            );
+
+           //SAVE BOOK ID
+            book.Id = (int)bookIdParam.Value;
         }
         public async Task AddBulkColorsAsync(IEnumerable<Color> colors)
         {
